@@ -116,19 +116,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#########################################
-####### manually insterted by RJX #######
-#########################################
-eval "$(zoxide init bash)"
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-alias cl='clear'
-alias vim='nvim'
-alias vide='neovide'
-alias y='yazi'
+################################
+####### WORKING PROGRAMS #######
+################################
 alias rjxssh='ssh ruanjx@192.168.22.171'
-alias top='btop'
-# 设置AI Key
-export DEEPSEEK_API_KEY=sk-6dd2db9f15f54afeaf42f148479cd9f6
+
+# afni
 # auto-inserted by @update.afni.binaries :
 export PATH=$PATH:/home/nhp/abin
 # auto-inserted by @update.afni.binaries :
@@ -141,31 +134,22 @@ export R_LIBS=$HOME/R
 alias ls="ls --color"
 alias ll="ls --color -l"
 alias ltr="ls --color -ltr"
-# # fsl 配置
-# FSLDIR=~/fsl
-# PATH=${FSLDIR}/share/fsl/bin:${PATH}
-# export FSLDIR PATH
-# . ${FSLDIR}/etc/fslconf/fsl.sh
-# freesurfer 配置
+
+# freesurfer
 export FREESURFER_HOME=/usr/local/freesurfer/6.0.0
 source $FREESURFER_HOME/SetUpFreeSurfer.sh
 export PATH=$PATH:/usr/local/freesurfer/6.0.0
-# conda 配置
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/nhp/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/nhp/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/nhp/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/nhp/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-# connectome workbench 配置
+
+# workbench
+export PATH=$PATH:/home/nhp/workbench/bin_linux64
+
+# ants
+export PATH=$PATH:/home/nhp/ants/ants-2.5.4/bin
+
+# zotero
+export PATH=$PATH:/home/nhp/ricardo/zotero/Zotero_linux-x86_64
+
+# NHPPipelines
 export CARET7DIR=${HOME}/workbench/bin_linux64
 export MSMBINDIR=${HOME}/fsl/bin
 export HCPPIPEDIR=${HOME}/HCP_pipelines/NHPPipelines
@@ -183,16 +167,49 @@ export HCPPIPEDIR_dMRI=${HCPPIPEDIR}/DiffusionPreprocessing/scripts
 export HCPPIPEDIR_dMRITract=${HCPPIPEDIR}/DiffusionTractography
 export HCPPIPEDIR_Global=${HCPPIPEDIR}/global/scripts
 export HCPPIPEDIR_tfMRIAnalysis=${HCPPIPEDIR}/TaskfMRIAnalysis/scripts
-# rust配置
-. "$HOME/.cargo/env"
-# 添加PATH
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+
+###########################
+####### MY PROGRAMS #######
+###########################
+# conda
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/nhp/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/nhp/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/nhp/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/nhp/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# nvim
 export PATH=$PATH:/home/nhp/ricardo/nvim/nvim-linux-x86_64/bin
-export PATH=$PATH:/home/nhp/workbench/bin_linux64
-export PATH=$PATH:/home/nhp/ants/ants-2.5.4/bin
-export PATH=$PATH:/home/nhp/ricardo/zotero/Zotero_linux-x86_64
-export PATH=$PATH:/home/nhp/ricardo/7zip/7z2409-linux-x64
-export PATH=$PATH:/home/nhp/python/Projects/gen_FC
+alias vim='nvim'
 export EDITOR=nvim
+# homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# zoxide
+eval "$(zoxide init bash)"
+# rust
+. "$HOME/.cargo/env"
+# yazi
+alias y='yazi'
+# btop
+alias top='btop'
+# neovide
+alias vide='neovide'
+# python
+export PATH=$PATH:/home/nhp/python/Projects/gen_FC
+# 7zip
+export PATH=$PATH:/home/nhp/ricardo/7zip/7z2409-linux-x64
+# tmux
+alias cl='clear'
 
 nu
