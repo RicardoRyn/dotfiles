@@ -1,0 +1,9 @@
+[user]
+	name = nhp
+	email = ricardoryn1317@gmail.com
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
+[alias]
+	ac = "!f() { git add . && git commit -m \"$1\"; }; f"
