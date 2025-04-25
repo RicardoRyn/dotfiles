@@ -168,6 +168,9 @@ export HCPPIPEDIR_dMRITract=${HCPPIPEDIR}/DiffusionTractography
 export HCPPIPEDIR_Global=${HCPPIPEDIR}/global/scripts
 export HCPPIPEDIR_tfMRIAnalysis=${HCPPIPEDIR}/TaskfMRIAnalysis/scripts
 
+# # remote_data
+# sshfs ruanjx@192.168.22.171:/media/Data/ruanjx /mnt/remote_data
+
 ###########################
 ####### MY PROGRAMS #######
 ###########################
@@ -207,8 +210,6 @@ alias top='btop'
 alias vide='neovide'
 # python
 export PATH=$PATH:/home/nhp/python/Projects/gen_FC
-# 7zip
-export PATH=$PATH:/home/nhp/ricardo/7zip/7z2409-linux-x64
 # tmux
 alias cl='clear'
 
