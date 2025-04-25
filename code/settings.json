@@ -136,9 +136,6 @@
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
-    },
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "right"
@@ -147,6 +144,7 @@
     "notebook.outline.showCodeCells": true,
     "notebook.outline.showCodeCellSymbols": false,
     "python.defaultInterpreterPath": "/home/nhp/anaconda3/envs/main",
+    "workbench.colorTheme": "Default Light Modern",
     //  光标流畅动画
     // "vscode_custom_css.imports": [
     //     "file:///c:/Users/RicardoRyn/.vscode/config/trailCursorEffect/index.js"

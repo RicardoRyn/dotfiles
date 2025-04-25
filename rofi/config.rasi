@@ -1,0 +1,15 @@
+configuration {
+	font:							"Iosevka Nerd Font 13";
+    show-icons:                     true;
+	icon-theme: 					"Papirus";
+    display-drun: 					" ";
+    display-window: 					" ";
+    display-run: 					" ";
+    display-ssh: 					"󰣀 ";
+    drun-display-format:            "{name}";
+    disable-history:                false;
+	sidebar-mode: 					false;
+  modi: [window, run, ssh, drun];
+}
+
+@theme "$HOME/.local/share/rofi/themes/rjx.rasi"
