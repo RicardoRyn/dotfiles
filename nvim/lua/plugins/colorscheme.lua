@@ -4,7 +4,19 @@ if vim.g.vscode then
 else
   return {
     -- add catppuccin
-    { "catppuccin/nvim" },
+    {
+      "catppuccin/nvim",
+      name = "catppuccin",
+      opts = {
+        highlight_overrides = {
+          latte = function(colors)
+            return {
+              CursorLine = { bg = "#dce0e8" }, -- 更浅的灰色背景
+            }
+          end,
+        },
+      },
+    },
 
     -- Configure LazyVim to load catppuccin
     {
@@ -13,6 +25,6 @@ else
         -- colorscheme = "tokyonight",
         colorscheme = "catppuccin-latte",
       },
-    }
+    },
   }
 end
