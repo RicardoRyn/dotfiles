@@ -10,6 +10,7 @@ local unmap = vim.keymap.del
 map("i", "<C-h>", "<ESC>I", { desc = "Move to the beginning of the line in Insert mode" })
 map("i", "<C-l>", "<ESC>A", { desc = "Move to the end of the line in Insert mode" })
 map("n", "<leader>h", "<cmd>:noh<cr>", { desc = "No highlight" })
+
 -- 禁用部分默认快捷键，防误触
 map({ "n", "v" }, "J", "<Nop>")
 map({ "v" }, "U", "<Nop>")
@@ -105,6 +106,8 @@ if not vim.g.vscode then
   map({ "i" }, "jk", "<Esc>")
   map("v", "<C-c>", '"+y') -- 让neovim中C-c可以复制内容到剪贴板
   map("n", "<leader>rn", ":IncRename ") -- 让nvim中更改变量名字
+  map("n", "gj", "j", { desc = "j" })
+  map("n", "gk", "k", { desc = "k" })
 
   -- 以下命令在vscode中容易导致崩溃
   -- csvview.lua
@@ -140,7 +143,7 @@ else
   unmap("n", "<leader>K", { desc = "Keywordprg" })
   unmap("n", "<leader>l", { desc = "Lazy" })
   unmap("n", "<leader>L", { desc = "LazyVim Changelog" })
-  -- unmap("n", "<leader>n", { desc = "Notification History" })
+  unmap("n", "<leader>n", { desc = "Notification History" })
   unmap("n", "<leader>.", { desc = "Toggle Scratch Buffer" })
   unmap("n", "<leader>`", { desc = "Switch to Other Buffer" })
   -- 常规快捷键，尽量与nvim本身保持一致，但是使用vscode的方式
@@ -166,13 +169,6 @@ else
     "<leader>a",
     "<Cmd>lua require('vscode').call('workbench.action.toggleActivityBarVisibility')<CR>",
     { desc = "toggleActivityBarVisibility" }
-  )
-  -- vscode中markdown文档的预览
-  map(
-    "n",
-    "<C-k><C-v>",
-    "<Cmd>lua require('vscode').call('markdown-preview-enhanced.openPreviewToTheSide')<CR>",
-    { desc = "openPreviewToTheSide" }
   )
 end
 
