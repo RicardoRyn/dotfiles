@@ -170,6 +170,18 @@ else
     "<Cmd>lua require('vscode').call('workbench.action.toggleActivityBarVisibility')<CR>",
     { desc = "toggleActivityBarVisibility" }
   )
+  map(
+    "v",
+    "<leader>cf",
+    "<Cmd>lua require('vscode').call('editor.action.formatSelection')<CR>",
+    { desc = "format selection" }
+  )
+  map(
+    "n",
+    "<leader>cf",
+    "<Cmd>lua require('vscode').call('editor.action.formatDocument')<CR>",
+    { desc = "format selection" }
+  )
 end
 
 -------------------------------
