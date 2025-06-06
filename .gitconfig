@@ -19,3 +19,4 @@
 	sort = version:refname
 [diff]
 	algorithm = histogram
+	colorMoved = plain
