@@ -182,6 +182,14 @@ else
     "<Cmd>lua require('vscode').call('editor.action.formatDocument')<CR>",
     { desc = "format selection" }
   )
+  -- yazi vscode
+  map(
+    "n",
+    "<leader>-",
+    "<Cmd>lua require('vscode').call('yazi-vscode.toggle')<CR>",
+    { desc = "open yazi" }
+  )
+
 end
 
 -------------------------------
