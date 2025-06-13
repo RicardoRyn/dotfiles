@@ -1,0 +1,36 @@
+return {
+  -- ref: https://wezfurlong.org/wezterm/config/lua/WslDomain.html
+  wsl_domains = {
+    {
+      name = "WSL:Ubuntu",
+      distribution = "Ubuntu-22.04",
+      username = "ricardo",
+      default_cwd = "/home/ricardo",
+      default_prog = { "bash", "-l" },
+    },
+  },
+
+  -- ref: https://wezfurlong.org/wezterm/config/lua/SshDomain.html
+  ssh_domains = {
+    -- yazi's image preview on Windows will only work if launched via ssh from WSL
+    {
+      name = "nhp.ssh",
+      remote_address = "192.168.22.173",
+      username = "nhp",
+      multiplexing = "None",
+      default_prog = { "bash", "-l" },
+      assume_shell = "Posix",
+    },
+    {
+      name = "Server.ssh",
+      remote_address = "192.168.22.171",
+      username = "ruanjx",
+      multiplexing = "None",
+      default_prog = { "bash", "-l" },
+      assume_shell = "Posix",
+    },
+  },
+
+  -- ref: https://wezfurlong.org/wezterm/multiplexing.html#unix-domains
+  unix_domains = {},
+}

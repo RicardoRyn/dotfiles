@@ -1,0 +1,22 @@
+[user]
+  name = Ricardo_T8
+  email = ricardoryn1317@gmail.com
+[credential "https://gitee.com"]
+  provider = generic
+[safe]
+  directory = E:/jupyter_notebook/jupyter_notebook_code
+[credential]
+  helper = store
+[init]
+  defaultBranch = main
+[alias]
+  ac = "!f() { git add . && git commit -m \"$1\"; }; f"
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
