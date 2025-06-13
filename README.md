@@ -5,6 +5,7 @@
 mklink "%USERPROFILE%\.gitconfig" "%USERPROFILE%\dotfiles\.gitconfig"
 
 # 如果是文件夹
-mklink /D "%USERPROFILE%\AppData\Roaming\yazi" "%USERPROFILE%\dotfiles\yazi"
+mklink /D "%USERPROFILE%\AppData\Roaming\nushell" "%USERPROFILE%\dotfiles\nushell"
 ```
+
 
