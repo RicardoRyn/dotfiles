@@ -1,0 +1,116 @@
+{
+    // gernal
+    "editor.wordWrap": "on", // 自动换行
+    "editor.fontSize": 13, // 字体大小
+    "editor.fontFamily": "Maple Mono NF CN", // 字体
+    "editor.fontWeight": "300", // 字体粗细
+    "editor.minimap.autohide": true, // 自动隐藏缩略图
+    "editor.showFoldingControls": "always", // 总是显示折叠控件，例如可以折叠一个函数
+    "editor.cursorBlinking": "smooth", // 光标闪烁
+    "editor.mouseWheelZoom": true, //  Ctrl + 鼠标滚轮缩放
+    "editor.acceptSuggestionOnEnter": "smart", // 智能回车
+    "editor.suggestSelection": "recentlyUsed", // 智能提示选择
+    "editor.accessibilitySupport": "auto", // 自动检测使用屏幕辅助功能
+    "editor.formatOnSave": false, // 保存时不自动格式化
+    "editor.detectIndentation": false, // 禁止自动检测缩进
+    "editor.renderWhitespace": "all", // 显示空格
+    "editor.guides.bracketPairs": true, // 高亮括号
+    "editor.stickyScroll.enabled": false, // 禁止将当前作用域（如函数或类）的标题固定在顶部
+    "editor.smoothScrolling": true, // 平滑滚动
+    "editor.cursorSmoothCaretAnimation": "on", // 光标动画移动平滑
+    "editor.lineNumbers": "on", // 相对行号
+    "window.title": "${dirty}${activeEditorLong}${separator}${rootName}${separator}${profileName}${separator}${appName}",
+    "window.enableMenuBarMnemonics": false, // 禁用菜单栏快捷键
+    "window.customMenuBarAltFocus": false, // 禁用菜单栏快捷键
+    "window.commandCenter": false,
+    "window.titleBarStyle": "custom",
+    "window.dialogStyle": "custom",
+    "workbench.colorTheme": "Default Light Modern",
+    "workbench.layoutControl.enabled": false,
+    "workbench.list.smoothScrolling": true,
+    "workbench.startupEditor": "none", // 关闭布局控制
+    "workbench.iconTheme": "material-icon-theme",
+    "files.autoSave": "afterDelay", // 自动保存，onWindowChange
+    "files.autoSaveDelay": 2000, // 自动保存延迟
+    "files.autoSaveWhenNoErrors": false, // 文件即使有错误，也会保存
+    "explorer.confirmDelete": false, // 删除文件不提示
+    "explorer.confirmDragAndDrop": false, // 拖拽文件不提示
+    "breadcrumbs.enabled": false, // 始终显示菜单栏
+    "outline.collapseItems": "alwaysCollapse", // 折叠大纲视图
+    "search.followSymlinks": false, // 搜索时不跟随符号链接
+    "security.workspace.trust.untrustedFiles": "open", // 未受信任文件提示
+    // jupyter notebook
+    "jupyter.askForKernelRestart": false, // 重启内核提示，直接重启内核，不会显示确认提示
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
+    "notebook.lineNumbers": "on",
+    "notebook.output.minimalErrorRendering": true,
+    "notebook.output.wordWrap": true,
+    "notebook.outline.showCodeCells": true,
+    "notebook.outline.showCodeCellSymbols": false,
+    // vscode-neovim
+    "vscode-neovim.neovimClean": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    // "vscode-neovim.compositeKeys": {
+    //     "jk": {
+    //         "command": "vscode-neovim.escape"
+    //     }
+    // },
+    // terminal
+    "terminal.integrated.profiles.windows": {
+        "NuShell": {
+            "path": "C:/Users/RicardoRyn/scoop/shims/nu.exe",
+            "args": [
+                "-l"
+            ], // 可选：添加启动参数（如 `-l` 启用登录模式）
+            "icon": "terminal" // 可选：设置终端图标
+        }
+    },
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.scrollback": 10000, // 终端滚动条
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.inheritEnv": false, // 关闭继承环境变量，避免与系统环境变量冲突
+    "terminal.external.windowsExec": "C:/Users/RicardoRyn/scoop/shims/nu.exe",
+    "terminal.integrated.defaultProfile.windows": "NuShell",
+    "terminal.integrated.allowChords": false,
+    // git
+    "git.autorefresh": false, // 关闭自动刷新
+    "git.autofetch": true, // 自动获取
+    "git.enableSmartCommit": true, // 启用智能提交
+    "git.ignoreRebaseWarning": false, // 忽略变基警告
+    "git.confirmSync": false, // 同步时不提示
+    "git.openRepositoryInParentFolders": "never",
+    // python
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+    "python.defaultInterpreterPath": "E:\\python\\envs\\main",
+    "debug.inlineValues": "off",
+    "debug.enableStatusBarColor": false,
+    "debug.showBreakpointsInOverviewRuler": true, // 在概览标尺中显示断点
+    // ssh
+    "security.allowedUNCHosts": [
+        "172.28.141.47"
+    ],
+    "remote.SSH.remotePlatform": {
+        "nhp:ssh": "linux",
+        "Server:ssh": "linux"
+    },
+    // mkdocs yaml
+    "yaml.schemas": {
+        "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+    },
+    "yaml.customTags": [
+        "!ENV scalar",
+        "!ENV sequence",
+        "!relative scalar",
+        "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
+        "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
+        "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format",
+        "tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"
+    ],
+}
