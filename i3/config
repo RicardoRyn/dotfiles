@@ -205,17 +205,24 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task-dialog"] floating enable
 for_window [title="Perferences$"] floating enable
 
+####################
+### 开机启动程序 ###
+####################
 # 常规
-focus_follows_mouse no
-exec --no-startup-id xset m 1 0
+exec --no-startup-id xset m 0.1
 exec --no-startup-id bash $HOME/.config/polybar/launch.sh --forest
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id feh --bg-fill /usr/share/backgrounds/Jammy-Jellyfish_WP_4096x2304_Grey.png
+exec --no-startup-id sunshine
+exec --no-startup-id kanata -c /home/nhp/ricardo/kanata/kanata.kbd
+# 鼠标光标
+exec --no-startup-id xrdb -merge ~/.Xresources 
 # 禁止黑屏
 exec --no-startup-id xset s off -dpms s noblank
 exec --no-startup-id caffeine
 
+focus_follows_mouse no
 gaps inner 5
 gaps outer 2
 default_border pixel 5
