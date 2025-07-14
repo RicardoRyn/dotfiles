@@ -11,6 +11,7 @@ $character
 
 add_newline = true
 palette = "onedark"
+command_timeout = 1000
 
 [directory]
 style = 'bold fg:dark_blue'

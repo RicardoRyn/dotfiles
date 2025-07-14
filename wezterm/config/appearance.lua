@@ -34,7 +34,7 @@ return {
 
   -- window
   -- window_decorations = "INTEGRATED_BUTTONS | RESIZE",
-  window_padding = { left = 3, right = 3, top = 0, bottom = 0 },
+  window_padding = { left = 3, right = 3, top = 0, bottom = 1 },
   adjust_window_size_when_changing_font_size = false,
   window_close_confirmation = "NeverPrompt",
   window_frame = {
