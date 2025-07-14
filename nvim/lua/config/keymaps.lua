@@ -10,6 +10,7 @@
 vim.keymap.set({ "n", "v" }, "J", "<Nop>")
 vim.keymap.set({ "v" }, "U", "<Nop>")
 vim.keymap.set({ "v" }, "u", "<Nop>")
+vim.keymap.set("n", "<leader>h", "<cmd>:noh<cr>", { desc = "No highlight" })
 vim.keymap.del("n", "<leader>l", { desc = "Lazy" })
 vim.keymap.del("n", "<leader>L", { desc = "LazyVim Changelog" })
 

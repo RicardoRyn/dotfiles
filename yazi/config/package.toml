@@ -3,5 +3,20 @@ use = "yazi-rs/plugins:git"
 rev = "a54b96a"
 hash = "c2c9ad90a84f9d86188a2b8b73a289c1"
 
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "a63550b"
+hash = "733c7340b1ca2d3ef274c427a0cf21b"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:vcs-files"
+rev = "b886025"
+hash = "67863e9bdd5a59b10d3b7479a109211a"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "7a08a09"
+hash = "5249d156940fa0ee9f00ca148e574eeb"
+
 [flavor]
 deps = []
