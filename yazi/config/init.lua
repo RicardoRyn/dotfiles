@@ -8,3 +8,5 @@ th.git.updated_sign = "󰚰"
 require("git"):setup { order = 0 }
 require("full-border"):setup()
 require("starship"):setup()
+-- cloese preview panel when start yazi
+require("toggle-pane"):entry("min-preview")
