@@ -8,8 +8,6 @@ return {
   front_end = "WebGpu",
   webgpu_power_preference = "HighPerformance",
   webgpu_preferred_adapter = gpu_adapters:pick_best(),
-  -- webgpu_preferred_adapter = gpu_adapters:pick_manual('Dx12', 'IntegratedGpu'),
-  -- webgpu_preferred_adapter = gpu_adapters:pick_manual('Gl', 'Other'),
   underline_thickness = "1.5pt",
 
   -- cursor
@@ -35,14 +33,13 @@ return {
   switch_to_last_active_tab_when_closing_tab = true,
 
   -- window
-  window_decorations = "INTEGRATED_BUTTONS | RESIZE",
+  -- window_decorations = "INTEGRATED_BUTTONS | RESIZE",
   window_padding = { left = 3, right = 3, top = 0, bottom = 0 },
   adjust_window_size_when_changing_font_size = false,
   window_close_confirmation = "NeverPrompt",
   window_frame = {
-    active_titlebar_bg = "#1a1b26",
-    -- font = fonts.font,
-    -- font_size = fonts.font_size,
+    border_top_height = '0.1cell',
+    border_top_color = 'steelblue',
   },
   inactive_pane_hsb = { saturation = 0.9, brightness = 0.3 },
 
