@@ -29,8 +29,8 @@ alias vide = neovide
 alias y = yazi
 alias lg = lazygit
 alias rjxgit = git --git-dir=$"($env.USERPROFILE)/.rjx_dotfiles/" --work-tree=$"($env.USERPROFILE)"
-alias typora = D:/Typora/Typora/Typora.exe
 let nhp_sambashare = "\\\\172.28.178.224\\nhp_sambashare"
+
 $env.config.shell_integration.osc133 = false  # 修复按下任何键时屏幕滚动的问题
 $env.config = {
   show_banner: false,
@@ -56,7 +56,9 @@ $env.config = {
     }
   ]
 }
-# >>> conda initialize >>>
-use ~/appdata/roaming/nushell/conda/conda.nu
-# <<< conda initialize <<<
+
+# conda
+$env.CONDA_NO_PROMPT = true
+use ~/appdata/roaming/nushell/virtual_environments/nu_conda_2/conda.nu
+
 source ~/.zoxide.nu
