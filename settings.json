@@ -34,8 +34,7 @@
     "files.autoSaveDelay": 2000, // 自动保存延迟
     "files.autoSaveWhenNoErrors": false, // 文件即使有错误，也会保存
     "explorer.confirmDelete": false, // 删除文件不提示
-    "explorer.confirmDragAndDrop": false, // 拖拽文件不提示
-    "breadcrumbs.enabled": false, // 始终显示菜单栏
+    "explorer.confirmDragAndDrop": false, // 始终显示菜单栏
     "outline.collapseItems": "alwaysCollapse", // 折叠大纲视图
     "search.followSymlinks": false, // 搜索时不跟随符号链接
     "security.workspace.trust.untrustedFiles": "open", // 未受信任文件提示
@@ -55,11 +54,11 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    // "vscode-neovim.compositeKeys": {
-    //     "jk": {
-    //         "command": "vscode-neovim.escape"
-    //     }
-    // },
+    "vscode-neovim.compositeKeys": {
+        "jk": {
+            "command": "vscode-neovim.escape"
+        }
+    },
     // terminal
     "terminal.integrated.profiles.windows": {
         "NuShell": {
@@ -113,4 +112,10 @@
         "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format",
         "tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"
     ],
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
 }
