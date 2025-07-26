@@ -212,5 +212,11 @@
         "key": "ctrl+c",
         "command": "editor.action.clipboardCopyAction",
         "when": "editorTextFocus && neovim.mode == 'visual'"
-    }
+    },
+    // 在终端中禁止ctrl+v复制，保证ctrl+v正确出发nushell的介绍提示词
+    {
+        "key": "ctrl+v",
+        "command": "-workbench.action.terminal.paste",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
 ]
