@@ -275,8 +275,10 @@ dirs  = [
 	{ name = "Videos", text = "" },
   # 自定义
 	{ name = "python", text = "" },
+	{ name = "pycharm", text = "" },
 	{ name = "Ricardo", text = "" },
 	{ name = "ricardo", text = "" },
+	{ name = "git_repositories", text = "" },
 ]
 files = [
 	{ name = ".babelrc", text = "", fg = "#666620" },
