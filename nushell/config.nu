@@ -30,10 +30,7 @@ alias y = yazi
 alias lg = lazygit
 alias lj = lazyjj
 alias rjxgit = git --git-dir=$"($env.USERPROFILE)/.rjx_dotfiles/" --work-tree=$"($env.USERPROFILE)"
-let nhp_sambashare = "\\\\172.28.178.224\\nhp_sambashare"
 
-$env.EDITOR = "nvim"
-$env.config.shell_integration.osc133 = false  # 修复按下任何键时屏幕滚动的问题
 $env.config = {
   show_banner: false,
   edit_mode: vi,
@@ -59,10 +56,6 @@ $env.config = {
   ]
 }
 
-# zoxide
 source ~/.zoxide.nu
-# conda
-$env.CONDA_NO_PROMPT = true
 use ~/appdata/roaming/nushell/virtual_environments/nu_conda_2/conda.nu
-# jj
 use ~/appdata/roaming/nushell/completions-jj.nu *
