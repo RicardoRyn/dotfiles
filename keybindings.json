@@ -219,4 +219,13 @@
         "command": "-workbench.action.terminal.paste",
         "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },
+    // 在终端中使用ctrl+shift+=使终端最大化
+    {
+        "key": "ctrl+shift+oem_plus",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "ctrl+shift+oem_plus",
+        "command": "-workbench.action.zoomIn"
+    },
 ]
