@@ -29,7 +29,6 @@ alias vide = neovide
 alias y = yazi
 alias lg = lazygit
 alias lj = lazyjj
-alias rjxgit = git --git-dir=$"($env.USERPROFILE)/.rjx_dotfiles/" --work-tree=$"($env.USERPROFILE)"
 
 $env.config = {
   show_banner: false,
