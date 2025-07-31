@@ -1,0 +1,15 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.16.3
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Tue Apr 29 20:55:07 2025"
+  rime_version: 1.11.2
+patch:
+  schema_list:
+    - {schema: rime_ice}
+  recognizer:
+    patterns:
+      email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"                            # email @ 之后不上屏
+      url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"  # URL
+      underscore: "^[A-Za-z]+_.*"  # 下划线不上屏
+      uppercase: ".*[A-Z].*"

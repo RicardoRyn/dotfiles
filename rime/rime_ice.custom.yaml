@@ -1,0 +1,243 @@
+patch:
+  menu:
+    page_size: 5  # 候选词个数
+  punctuator:
+    half_shape:
+      ',' : '，'
+      '.' : '。'
+      '<' : '《'
+      '>' : '》'
+      '/' : '/'
+      '?' : '？'
+      ';' : '；'
+      ':' : '：'
+      '''' : { pair: [ '‘', '’' ] }
+      '"' : { pair: [ '“', '”' ] }
+      '\' : '、'
+      '|' : '|'
+      '`' : '`'
+      '~' : '~'
+      '!' : '！'
+      '@' : '@'
+      '#' : '#'
+      '%' : '%'
+      '$' : '¥'
+      '^' : '……'
+      '&' : '&'
+      '*' : '*'
+      '(' : '（'
+      ')' : '）'
+      '-' : '-'
+      '_' : ——
+      '+' : '+'
+      '=' : '='
+      '[' : '['
+      ']' : ']'
+      '{' : '{'
+      '}' : '}'
+  switches:
+    - name: ascii_mode
+      states: [ 中, Ａ ]
+      reset: 1
+    - name: ascii_punct  # 中英标点
+      states: [ ¥, $ ]
+    - name: traditionalization
+      states: [ 简, 繁 ]
+    - name: emoji
+      states: [ 💀, 😄 ]
+      reset: 1
+    - name: full_shape
+      states: [ 半角, 全角 ]
+    - name: search_single_char  # search.lua 的功能开关，辅码查词时是否单字优先
+      states: [正常, 单字]
+      abbrev: [词, 单]
+  ascii_composer:
+    switch_key:
+      Caps_Lock: clear      # commit_code | commit_text | clear
+      Shift_L: noop         # commit_code | commit_text | inline_ascii | clear | noop
+      Shift_R: commit_code  # commit_code | commit_text | inline_ascii | clear | noop
+      Control_L: noop       # commit_code | commit_text | inline_ascii | clear | noop
+      Control_R: noop       # commit_code | commit_text | inline_ascii | clear | noop
+  style:
+    font_point: 11                           # 全局字体字号
+  key_binder:
+    bindings:
+      # Tab / Shift+Tab 切换光标至下/上一个拼音
+      - { when: composing, accept: Shift+Tab, send: Shift+Left }
+      - { when: composing, accept: Tab, send: Shift+Right }
+
+      # Option/Alt + ←/→ 切换光标至下/上一个拼音
+      - { when: composing, accept: Alt+Left, send: Shift+Left }
+      - { when: composing, accept: Alt+Right, send: Shift+Right }
+
+      # 翻页 - =
+      - { when: has_menu, accept: minus, send: Page_Up }  # 上一页设置为 paging 时会导致直接上屏并输出减号
+      - { when: has_menu, accept: equal, send: Page_Down }
+
+      # 翻页 , .
+      - { when: paging, accept: comma, send: Page_Up }
+      - { when: has_menu, accept: period, send: Page_Down }
+
+      - { when: always, toggle: ascii_punct, accept: Control+Shift+3 }              # 切换中英标点
+      - { when: always, toggle: ascii_punct, accept: Control+Shift+numbersign }     # 切换中英标点
+      - { when: always, toggle: traditionalization, accept: Control+Shift+4 }       # 切换简繁
+      - { when: always, toggle: traditionalization, accept: Control+Shift+dollar }  # 切换简繁
+
+      # 将小键盘 0~9 . 映射到主键盘，数字金额大写的 Lua 如 R1234.5678 可使用小键盘输入
+      - {accept: KP_0, send: 0, when: composing}
+      - {accept: KP_1, send: 1, when: composing}
+      - {accept: KP_2, send: 2, when: composing}
+      - {accept: KP_3, send: 3, when: composing}
+      - {accept: KP_4, send: 4, when: composing}
+      - {accept: KP_5, send: 5, when: composing}
+      - {accept: KP_6, send: 6, when: composing}
+      - {accept: KP_7, send: 7, when: composing}
+      - {accept: KP_8, send: 8, when: composing}
+      - {accept: KP_9, send: 9, when: composing}
+      - {accept: KP_Decimal, send: period, when: composing}
+      # 将小键盘 + - * / 映射到主键盘，使计算器 如 1+2-3*4 可使用小键盘输入
+      - {accept: KP_Multiply, send: asterisk, when: composing}
+      - {accept: KP_Add,      send: plus,     when: composing}
+      - {accept: KP_Subtract, send: minus,    when: composing}
+      - {accept: KP_Divide,   send: slash,    when: composing}
+  speller:
+    algebra:
+      ### 模糊音
+      # 声母
+      # - derive/^([zcs])h/$1/          # zh* ch* sh* 派生出 z* c* s*
+      # - derive/^([zcs])([^h])/$1h$2/  # z* c* s*    派生出 zh* ch* sh*
+      # - derive/^l/n/  # 解释：为 l 开头的拼写派生出 n 开头，即 nai 也可以输出 lai（来、莱、赖……）
+      # - derive/^n/l/  #      lai 可输出 nai（奶、乃、奈……）。 可以单向或成对儿启用模糊音
+      # - derive/^f/h/
+      # - derive/^h/f/
+      # - derive/^l/r/
+      # - derive/^r/l/
+      # - derive/^g/k/
+      # - derive/^k/g/
+      # 韵母
+      # - derive/ang$/an/
+      # - derive/an$/ang/
+      # - derive/eng$/en/
+      # - derive/en$/eng/
+      - derive/in$/ing/
+      - derive/ing$/in/
+      # - derive/ian$/iang/
+      # - derive/iang$/ian/
+      # - derive/uan$/uang/
+      # - derive/uang$/uan/
+      # - derive/ai$/an/
+      # - derive/an$/ai/
+      # - derive/ong$/un/
+      # - derive/un$/ong/
+      # - derive/ong$/on/
+      # - derive/iong$/un/
+      # - derive/un$/iong/
+      # - derive/ong$/eng/
+      # - derive/eng$/ong/
+      # 拼音音节
+      # - derive/^fei$/hui/
+      # - derive/^hui$/fei/
+      # - derive/^hu$/fu/
+      # - derive/^fu$/hu/
+      # - derive/^wang$/huang/
+      # - derive/^huang$/wang/
+
+      ### 旧时的拼写规则
+      # - derive/un$/uen/
+      # - derive/ui$/uei/
+      # - derive/iu$/iou/
+
+      ### 超级简拼
+      - erase/^hm$/ # 响应超级简拼，取消「噷 hm」的独占（如果拼音词库有这个音节的话，雾凇里没有）
+      - erase/^m$/  # 响应超级简拼，取消「呣 m」的独占（如果拼音词库有这个音节的话，雾凇里没有）
+      - erase/^n$/  # 响应超级简拼，取消「嗯 n」的独占（如果拼音词库有这个音节的话，雾凇里没有）
+      - erase/^ng$/ # 响应超级简拼，取消「嗯 ng」的独占（如果拼音词库有这个音节的话，雾凇里没有）
+      - abbrev/^([a-z]).+$/$1/   # 超级简拼
+      - abbrev/^([zcs]h).+$/$1/  # 超级简拼中，zh ch sh 视为整体（ch'sh → 城市），而不是像这样分开（c'h's'h → 吃好睡好）。
+
+      ### v u 转换
+      # 雾凇的词库严格按照正确的 u v(ü) 注音的，下面两行支持使用错误的拼音，例如 qv nue 来响应 qu nve
+      - derive/^([nl])ve$/$1ue/
+      - derive/^([jqxy])u/$1v/
+      # 以防引入的其他词库没按照正确方式注音，也做一个转换
+      - derive/^([nl])ue$/$1ve/
+      - derive/^([jqxy])v/$1u/
+
+      ### 自动纠错
+  ########## START 这几个有副作用的规则圈起来，方便取舍
+      # 这些规则对全拼简拼混输有副作用：如「x'ai 喜爱」被纠错为「xia 下」
+      # zh、ch、sh
+      - derive/([zcs])h(a|e|i|u|ai|ei|an|en|ou|uo|ua|un|ui|uan|uai|uang|ang|eng|ong)$/h$1$2/  # hzi → zhi
+      - derive/([zcs])h([aeiu])$/$1$2h/  # zih → zhi
+      # # ia
+      # - derive/([qjx])ia$/$1ai/  # qai → qia
+      # # an
+      # - derive/([wrtypsdfghklzcbnm])an$/$1na/  # dna → dan
+      # # en
+      # - derive/([wrpsdfghklzcbnm])en$/$1ne/  # rne → ren
+      # # in
+      # - derive/([qypjlxbnm])in$/$1ni/  # qni → qin
+      # # un
+      # - derive/([qrtysdghjklzxc])un$/$1nu/  # qnu → qun
+      # # ian
+      # - derive/([qtpdjlxbnm])ian$/$1ain/
+  ########## END
+      # ai
+      - derive/^([wghk])ai$/$1ia/  # wia → wai
+      # ei
+      - derive/([wfghkz])ei$/$1ie/  # wie → wei
+      # ie
+      - derive/([jqx])ie$/$1ei/  # jei → jie
+      # ao
+      - derive/([rtypsdghklzcbnm])ao$/$1oa/
+      # ou
+      - derive/([ypfm])ou$/$1uo/
+      # uo（无）
+      # ang
+      - derive/([wrtypsdfghklzcbnm])ang$/$1nag/
+      - derive/([wrtypsdfghklzcbnm])ang$/$1agn/
+      # eng
+      - derive/([wrtpsdfghklzcbnm])eng$/$1neg/
+      - derive/([wrtpsdfghklzcbnm])eng$/$1egn/
+      # ing
+      - derive/([qtypdjlxbnm])ing$/$1nig/
+      - derive/([qtypdjlxbnm])ing$/$1ign/
+      # ong
+      - derive/([rtysdghklzcn])ong$/$1nog/
+      - derive/([rtysdghklzcn])ong$/$1ogn/
+      # iao
+      - derive/([qtpdjlxbnm])iao$/$1ioa/
+      - derive/([qtpdjlxbnm])iao$/$1oia/
+      # ui
+      - derive/([rtsghkzc])ui$/$1iu/
+      # iu
+      - derive/([qjlxnm])iu$/$1ui/
+      # iang
+      - derive/([qjlxn])iang$/$1aing/
+      - derive/([qjlxn])iang$/$1inag/
+      # ua
+      - derive/([g|k|h|zh|sh])ua$/$1au/
+      # uai
+      - derive/([g|h|k|zh|ch|sh])uai$/$1aui/
+      # - derive/([g|h|k|zh|ch|sh])uai$/$1uia/ # 和「会啊、追啊」等常用词有冲突
+      # uan
+      - derive/([qrtysdghjklzxcn])uan$/$1aun/
+      # - derive/([qrtysdghjklzxcn])uan$/$1una/ # 和「去哪、露娜」等常用词有冲突
+      # ue
+      - derive/([nlyjqx])ue$/$1eu/
+      # uang
+      - derive/([g|h|k|zh|ch|sh])uang$/$1aung/
+      - derive/([g|h|k|zh|ch|sh])uang$/$1uagn/
+      - derive/([g|h|k|zh|ch|sh])uang$/$1unag/
+      - derive/([g|h|k|zh|ch|sh])uang$/$1augn/
+      # iong
+      - derive/([jqx])iong$/$1inog/
+      - derive/([jqx])iong$/$1oing/
+      - derive/([jqx])iong$/$1iogn/
+      - derive/([jqx])iong$/$1oign/
+      # 其他
+      - derive/([rtsdghkzc])o(u|ng)$/$1o/ # do → dou|dong
+      - derive/(.+)ong$/$1on/ # lon → long
+      - derive/([tl])eng$/$1en/ # ten → teng
+      - derive/([qwrtypsdfghjklzxcbnm])([aeio])ng$/$1ng/ # lng → lang、leng、ling、long
+
