@@ -1,0 +1,12 @@
+#|
+将Esc键和Caps键互换
+|#
+
+(defsrc
+  esc caps
+)
+
+(deflayer default
+  caps esc
+)
+
