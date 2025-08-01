@@ -16,6 +16,7 @@ mklink /D "%USERPROFILE%\.glzr\glazewm" "%USERPROFILE%\dotfiles\glazewm"
 mklink /D "%USERPROFILE%\AppData\Local\nvim" "%USERPROFILE%\dotfiles\nvim"
 mklink /D "%USERPROFILE%\AppData\Roaming\nushell" "%USERPROFILE%\dotfiles\nushell"
 mklink /D "%USERPROFILE%\AppData\Roaming\yazi" "%USERPROFILE%\dotfiles\yazi"
+mklink /D "%USERPROFILE%\AppData\Roaming\jj" "%USERPROFILE%\dotfiles\jj"
 mklink /D "%USERPROFILE%\.config\wezterm" "%USERPROFILE%\dotfiles\wezterm"
 mklink /D "%USERPROFILE%\.config\yasb" "%USERPROFILE%\dotfiles\yasb"
 ```

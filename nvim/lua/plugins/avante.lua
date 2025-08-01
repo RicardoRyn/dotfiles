@@ -10,7 +10,7 @@ return {
   ---@type avante.Config
   opts = {
     provider = "deepseek",
-    vendors = {
+    providers = {
       deepseek = {
         __inherited_from = "openai",
         api_key_name = "AVANTE_DEEPSEEK_API_KEY",
