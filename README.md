@@ -5,8 +5,8 @@ kanata.kbd手动复制到装有kanata_gui.exe的文件夹下
 
 # 文件
 mklink "%USERPROFILE%\.config\starship.toml" "%USERPROFILE%\dotfiles\starship.toml"
-mklink "%USERPROFILE%AppData\Roaming\Code\User\settings.json" "%USERPROFILE%\dotfiles\settings.json"
-mklink "%USERPROFILE%AppData\Roaming\Code\User\keybindings.json" "%USERPROFILE%\dotfiles\keybindings.json"
+mklink "%USERPROFILE%\AppData\Roaming\Code\User\settings.json" "%USERPROFILE%\dotfiles\settings.json"
+mklink "%USERPROFILE%\AppData\Roaming\Code\User\keybindings.json" "%USERPROFILE%\dotfiles\keybindings.json"
 mklink "%USERPROFILE%\AppData\Roaming\Rime\default.custom.yaml" "%USERPROFILE%\dotfiles\rime_ice\default.custom.yaml"
 mklink "%USERPROFILE%\AppData\Roaming\Rime\rime_ice.custom.yaml" "%USERPROFILE%\dotfiles\rime_ice\rime_ice.custom.yaml"
 mklink "%USERPROFILE%\AppData\Roaming\Rime\weasel.custom.yaml" "%USERPROFILE%\dotfiles\rime_ice\weasel.custom.yaml"
