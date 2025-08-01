@@ -23,7 +23,6 @@
 alias ll = ls -l
 alias la = ls -a
 alias lla = ls -al
-alias cl = clear
 alias vim = nvim
 alias vide = neovide
 alias y = yazi
