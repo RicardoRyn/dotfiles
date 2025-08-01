@@ -1,11 +1,12 @@
--- yazi
 if vim.g.vscode then
   return {}
 else
   return {
-    "RicardoRyn/yazi.nvim",
+    "mikavilpas/yazi.nvim",
     event = "VeryLazy",
-    -- dependencies = { "folke/snacks.nvim", lazy = true },
+    dependencies = {
+      { "nvim-lua/plenary.nvim", lazy = true },
+    },
     keys = {
       -- 👇 in this section, choose your own keymappings!
       {
@@ -32,6 +33,13 @@ else
       open_for_directories = true,
       keymaps = {
         show_help = "<f1>",
+      },
+      integrations = {
+        -- Using Nushell on Windows
+        escape_path_implementation = function(path)
+          local result = path:gsub("\\", "/")
+          return result
+        end,
       },
     },
     -- 👇 if you use `open_for_directories=true`, this is recommended
