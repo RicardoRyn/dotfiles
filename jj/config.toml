@@ -1,0 +1,18 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Ricardo_T8"
+email = "ricardoryn1317@gmail.com"
+
+[lazyjj]
+highlight-color = "#dce0e8"
+
+[ui]
+diff-editor = ":builtin"
+pager = ["D:\\Git\\Git\\usr\\bin\\less.exe", "-FRX"]
+paginate = "auto"
+default-command = "log"
+
+[git]
+auto-local-bookmark = true
+private-commits = '''description(glob:'private:*')'''
