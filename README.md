@@ -1,6 +1,8 @@
 手动用管理员权限打开cmd:
 
 ```bat
+kanata.kbd手动复制到装有kanata_gui.exe的文件夹下
+
 # 文件
 mklink "%USERPROFILE%\.config\starship.toml" "%USERPROFILE%\dotfiles\starship.toml"
 mklink "%USERPROFILE%AppData\Roaming\Code\User\settings.json" "%USERPROFILE%\dotfiles\settings.json"
