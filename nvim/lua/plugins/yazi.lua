@@ -34,13 +34,6 @@ else
       keymaps = {
         show_help = "<f1>",
       },
-      integrations = {
-        -- Using Nushell on Windows
-        escape_path_implementation = function(path)
-          local result = path:gsub("\\", "/")
-          return result
-        end,
-      },
     },
     -- 👇 if you use `open_for_directories=true`, this is recommended
     init = function()
