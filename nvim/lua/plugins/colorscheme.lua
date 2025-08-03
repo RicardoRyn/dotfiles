@@ -5,12 +5,14 @@ else
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
+
     lazy = false,
     config = function()
       require("catppuccin").setup({
-        flavour = "latte", -- latte | frappe | macchiato | mocha
+        flavour = "latte",
         integrations = {
-          bufferline = true, -- 开启 bufferline 支持
+          -- 开启 bufferline 支持
+          bufferline = true,
         },
       })
 
