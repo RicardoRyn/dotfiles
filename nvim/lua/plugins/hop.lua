@@ -1,11 +1,3 @@
--- return {
---   "smoka7/hop.nvim",
---   event = "VeryLazy",
---   version = "*",
---   vscode = true,
---   opts = {},
--- }
-
 return {
   "smoka7/hop.nvim",
   event = "VeryLazy",
@@ -17,7 +9,7 @@ return {
     local directions = require("hop.hint").HintDirection
     local positions = require("hop.hint").HintPosition
 
-    hop.setup({})  -- 初始化插件
+    hop.setup({}) -- 初始化插件
 
     vim.keymap.set({ "n", "v" }, "<leader><leader>w", function()
       hop.hint_words({ direction = directions.AFTER_CURSOR, hint_position = positions.END })
@@ -52,4 +44,3 @@ return {
     end, { desc = "Go to line above" })
   end,
 }
-

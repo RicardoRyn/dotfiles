@@ -1,21 +1,25 @@
-return {
-  "saghen/blink.cmp",
-  version = "*",
-  dependencies = {
-    "rafamadriz/friendly-snippets"
-  },
-  event = "VeryLazy",
-  opts = {
-    completion = {
-      documentation = {
-        auto_show = true
-      }
+if vim.g.vscode then
+  return {}
+else
+  return {
+    "saghen/blink.cmp",
+    version = "*",
+    dependencies = {
+      "rafamadriz/friendly-snippets",
     },
-    keymap = {
-      preset = "super-tab"
+    event = "VeryLazy",
+    opts = {
+      completion = {
+        documentation = {
+          auto_show = true,
+        },
+      },
+      keymap = {
+        preset = "super-tab",
+      },
+      sources = {
+        default = { "path", "snippets", "buffer", "lsp" },
+      },
     },
-    sources = {
-      default = { "path", "snippets", "buffer", "lsp" }
-    }
   }
-}
+end
