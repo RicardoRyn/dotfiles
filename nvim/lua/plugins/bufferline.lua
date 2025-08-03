@@ -52,7 +52,7 @@ else
           end,
           desc = "Delete buffer without messing up window layout",
         },
-        { "<leader>bo", ":BufferLineCloseOthers<CR>", silent = true },
+        { "<leader>bo", ":BufferLineCloseOthers<CR>", desc = "Delete Other Buffers" },
         { "<leader>br", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete Buffers to the Right" },
         { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete Buffers to the Left" },
         { "<leader>b<", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },

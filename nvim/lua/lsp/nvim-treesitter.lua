@@ -4,6 +4,9 @@ else
   return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    opts = {
+      ensure_installed = {
+        "git_config", "gitcommit", "git_rebase", "gitignore", "gitattributes" } },
     config = function()
       local configs = require("nvim-treesitter.configs")
 

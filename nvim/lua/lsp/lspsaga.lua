@@ -12,15 +12,15 @@ else
       },
     },
     keys = {
-      { "<leader>cr", ":Lspsaga rename<CR>", { desc = "Last Tab" } },
-      { "<leader>cR", ":Lspsaga finder<CR>" },
-      { "<leader>ch", ":Lspsaga hover_doc<CR>" },
+      { "<leader>cr", ":Lspsaga rename<CR>", desc = "Rename variable" },
+      { "<leader>cR", ":Lspsaga finder<CR>", desc = "Find references" },
+      { "<leader>ch", ":Lspsaga hover_doc<CR>", desc = "Show documentation" },
 
-      { "<leader>cd", ":Lspsaga goto_definition<CR>" },
-      { "<leader>cc", ":Lspsaga code_action<CR>" },
+      { "<leader>cd", ":Lspsaga goto_definition<CR>", desc = "Go to definition" },
+      { "<leader>cc", ":Lspsaga code_action<CR>", desc = "Code actions" },
 
-      { "<leader>cn", ":Lspsaga diagnostic_jump_next<CR>" },
-      { "<leader>cp", ":Lspsaga diagnostic_jump_prev<CR>" },
+      { "<leader>cn", ":Lspsaga diagnostic_jump_next<CR>", desc = "Jump to next diagnostic" },
+      { "<leader>cp", ":Lspsaga diagnostic_jump_prev<CR>", desc = "Jump to previous diagnostic" },
     },
   }
 end

@@ -14,7 +14,6 @@ else
       local function setup(name)
         local success, package = pcall(registry.get_package, name)
         if success and not package:is_installed() then
-          vim.notify(package.name .. ": 格式化器正在安装...", vim.log.levels.INFO)
           package:install()
         end
       end
@@ -32,7 +31,7 @@ else
       })
     end,
     keys = {
-      { "<leader>cf", vim.lsp.buf.format },
+      { "<leader>cf", vim.lsp.buf.format, desc = "Code Formating" },
     },
   }
 end

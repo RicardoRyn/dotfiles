@@ -10,22 +10,22 @@ else
     keys = {
       -- 👇 in this section, choose your own keymappings!
       {
-        "<leader>-",
+        "<leader>E",
         mode = { "n", "v" },
         "<cmd>Yazi<cr>",
-        desc = "Open yazi at the current file",
+        desc = "Open yazi (cwd)",
       },
       {
         -- Open in the current working directory
-        "<leader>cw",
+        "<leader>-",
         "<cmd>Yazi cwd<cr>",
-        desc = "Open the file manager in nvim's working directory",
+        desc = "Open yazi (root dir)",
       },
-      -- {
-      --   "<c-up>",
-      --   "<cmd>Yazi toggle<cr>",
-      --   desc = "Resume the last yazi session",
-      -- },
+      {
+        "<leader>=",
+        "<cmd>Yazi toggle<cr>",
+        desc = "Open yazi (last session)",
+      },
     },
     ---@type YaziConfig | {}
     opts = {
