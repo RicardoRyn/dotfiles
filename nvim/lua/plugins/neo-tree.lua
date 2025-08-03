@@ -69,7 +69,7 @@ else
             end,
             desc = "Open with System Application",
           },
-          ["P"] = { "toggle_preview", config = { use_float = true } },
+          ["P"] = { "toggle_preview", config = { use_float = false } },
         },
       },
 
