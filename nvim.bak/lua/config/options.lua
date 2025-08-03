@@ -1,33 +1,20 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-vim.g.autoformat = false
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
 
-vim.opt.number = true
-vim.opt.wrap = true
+vim.g.autoformat = false
 vim.opt.colorcolumn = "80"
 vim.opt.timeoutlen = 1000
-vim.opt.list = true
-vim.opt.listchars = { tab = ">-", trail = "-" }
-vim.opt.relativenumber = false
-vim.opt.clipboard = "" -- 禁止neovim寄存器和系统剪贴板共用
-vim.opt.conceallevel = 0 -- 不隐藏任何文本
-
-vim.opt.ignorecase = true -- 如果输入没有大写，则大小写不敏感
-vim.opt.smartcase = true -- 如果输入有大写，则大小写敏感
-
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-
 vim.opt.shell = "nu"
 vim.opt.shellcmdflag = "-c"
 vim.opt.shellquote = '"'
 vim.opt.shellxquote = ""
+vim.opt.clipboard = "" -- 禁止neovim寄存器和系统剪贴板共用
+vim.opt.conceallevel = 0 -- 不隐藏任何文本
+vim.opt.wrap = true
+vim.opt.relativenumber = false
+vim.opt.smartindent = false
 
-vim.o.signcolumn = "yes"  -- 行号旁边留出显示标识符的位置
-
--- 关于neovide
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
   -- vim.g.neovide_title_background_color =
@@ -53,4 +40,3 @@ if vim.g.neovide then
   vim.g.neovide_cursor_vfx_mode = "pixiedust"
   vim.g.neovide_cursor_vfx_particle_density = 17.0
 end
-
