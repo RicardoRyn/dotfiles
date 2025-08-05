@@ -32,24 +32,24 @@ else
         once = true,
         callback = function()
 
-          -- 打开文件时显示neo-tree
-          if not package.loaded["neo-tree"] then
-            require("neo-tree")
-          end
-          require("neo-tree.command").execute({ toggle = true, dir = vim.fn.getcwd() })
-          vim.schedule(function()
-            vim.cmd("wincmd p")
-          end) -- 延迟让光标跳回主窗口
-
-          -- -- 打开文件时不显示neo-tree
-          -- if package.loaded["neo-tree"] then
-          --   return
-          -- else
-          --   local stats = vim.uv.fs_stat(vim.fn.argv(0))
-          --   if stats and stats.type == "directory" then
-          --     require("neo-tree")
-          --   end
+          -- -- 打开文件时显示neo-tree
+          -- if not package.loaded["neo-tree"] then
+          --   require("neo-tree")
           -- end
+          -- require("neo-tree.command").execute({ toggle = true, dir = vim.fn.getcwd() })
+          -- vim.schedule(function()
+          --   vim.cmd("wincmd p")
+          -- end) -- 延迟让光标跳回主窗口
+
+          -- 打开文件时不显示neo-tree
+          if package.loaded["neo-tree"] then
+            return
+          else
+            local stats = vim.uv.fs_stat(vim.fn.argv(0))
+            if stats and stats.type == "directory" then
+              require("neo-tree")
+            end
+          end
 
         end,
       })

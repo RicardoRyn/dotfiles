@@ -2,7 +2,6 @@ return {
   "echasnovski/mini.nvim",
   version = false,
   config = function()
-    -- 启用 mini.ai 模块
     require("mini.ai").setup() -- 识别小/中/大括号
     require('mini.surround').setup({
       mappings = {
@@ -15,6 +14,13 @@ return {
         update_n_lines = 'yn', -- 更新换行
       }
     })
-    require('mini.indentscope').setup()
+    require('mini.pairs').setup()
+    require('mini.bracketed').setup()
+    require('mini.icons').setup()
+
+    print(require("mini.icons"))
+
+
+
   end,
 }

@@ -51,6 +51,7 @@ else
           end,
           desc = "Delete buffer without messing up window layout",
         },
+        { "<leader>bb", ":BufferLinePickClose<CR>",    desc = "Delete Pick Buffer" },
         { "<leader>bo", ":BufferLineCloseOthers<CR>",    desc = "Delete Other Buffers" },
         { "<leader>br", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete Buffers to the Right" },
         { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>",  desc = "Delete Buffers to the Left" },
