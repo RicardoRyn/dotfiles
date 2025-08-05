@@ -17,11 +17,11 @@ else
             for level, number in pairs(diagnostics_dict) do
               local symbol
               if level == "error" then
-                symbol = " "
+                symbol = require("config.icons").diagnostics.error .. " "
               elseif level == "warning" then
-                symbol = " "
+                symbol = require("config.icons").diagnostics.warning .. " "
               else
-                symbol = " "
+                symbol = require("config.icons").diagnostics.info .. " "
               end
               indicator = indicator .. number .. symbol
             end
@@ -43,7 +43,6 @@ else
       keys = {
         { "<S-h>", ":BufferLineCyclePrev<CR>", silent = true },
         { "<S-l>", ":BufferLineCycleNext<CR>", silent = true },
-        -- { "<leader>bd", ":bdelete<CR>", silent = true },
         {
           "<leader>bd",
           function()
@@ -52,11 +51,11 @@ else
           end,
           desc = "Delete buffer without messing up window layout",
         },
-        { "<leader>bo", ":BufferLineCloseOthers<CR>", desc = "Delete Other Buffers" },
+        { "<leader>bo", ":BufferLineCloseOthers<CR>",    desc = "Delete Other Buffers" },
         { "<leader>br", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete Buffers to the Right" },
-        { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete Buffers to the Left" },
-        { "<leader>b<", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
-        { "<leader>b>", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
+        { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>",  desc = "Delete Buffers to the Left" },
+        { "<leader>b<", "<cmd>BufferLineMovePrev<cr>",   desc = "Move buffer prev" },
+        { "<leader>b>", "<cmd>BufferLineMoveNext<cr>",   desc = "Move buffer next" },
 
         -- 自定义移动buffer左右的按键 <b 和 >b
         {

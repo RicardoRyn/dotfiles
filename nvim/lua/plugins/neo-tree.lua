@@ -9,7 +9,7 @@ else
       "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-web-devicons", -- optional, but recommended
     },
-    lazy = false, -- neo-tree will lazily load itself
+    lazy = false,                    -- neo-tree will lazily load itself
     keys = {
       {
         "<leader>e",
@@ -20,6 +20,7 @@ else
       },
     },
 
+    -- 钩子函数，想在其他场景自动关闭 Neo-tree，调用这个函数就可以
     deactivate = function()
       vim.cmd([[Neotree close]])
     end,
@@ -44,6 +45,7 @@ else
     end,
 
     opts = {
+      sources = { "filesystem", "git_status" }, -- "filesystem" | "buffers" | "git_status"
       open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
       filesystem = {
         bind_to_cwd = true,
@@ -55,7 +57,9 @@ else
           ["l"] = "open",
           ["h"] = "close_node",
           ["<space>"] = "none",
-          ["Y"] = {
+          ["t"] = "none",
+          ["c"] = "none",
+          ["cc"] = {
             function(state)
               local node = state.tree:get_node()
               local path = node:get_id()
@@ -63,12 +67,48 @@ else
             end,
             desc = "Copy Path to Clipboard",
           },
+          ["cd"] = {
+            function(state)
+              local node = state.tree:get_node()
+              local path = node:get_id()
+              local dir = vim.fn.fnamemodify(path, ":h") -- 获取目录部分
+              vim.fn.setreg("+", dir, "c")               -- 复制到系统剪贴板
+            end,
+            desc = "Copy Directory Path to Clipboard",
+          },
+          ["cf"] = {
+            function(state)
+              local node = state.tree:get_node()
+              local path = node:get_id()
+              local name = vim.fn.fnamemodify(path, ":t")
+              vim.fn.setreg("+", name, "c")
+              -- 可选提示
+              -- vim.notify("Copied name: " .. name)
+            end,
+            desc = "Copy File/Dir Name to Clipboard",
+          },
+          ["o"] = "open",
           ["O"] = {
             function(state)
               require("lazy.util").open(state.tree:get_node().path, { system = true })
             end,
             desc = "Open with System Application",
           },
+          ["oc"] = "none",
+          ["od"] = "none",
+          ["og"] = "none",
+          ["om"] = "none",
+          ["on"] = "none",
+          ["os"] = "none",
+          ["ot"] = "none",
+          [","] = "none",
+          [",c"] = "order_by_created",
+          [",d"] = "order_by_diagnostics",
+          [",g"] = "order_by_git_status",
+          [",m"] = "order_by_modified",
+          [",n"] = "order_by_name",
+          [",s"] = "order_by_size",
+          [",t"] = "order_by_type",
           ["P"] = { "toggle_preview", config = { use_float = false } },
         },
       },
@@ -80,10 +120,14 @@ else
           expander_expanded = "",
           expander_highlight = "NeoTreeExpander",
         },
+
         git_status = {
           symbols = {
-            unstaged = "󰄱",
-            staged = "󰱒",
+            unstaged = require("config.icons").git.unstaged,
+            staged = require("config.icons").git.staged,
+            modified = require("config.icons").git.modified,
+            added = require("config.icons").git.added,
+            ignored = require("config.icons").git.ignored,
           },
         },
       },

@@ -1,7 +1,7 @@
 if vim.g.vscode then
   return {}
 else
-  -- INFO: master分支的treesitter，不再维护
+  -- PERF: master分支的treesitter，不再维护
   return {
     "nvim-treesitter/nvim-treesitter",
     branch = "master",

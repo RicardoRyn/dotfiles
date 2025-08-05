@@ -8,8 +8,11 @@ vim.keymap.set("v", ">", ">gv", { desc = "Indent and reselect" })
 
 if vim.g.vscode then
   -- NOTE: 仅vscode中生效的设置
-  vim.api.nvim_exec2("nmap j gj", { output = false })  -- FIX: 无效
-  vim.api.nvim_exec2("nmap k gk", { output = false })  -- FIX: 无效
+  vim.keymap.set("n", "L", "<Cmd>lua require('vscode').call('workbench.action.nextEditor')<CR>", { desc = "Next buffer" })
+  vim.keymap.set("n", "H", "<Cmd>lua require('vscode').call('workbench.action.previousEditor')<CR>", { desc = "Prev buffer" })
+
+  vim.api.nvim_exec2("nmap j gj", { output = false })
+  vim.api.nvim_exec2("nmap k gk", { output = false })
 
   vim.keymap.set("n", "u", "<Cmd>lua require('vscode').call('undo')<CR>", { desc = "Undo" })
   vim.keymap.set("n", "<C-r>", "<Cmd>lua require('vscode').call('redo')<CR>", { desc = "Redo" })

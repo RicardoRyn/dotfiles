@@ -41,6 +41,34 @@ else
         end,
         desc = "Find help tags",
       },
+      -- Todo-comments
+      {
+        "<leader>ftt",
+        function()
+          local cwd = vim.fn.expand("%:p:h") -- 当前 buffer 所在目录
+          vim.cmd("TodoTelescope cwd=" .. cwd)
+        end,
+        desc = "Find TODOs in current buffer's directory",
+      },
+      {
+        "<leader>ftT",
+        "<cmd>TodoTelescope<CR>",
+        desc = "Find TODOs (via Telescope)",
+      },
+      {
+        "<leader>ftf",
+        function()
+          local cwd = vim.fn.expand("%:p:h") -- 当前 buffer 所在目录
+          vim.cmd("TodoTelescope keywords=FIX,TODO,HACK,WARN cwd=" .. cwd)
+        end,
+        desc = "Find TODOs in current buffer's directory",
+      },
+      {
+        "<leader>ftF",
+        "<cmd>TodoTelescope keywords=FIX,TODO,HACK,WARN<CR>",
+        desc = "Find TODOs (via Telescope)",
+      },
+
     },
   }
 end

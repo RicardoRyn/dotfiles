@@ -30,10 +30,10 @@ else
             {
               "diagnostics",
               symbols = {
-                error = " ",
-                warn = " ",
-                info = " ",
-                hint = " ",
+                error = require("config.icons").diagnostics.error .. " ",
+                warn = require("config.icons").diagnostics.warning .. " ",
+                info = require("config.icons").diagnostics.info .. " ",
+                hint = require("config.icons").diagnostics.hint .. " "
               },
             },
             { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
@@ -67,9 +67,9 @@ else
             {
               "diff",
               symbols = {
-                added = " ",
-                modified = " ",
-                removed = " ",
+                added = require("config.icons").git.added .. " ",
+                modified = require("config.icons").git.modified .. " ",
+                removed = require("config.icons").git.deleted .. " ",
               },
               source = function()
                 local gitsigns = vim.b.gitsigns_status_dict
