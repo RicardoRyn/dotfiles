@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.nvim",
-  version = false, -- 如果你想用最新版，false 表示不固定版本
+  version = false,
   config = function()
     -- 启用 mini.ai 模块
     require("mini.ai").setup() -- 识别小/中/大括号
@@ -16,9 +16,5 @@ return {
       }
     })
     require('mini.indentscope').setup()
-    -- require('mini.statusline').setup()
-    -- require('mini.tabline').setup()
-
-
   end,
 }
