@@ -4,40 +4,53 @@ vim.lsp.config("*", {
 })
 
 -- UI
-vim.diagnostic.config({
-  underline = true,
-  virtual_text = true,
-  update_in_insert = true,
-  severity_sort = true,
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = require("config.icons").diagnostics.error,
-      [vim.diagnostic.severity.WARN] = require("config.icons").diagnostics.warning,
-      [vim.diagnostic.severity.INFO] = require("config.icons").diagnostics.info,
-      [vim.diagnostic.severity.HINT] = require("config.icons").diagnostics.hint,
-    },
-    numhl = {
-      [vim.diagnostic.severity.ERROR] = "DiagnosticError",
-      [vim.diagnostic.severity.WARN] = "DiagnosticWarn",
-      [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
-      [vim.diagnostic.severity.HINT] = "DiagnosticHint",
-    },
-  },
-})
+vim.g.diagnostics_visible = true
+vim.keymap.set("n", "<leader>ux", function()
+  vim.g.diagnostics_visible = not vim.g.diagnostics_visible
+  if vim.g.diagnostics_visible then
+    vim.diagnostic.enable()
+    vim.diagnostic.config({
+      virtual_text = true,
+      underline = true,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = require("config.icons").diagnostics.error,
+          [vim.diagnostic.severity.WARN] = require("config.icons").diagnostics.warning,
+          [vim.diagnostic.severity.INFO] = require("config.icons").diagnostics.info,
+          [vim.diagnostic.severity.HINT] = require("config.icons").diagnostics.hint,
+        },
+        numhl = {
+          [vim.diagnostic.severity.ERROR] = "DiagnosticError",
+          [vim.diagnostic.severity.WARN] = "DiagnosticWarn",
+          [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+          [vim.diagnostic.severity.HINT] = "DiagnosticHint",
+        },
+      },
+    })
+    print("󰂚 Diagnostics enabled")
+  else
+    vim.diagnostic.disable()
+    vim.diagnostic.config({
+      virtual_text = false,
+      underline = false,
+      signs = false,
+    })
+    print("󱏧 Diagnostics disabled")
+  end
+end, { desc = "Toggle diagnostics" })
 
 -- 功能
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Code format" })
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename symbol" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
+vim.keymap.set("n", "<leader>cD", ":Telescope diagnostics bufnr=0<CR>", { desc = "Show diagnostics for current buffer" })
 -- 跳转
 vim.keymap.set("n", "gd", ":Telescope lsp_definitions<CR>", { desc = "Go to definition" })
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
 vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>", { desc = "Go to references" })
 vim.keymap.set("n", "gt", ":Telescope lsp_type_definitions<CR>", { desc = "Go to type definition" })
 vim.keymap.set("n", "gi", ":Telescope lsp_implementations<CR>", { desc = "Go to implementation" })
--- 诊断
-vim.keymap.set("n", "<leader>uD", ":Telescope diagnostics bufnr=0<CR>", { desc = "Show diagnostics for current buffer" })
-vim.keymap.set("n", "<leader>ud", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
 -- 提示
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover information" })
 vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Show signature help" })
