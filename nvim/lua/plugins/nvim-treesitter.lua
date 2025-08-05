@@ -9,7 +9,7 @@ else
     branch = "master", -- 详见本系列的附录
     event = "VeryLazy",
     opts = {
-      ensure_installed = { "lua" },
+      ensure_installed = { "lua", "python" },
       highlight = { enable = true }
     },
   }
