@@ -17,6 +17,8 @@ else
       })
 
       vim.cmd.colorscheme("catppuccin")
+      vim.cmd([[highlight CursorLine guibg=#dce0e8]])
+      vim.o.cursorline = true
     end,
   }
 end

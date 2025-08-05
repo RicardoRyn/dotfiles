@@ -20,5 +20,3 @@ mklink /D "%USERPROFILE%\AppData\Roaming\jj" "%USERPROFILE%\dotfiles\jj"
 mklink /D "%USERPROFILE%\.config\wezterm" "%USERPROFILE%\dotfiles\wezterm"
 mklink /D "%USERPROFILE%\.config\yasb" "%USERPROFILE%\dotfiles\yasb"
 ```
-
-

@@ -4,7 +4,7 @@ vim.g.autoformat = false
 
 vim.opt.number = true
 vim.opt.wrap = true
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 vim.opt.timeoutlen = 1000
 vim.opt.list = true
 vim.opt.listchars = { tab = ">-", trail = "-" }

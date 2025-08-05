@@ -57,6 +57,32 @@ else
         { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete Buffers to the Left" },
         { "<leader>b<", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
         { "<leader>b>", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
+
+        -- 自定义移动buffer左右的按键 <b 和 >b
+        {
+          "<b",
+          function()
+            local dir = -1
+            local moveBy = vim.v.count > 0 and vim.v.count or 1
+            local bufferline = require("bufferline")
+            for _ = 1, moveBy do
+              bufferline.move(dir)
+            end
+          end,
+          desc = "Move current buffer to left",
+        },
+        {
+          ">b",
+          function()
+            local dir = 1
+            local moveBy = vim.v.count > 0 and vim.v.count or 1
+            local bufferline = require("bufferline")
+            for _ = 1, moveBy do
+              bufferline.move(dir)
+            end
+          end,
+          desc = "Move current buffer to right",
+        },
       },
       lazy = false,
     },
