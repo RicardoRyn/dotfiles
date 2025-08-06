@@ -51,12 +51,23 @@ else
           end,
           desc = "Delete Duffer",
         },
-        { "<leader>bo", ":BufferLineCloseOthers<CR>",    desc = "Delete Other Buffers" },
+        { "<leader>bo", ":BufferLineCloseOthers<CR>", desc = "Delete Other Buffers" },
         { "<leader>br", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete Buffers to the Right" },
-        { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>",  desc = "Delete Buffers to the Left" },
-        { "<leader>bb", ":BufferLinePickClose<CR>",    desc = "Delete Pick Buffer" },
-        { "<leader>b<", "<cmd>BufferLineMovePrev<cr>",   desc = "Move Buffer Prev" },
-        { "<leader>b>", "<cmd>BufferLineMoveNext<cr>",   desc = "Move Buffer Next" },
+        { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete Buffers to the Left" },
+        { "<leader>bb", ":BufferLinePickClose<CR>", desc = "Delete Pick Buffer" },
+        {
+          "<leader>ba",
+          function()
+            vim.cmd("BufferLineCloseOthers")
+            local buf = vim.api.nvim_get_current_buf()
+            require("bufdelete").bufdelete(buf, false)
+          end,
+          desc = "Delete All Buffers",
+          silent = true,
+        },
+
+        { "<leader>b<", "<cmd>BufferLineMovePrev<cr>", desc = "Move Buffer Prev" },
+        { "<leader>b>", "<cmd>BufferLineMoveNext<cr>", desc = "Move Buffer Next" },
 
         -- 自定义移动buffer左右的按键 <b 和 >b
         {

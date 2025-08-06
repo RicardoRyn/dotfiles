@@ -22,6 +22,7 @@ else
               { find = "; before #%d+" },
             },
           },
+          opts = { timeout = 7000 },
           view = "mini",
         },
       },

@@ -27,9 +27,9 @@ vim.opt.shellxquote = ""
 
 vim.o.signcolumn = "yes" -- 行号旁边留出显示标识符的位置
 vim.o.foldmethod = "expr" -- 设置折叠
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldenable = true
-vim.o.foldlevel = 99 -- 打开文件时默认全部展开
+vim.o.foldexpr = "nvim_treesitter#foldexpr()" -- 禁止初始折叠，默认展开所有内容
+vim.o.foldenable = false -- 打开文件时默认全部展开 -- 设置折叠层级为 99
+vim.o.foldlevel = 99
 
 -- 设置一些原生命令的偏好
 vim.cmd([[cnoreabbrev qa confirm qa]])

@@ -3,6 +3,11 @@ return {
   version = false,
   config = function()
     require("mini.ai").setup() -- 识别小/中/大括号
+    require("mini.pairs").setup()
+    require("mini.bracketed").setup()
+    require("mini.cursorword").setup()
+    require("mini.starter").setup()
+    require("mini.trailspace").setup()
     require("mini.surround").setup({
       mappings = {
         add = "gsa", -- Add surrounding in Normal and Visual modes
@@ -14,8 +19,6 @@ return {
         update_n_lines = "gsn", -- Update `n_lines`
       },
     })
-    require("mini.pairs").setup()
-    require("mini.bracketed").setup()
     require("mini.icons").setup({
       file = {
         [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
@@ -25,14 +28,9 @@ return {
         dotenv = { glyph = "", hl = "MiniIconsYellow" },
       },
     })
-    -- require("mini.misc").setup_auto_root()
-
-
-
-
-
-
-
+    vim.keymap.set("n", "<leader>z", function()
+      require("mini.misc").zoom()
+    end, { desc = "Zoom (current window)" })
   end,
   init = function()
     package.preload["nvim-web-devicons"] = function()
