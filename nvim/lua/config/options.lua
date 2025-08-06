@@ -25,7 +25,11 @@ vim.opt.shellcmdflag = "-c"
 vim.opt.shellquote = '"'
 vim.opt.shellxquote = ""
 
-vim.o.signcolumn = "yes"  -- 行号旁边留出显示标识符的位置
+vim.o.signcolumn = "yes" -- 行号旁边留出显示标识符的位置
+vim.o.foldmethod = "expr" -- 设置折叠
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldenable = true
+vim.o.foldlevel = 99 -- 打开文件时默认全部展开
 
 -- 设置一些原生命令的偏好
 vim.cmd([[cnoreabbrev qa confirm qa]])

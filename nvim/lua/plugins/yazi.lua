@@ -13,13 +13,13 @@ else
         "<leader>E",
         mode = { "n", "v" },
         "<cmd>Yazi<cr>",
-        desc = "Open Yazi (cwd)",
+        desc = "Open Yazi (buffer directory)",
       },
       {
         -- Open in the current working directory
         "<leader>-",
         "<cmd>Yazi cwd<cr>",
-        desc = "Open Yazi (root dir)",
+        desc = "Open Yazi (cwd)",
       },
       {
         "<leader>=",

@@ -5,6 +5,25 @@ vim.lsp.config("*", {
 
 -- UI
 vim.g.diagnostics_visible = true
+vim.diagnostic.config({
+  virtual_text = true,
+  underline = true,
+  update_in_insert = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = require("config.icons").diagnostics.error,
+      [vim.diagnostic.severity.WARN] = require("config.icons").diagnostics.warning,
+      [vim.diagnostic.severity.INFO] = require("config.icons").diagnostics.info,
+      [vim.diagnostic.severity.HINT] = require("config.icons").diagnostics.hint,
+    },
+    numhl = {
+      [vim.diagnostic.severity.ERROR] = "DiagnosticError",
+      [vim.diagnostic.severity.WARN] = "DiagnosticWarn",
+      [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+      [vim.diagnostic.severity.HINT] = "DiagnosticHint",
+    },
+  },
+})
 vim.keymap.set("n", "<leader>ux", function()
   vim.g.diagnostics_visible = not vim.g.diagnostics_visible
   if vim.g.diagnostics_visible then
@@ -12,6 +31,7 @@ vim.keymap.set("n", "<leader>ux", function()
     vim.diagnostic.config({
       virtual_text = true,
       underline = true,
+      update_in_insert = true,
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = require("config.icons").diagnostics.error,
@@ -38,7 +58,6 @@ vim.keymap.set("n", "<leader>ux", function()
     print("󱏧 Diagnostics Disabled")
   end
 end, { desc = "Toggle Diagnostics" })
-
 -- 功能
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename Symbol" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
@@ -52,4 +71,4 @@ vim.keymap.set("n", "gt", ":Telescope lsp_type_definitions<CR>", { desc = "Go to
 vim.keymap.set("n", "gi", ":Telescope lsp_implementations<CR>", { desc = "Go to Implementation" })
 -- 提示
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show Hover Information" })
-vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, { desc = "Show Signature Help" })
+vim.keymap.set({ "i" }, "<C-k>", vim.lsp.buf.signature_help, { desc = "Show Signature Help" })

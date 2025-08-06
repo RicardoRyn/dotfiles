@@ -11,7 +11,7 @@ else
         function()
           require("telescope.builtin").find_files()
         end,
-        desc = "Find Files (root dir)",
+        desc = "Find Files (cwd)",
       },
       {
         "<leader>fr",
@@ -48,12 +48,12 @@ else
           local cwd = vim.fn.expand("%:p:h") -- 当前 buffer 所在目录
           vim.cmd("TodoTelescope cwd=" .. cwd)
         end,
-        desc = "Find TODOs (cwd)",
+        desc = "Find TODOs (buffer directory)",
       },
       {
         "<leader>ftT",
         "<cmd>TodoTelescope<CR>",
-        desc = "Find TODOs (root dir)",
+        desc = "Find TODOs (cwd)",
       },
       {
         "<leader>ftf",
@@ -61,12 +61,12 @@ else
           local cwd = vim.fn.expand("%:p:h") -- 当前 buffer 所在目录
           vim.cmd("TodoTelescope keywords=FIX,TODO,HACK,WARN cwd=" .. cwd)
         end,
-        desc = "Find FIXs (cwd)",
+        desc = "Find FIXs (buffer directory)",
       },
       {
         "<leader>ftF",
         "<cmd>TodoTelescope keywords=FIX,TODO,HACK,WARN<CR>",
-        desc = "Find FIXs (root dir)",
+        desc = "Find FIXs (cwd)",
       },
     },
   }

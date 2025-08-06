@@ -16,7 +16,7 @@ else
         function()
           require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
         end,
-        desc = "Open NeoTree (root dir)",
+        desc = "Open NeoTree (cwd)",
       },
     },
 
