@@ -13,18 +13,18 @@ else
         "<leader>E",
         mode = { "n", "v" },
         "<cmd>Yazi<cr>",
-        desc = "Open yazi (cwd)",
+        desc = "Open Yazi (cwd)",
       },
       {
         -- Open in the current working directory
         "<leader>-",
         "<cmd>Yazi cwd<cr>",
-        desc = "Open yazi (root dir)",
+        desc = "Open Yazi (root dir)",
       },
       {
         "<leader>=",
         "<cmd>Yazi toggle<cr>",
-        desc = "Open yazi (last session)",
+        desc = "Open Yazi (last session)",
       },
     },
     ---@type YaziConfig | {}

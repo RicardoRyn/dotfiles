@@ -1,5 +1,5 @@
 -- NOTE: Neovim和vscode都有效的设置
-vim.keymap.set("n", "<leader>h", "<cmd>:noh<cr>", { desc = "No highlight" })
+vim.keymap.set("n", "<leader>h", "<cmd>:noh<cr>", { desc = "No Highlight" })
 vim.keymap.set({ "n", "v" }, "J", "<Nop>")
 vim.keymap.set({ "v" }, "U", "<Nop>")
 vim.keymap.set({ "v" }, "u", "<Nop>")

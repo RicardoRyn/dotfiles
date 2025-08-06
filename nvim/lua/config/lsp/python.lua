@@ -1,3 +1,4 @@
+-- pyright
 vim.lsp.config("pyright", {
   cmd = { "pyright-langserver", "--stdio" },
   filetypes = { "python" },
@@ -26,15 +27,3 @@ vim.lsp.config("pyright", {
   end
 })
 vim.lsp.enable("pyright")
-
-vim.lsp.config("ruff", {
-  cmd = { 'ruff', 'server' },
-  filetypes = { 'python' },
-  root_markers = { 'pyproject.toml', 'ruff.toml', '.ruff.toml', '.git' },
-  settings = {},
-  on_attach = function(client)
-    -- 禁止 诊断
-    client.server_capabilities.diagnosticProvider = false
-  end
-})
-vim.lsp.enable("ruff")

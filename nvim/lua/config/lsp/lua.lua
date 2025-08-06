@@ -1,3 +1,4 @@
+-- lua_ls
 vim.lsp.config("lua_ls", {
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
@@ -24,5 +25,10 @@ vim.lsp.config("lua_ls", {
       },
     },
   },
+  on_attach = function(client)
+    -- 禁止 格式化
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end,
 })
 vim.lsp.enable("lua_ls")

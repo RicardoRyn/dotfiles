@@ -13,6 +13,7 @@ else
     opts = {
       ensure_installed = {
         "lua-language-server",
+        "stylua",
         "pyright",
         "ruff",
       }

@@ -1,6 +1,6 @@
 vim.lsp.config("*", {
   capabilities = require("blink.cmp").get_lsp_capabilities(),
-  root_markers = { '.git' },
+  root_markers = { ".git" },
 })
 
 -- UI
@@ -27,7 +27,7 @@ vim.keymap.set("n", "<leader>ux", function()
         },
       },
     })
-    print("󰂚 Diagnostics enabled")
+    print("󰂚 Diagnostics Enabled")
   else
     vim.diagnostic.disable()
     vim.diagnostic.config({
@@ -35,22 +35,21 @@ vim.keymap.set("n", "<leader>ux", function()
       underline = false,
       signs = false,
     })
-    print("󱏧 Diagnostics disabled")
+    print("󱏧 Diagnostics Disabled")
   end
-end, { desc = "Toggle diagnostics" })
+end, { desc = "Toggle Diagnostics" })
 
 -- 功能
-vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Code format" })
-vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename symbol" })
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
-vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
-vim.keymap.set("n", "<leader>cD", ":Telescope diagnostics bufnr=0<CR>", { desc = "Show diagnostics for current buffer" })
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename Symbol" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show Diagnostics (line)" })
+vim.keymap.set("n", "<leader>cD", ":Telescope diagnostics bufnr=0<CR>", { desc = "Show Diagnostics (buffer)" })
 -- 跳转
-vim.keymap.set("n", "gd", ":Telescope lsp_definitions<CR>", { desc = "Go to definition" })
-vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
-vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>", { desc = "Go to references" })
-vim.keymap.set("n", "gt", ":Telescope lsp_type_definitions<CR>", { desc = "Go to type definition" })
-vim.keymap.set("n", "gi", ":Telescope lsp_implementations<CR>", { desc = "Go to implementation" })
+vim.keymap.set("n", "gd", ":Telescope lsp_definitions<CR>", { desc = "Go to Definition" })
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
+vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>", { desc = "Go to References" })
+vim.keymap.set("n", "gt", ":Telescope lsp_type_definitions<CR>", { desc = "Go to Type Definition" })
+vim.keymap.set("n", "gi", ":Telescope lsp_implementations<CR>", { desc = "Go to Implementation" })
 -- 提示
-vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover information" })
-vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Show signature help" })
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show Hover Information" })
+vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, { desc = "Show Signature Help" })
