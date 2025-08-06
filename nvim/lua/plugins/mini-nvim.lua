@@ -3,24 +3,41 @@ return {
   version = false,
   config = function()
     require("mini.ai").setup() -- 识别小/中/大括号
-    require('mini.surround').setup({
+    require("mini.surround").setup({
       mappings = {
-        add = 'ys',            -- 添加包围
-        delete = 'yd',         -- 删除包围
-        replace = 'yr',        -- 替换包围
-        find = 'yf',           -- 查找包围
-        find_left = 'yF',      -- 查找左侧包围
-        highlight = 'yh',      -- 高亮包围
-        update_n_lines = 'yn', -- 更新换行
-      }
+        add = "gsa", -- Add surrounding in Normal and Visual modes
+        delete = "gsd", -- Delete surrounding
+        replace = "gsr", -- Replace surrounding
+        find = "gsf", -- Find surrounding (to the right)
+        find_left = "gsF", -- Find surrounding (to the left)
+        highlight = "gsh", -- Highlight surrounding
+        update_n_lines = "gsn", -- Update `n_lines`
+      },
     })
-    require('mini.pairs').setup()
-    require('mini.bracketed').setup()
-    require('mini.icons').setup()
+    require("mini.pairs").setup()
+    require("mini.bracketed").setup()
+    require("mini.icons").setup({
+      file = {
+        [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
+        ["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
+      },
+      filetype = {
+        dotenv = { glyph = "", hl = "MiniIconsYellow" },
+      },
+    })
+    -- require("mini.misc").setup_auto_root()
 
-    print(require("mini.icons"))
 
 
 
+
+
+
+  end,
+  init = function()
+    package.preload["nvim-web-devicons"] = function()
+      require("mini.icons").mock_nvim_web_devicons()
+      return package.loaded["nvim-web-devicons"]
+    end
   end,
 }

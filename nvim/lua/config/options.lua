@@ -5,7 +5,7 @@ vim.g.autoformat = false
 vim.opt.number = true
 vim.opt.wrap = true
 vim.opt.colorcolumn = "120"
-vim.opt.timeoutlen = 1000
+vim.opt.timeoutlen = 500
 vim.opt.list = true
 vim.opt.listchars = { tab = ">-", trail = "-" }
 vim.opt.relativenumber = false
@@ -26,6 +26,10 @@ vim.opt.shellquote = '"'
 vim.opt.shellxquote = ""
 
 vim.o.signcolumn = "yes"  -- 行号旁边留出显示标识符的位置
+
+-- 设置一些原生命令的偏好
+vim.cmd([[cnoreabbrev qa confirm qa]])
+vim.cmd([[cabbrev help vertical rightbelow help]])
 
 -- 关于neovide
 if vim.g.neovide then
@@ -53,4 +57,3 @@ if vim.g.neovide then
   vim.g.neovide_cursor_vfx_mode = "pixiedust"
   vim.g.neovide_cursor_vfx_particle_density = 17.0
 end
-

@@ -22,7 +22,6 @@ icons.diagnostics = {
   warn = "",
   info    = "",
   hint    = "",
-
 }
 
 icons.comments = {
@@ -31,8 +30,8 @@ icons.comments = {
   hack = "󰈸",
   warn = "",
   perf = "󰅒",
-  note = "󰍨",
   test = "󰙨",
+  note = "󰍨",
 }
 
 return icons

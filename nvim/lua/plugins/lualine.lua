@@ -66,6 +66,7 @@ else
             },
             {
               "diff",
+
               symbols = {
                 added = require("config.icons").git.added .. " ",
                 modified = require("config.icons").git.modified .. " ",
