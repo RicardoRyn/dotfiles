@@ -1,5 +1,5 @@
 local function augroup(name)
-  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+  return vim.api.nvim_create_augroup("ricardo_" .. name, { clear = true })
 end
 
 -- 再次打开文件，光标位于上次打开的地方

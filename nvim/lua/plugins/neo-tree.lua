@@ -9,7 +9,7 @@ else
       "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-web-devicons", -- optional, but recommended
     },
-    lazy = false,                    -- neo-tree will lazily load itself
+    lazy = false, -- neo-tree will lazily load itself
     keys = {
       {
         "<leader>e",
@@ -31,7 +31,6 @@ else
         desc = "Auto-open Neo-tree on startup and focus main buffer",
         once = true,
         callback = function()
-
           -- -- 打开文件时显示neo-tree
           -- if not package.loaded["neo-tree"] then
           --   require("neo-tree")
@@ -50,7 +49,6 @@ else
               require("neo-tree")
             end
           end
-
         end,
       })
     end,
@@ -83,7 +81,7 @@ else
               local node = state.tree:get_node()
               local path = node:get_id()
               local dir = vim.fn.fnamemodify(path, ":h") -- 获取目录部分
-              vim.fn.setreg("+", dir, "c")               -- 复制到系统剪贴板
+              vim.fn.setreg("+", dir, "c") -- 复制到系统剪贴板
             end,
             desc = "Copy Directory Path to Clipboard",
           },
@@ -125,13 +123,41 @@ else
       },
 
       default_component_configs = {
+        -- neo-tree中使用mini.icons参考[#1527](https://github.com/nvim-neo-tree/neo-tree.nvim/pull/1527)
+        icon = {
+          provider = function(icon, node) -- setup a custom icon provider
+            local text, hl
+            local mini_icons = require("mini.icons")
+            if node.type == "file" then -- if it's a file, set the text/hl
+              text, hl = mini_icons.get("file", node.name)
+            elseif node.type == "directory" then -- get directory icons
+              text, hl = mini_icons.get("directory", node.name)
+              -- only set the icon text if it is not expanded
+              if node:is_expanded() then
+                text = nil
+              end
+            end
+            -- set the icon text/highlight only if it exists
+            if text then
+              icon.text = text
+            end
+            if hl then
+              icon.highlight = hl
+            end
+          end,
+        },
+        kind_icon = {
+          provider = function(icon, node)
+            local mini_icons = require("mini.icons")
+            icon.text, icon.highlight = mini_icons.get("lsp", node.extra.kind.name)
+          end,
+        },
         indent = {
           with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
           expander_collapsed = "",
           expander_expanded = "",
           expander_highlight = "NeoTreeExpander",
         },
-
         git_status = {
           symbols = {
             unstaged = require("config.icons").git.unstaged,
@@ -146,8 +172,7 @@ else
 
     config = function(_, opts)
       require("neo-tree").setup(opts)
-      -- 设置 NeoTree 当前行颜色为灰色
-      vim.api.nvim_set_hl(0, "NeoTreeCursorLine", { bg = "#dce0e8" })
+      vim.api.nvim_set_hl(0, "NeoTreeCursorLine", { bg = "#dce0e8" }) -- 设置 NeoTree 当前行颜色为灰色
     end,
   }
 end

@@ -8,6 +8,3 @@ if not vim.g.vscode then
   require("config.lsp.lua")
   require("config.lsp.python")
 end
-
--- TODO: autocmd的名字改成ricardo
--- TODO: mini.icons还是没用上
