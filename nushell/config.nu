@@ -53,6 +53,7 @@ $env.config = {
     }
   ]
 }
+$env.CONDA_NO_PROMPT = true
 
 source ~/.zoxide.nu
 use ~/appdata/roaming/nushell/virtual_environments/nu_conda_2/conda.nu
