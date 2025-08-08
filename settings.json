@@ -24,7 +24,7 @@
   "workbench.list.smoothScrolling": true, // 启用列表平滑滚动
   "workbench.startupEditor": "none", // 启动时的行为为"无"
   // 功能
-  "editor.mouseWheelZoom": true, //  Ctrl + 鼠标滚轮缩放
+  "editor.mouseWheelZoom": false, //  Ctrl + 鼠标滚轮缩放
   "editor.acceptSuggestionOnEnter": "smart", // 智能回车
   "editor.suggestSelection": "recentlyUsed", // 智能提示选择
   "editor.accessibilitySupport": "auto", // 自动检测使用屏幕辅助功能
