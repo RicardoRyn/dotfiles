@@ -16,6 +16,8 @@ else
         "stylua",
         "pyright",
         "ruff",
+        "bash-language-server",
+        "shfmt",
       }
     },
     config = function(_, opts)
