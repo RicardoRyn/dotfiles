@@ -1,0 +1,19 @@
+return {}
+-- return {
+--   "mfussenegger/nvim-lint",
+--   event = { "BufReadPre", "BufNewFile" },
+--   config = function()
+--     require("lint").linters_by_ft = {
+--       sh = { "shellcheck" },
+--       bash = { "shellcheck" },
+--       python = { "ruff" },
+--       lua = { "luacheck" },
+--     }
+--
+--     vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
+--       callback = function()
+--         require("lint").try_lint()
+--       end,
+--     })
+--   end,
+-- }

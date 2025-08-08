@@ -3,7 +3,7 @@ if vim.g.vscode then
 else
   return {
     "stevearc/conform.nvim",
-    cmd = { "ConformInfo" }, -- 可选命令
+    cmd = { "ConformInfo" },
     keys = {
       {
         "<leader>cf",
@@ -19,6 +19,7 @@ else
         lua = { "stylua" },
         python = { "ruff_format" },
         bash = { "shfmt" },
+        sh = { "shfmt" },
       },
     },
   }

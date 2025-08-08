@@ -14,9 +14,12 @@ else
       ensure_installed = {
         "lua-language-server",
         "stylua",
+
         "pyright",
         "ruff",
+
         "bash-language-server",
+        "shellcheck",
         "shfmt",
       }
     },
@@ -37,9 +40,6 @@ else
       else
         ensure_installed()
       end
-
-
     end
   }
-
 end

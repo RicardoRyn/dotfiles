@@ -1,4 +1,4 @@
--- lua_ls
+-- bashls
 vim.lsp.config("bashls", {
   cmd = { "bash-language-server", "start" },
   settings = {
