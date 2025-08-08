@@ -91,6 +91,9 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // lua
   "Lua.runtime.unicodeName": true,
   // ssh
@@ -214,7 +217,4 @@
   "Lingma.aI Chat.webToolsInAsk/AgentMode": "Auto-execute",
   // misc
   "redhat.telemetry.enabled": false,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
 }
