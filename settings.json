@@ -5,7 +5,7 @@
   "editor.fontFamily": "Maple Mono NF CN", // 字体
   "editor.fontWeight": "300", // 字体粗细
   // UI
-  "editor.minimap.autohide": true, // 自动隐藏缩略图
+  "editor.minimap.autohide": "mouseover", // 自动隐藏缩略图
   "editor.showFoldingControls": "always", // 总是显示折叠控件，例如可以折叠一个函数
   "editor.cursorBlinking": "smooth", // 光标闪烁
   "editor.renderWhitespace": "all", // 显示空格
@@ -81,8 +81,8 @@
   // python
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.autoFormatStrings": true,
-"python.analysis.inlayHints.callArgumentNames": "partial",
-"python.defaultInterpreterPath": "E:\\python\\envs\\main",
+  "python.analysis.inlayHints.callArgumentNames": "partial",
+  "python.defaultInterpreterPath": "E:\\python\\envs\\main",
   "python.analysis.typeCheckingMode": "standard",
   "debug.inlineValues": "off",
   "debug.enableStatusBarColor": false,
@@ -113,6 +113,7 @@
     "tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"
   ],
   // todo-tree
+  "todo-tree.regex.regex": "(//|#|--|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.general.tags": [
     "FIX",
     "TODO",
@@ -168,6 +169,7 @@
       "iconColour": "green"
     } // 绿
   },
+  // better-comments
   "better-comments.tags": [
     {
       "tag": "FIX",
@@ -191,11 +193,11 @@
     },
     {
       "tag": "PERF",
-      "color": "#6a2cbc", // 紫
+      "color": "#6a2cbc" // 紫
     },
     {
       "tag": "TEST",
-      "color": "#04a5e5", // 蓝
+      "color": "#04a5e5" // 蓝
     },
     {
       "tag": "NOTE",
@@ -211,5 +213,8 @@
   },
   "Lingma.aI Chat.webToolsInAsk/AgentMode": "Auto-execute",
   // misc
-"redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
