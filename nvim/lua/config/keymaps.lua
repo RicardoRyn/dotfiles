@@ -26,6 +26,12 @@ if vim.g.vscode then
     "<Cmd>lua require('vscode').call('editor.action.formatDocument')<CR>",
     { desc = "format selection" }
   )
+  vim.keymap.set(
+    "n",
+    "<leader>cr",
+    "<Cmd>lua require('vscode').call('editor.action.rename')<CR>",
+    { desc = "rename symbol" }
+  )
   -- 操作buffer（vscode中叫作编辑器）
   vim.keymap.set(
     "n",
