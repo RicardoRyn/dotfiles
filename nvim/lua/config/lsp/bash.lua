@@ -1,4 +1,3 @@
--- bashls
 vim.lsp.config("bashls", {
   cmd = { "bash-language-server", "start" },
   settings = {
@@ -15,10 +14,6 @@ vim.lsp.config("bashls", {
   },
   filetypes = { "bash", "sh" },
   root_markers = { ".git" },
-  on_attach = function(client)
-    -- 禁止 格式化
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
-  end,
 })
+
 vim.lsp.enable("bashls")

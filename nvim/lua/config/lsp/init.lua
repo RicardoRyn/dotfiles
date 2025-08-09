@@ -1,3 +1,8 @@
+local mason_bin = vim.fn.stdpath("data") .. "/mason/bin"
+if not string.find(vim.env.PATH, mason_bin, 1, true) then
+  vim.env.PATH = mason_bin .. package.config:sub(1,1) .. vim.env.PATH
+end
+
 vim.lsp.config("*", {
   capabilities = require("blink.cmp").get_lsp_capabilities(),
   root_markers = { ".git" },

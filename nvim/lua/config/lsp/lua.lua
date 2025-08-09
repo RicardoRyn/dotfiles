@@ -1,36 +1,31 @@
--- lua_ls
+local util = require("lspconfig.util")
+
+local function custom_root_dir(fname)
+  return util.search_ancestors(fname, function(path)
+    for _, marker in ipairs({
+      ".git",
+      "init.lua",
+      ".luarc.json",
+      ".luarc.jsonc",
+      ".luacheckrc",
+      ".stylua.toml",
+      "stylua.toml",
+      "selene.toml",
+      "selene.yml",
+    }) do
+      if util.path.exists(util.path.join(path, marker)) then
+        return path
+      end
+    end
+  end) or vim.fn.getcwd()
+end
+
 vim.lsp.config("lua_ls", {
-  cmd = { "lua-language-server" },
-  filetypes = { "lua" },
-
-  -- HACK: root_markers无效，不知道为什么
-  -- root_dir = function(bufnr, on_dir)
-  --   local fname = vim.api.nvim_buf_get_name(bufnr)
-  --   local root = require("lspconfig.util").root_pattern(
-  --     ".git",
-  --     "init.lua",
-  --     ".luarc.json",
-  --     ".luarc.jsonc",
-  --     ".luacheckrc",
-  --     ".stylua.toml",
-  --     "stylua.toml",
-  --     "selene.toml",
-  --     "selene.yml"
-  --   )(fname) or vim.fn.getcwd()
-  --   on_dir(root)
-  -- end,
-
-  root_markers = {
-    ".luarc.json",
-    ".luarc.jsonc",
-    ".luacheckrc",
-    ".stylua.toml",
-    "stylua.toml",
-    "selene.toml",
-    "selene.yml",
-    ".git",
-  },
-
+  root_dir = function(bufnr, on_dir)
+    local fname = vim.api.nvim_buf_get_name(bufnr)
+    local root = custom_root_dir(fname)
+    on_dir(root)
+  end,
   settings = {
     Lua = {
       diagnostics = {
@@ -39,9 +34,9 @@ vim.lsp.config("lua_ls", {
     },
   },
   on_attach = function(client)
-    -- 禁止 格式化
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
   end,
 })
+
 vim.lsp.enable("lua_ls")

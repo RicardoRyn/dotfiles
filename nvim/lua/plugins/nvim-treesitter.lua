@@ -4,7 +4,6 @@ else
   -- PERF: master分支的treesitter，不再维护
   return {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
     main = "nvim-treesitter.configs",
     branch = "master", -- 详见本系列的附录
     event = "VeryLazy",
