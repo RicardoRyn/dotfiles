@@ -53,7 +53,9 @@ $env.config = {
     }
   ]
 }
+$env.EDITOR = "nvim"
 $env.CONDA_NO_PROMPT = true
+$env.config.shell_integration.osc133 = false  # 修复按下任何键时屏幕滚动的问题
 
 source ~/.zoxide.nu
 use ~/appdata/roaming/nushell/virtual_environments/nu_conda_2/conda.nu
