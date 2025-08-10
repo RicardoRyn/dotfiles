@@ -32,6 +32,19 @@ if vim.g.vscode then
     "<Cmd>lua require('vscode').call('editor.action.rename')<CR>",
     { desc = "rename symbol" }
   )
+  vim.keymap.set(
+    "n",
+    "]d",
+    "<Cmd>lua require('vscode').call('editor.action.marker.next')<CR>",
+    { desc = "Go to next diagnostic" }
+  )
+  vim.keymap.set(
+    "n",
+    "[d",
+    "<Cmd>lua require('vscode').call('editor.action.marker.prev')<CR>",
+    { desc = "Go to previous diagnostic" }
+  )
+  vim.keymap.set("n", "<leader>o", "<Cmd>lua require('vscode').call('outline.focus')<CR>", { desc = "open outline" })
   -- 操作buffer（vscode中叫作编辑器）
   vim.keymap.set(
     "n",
