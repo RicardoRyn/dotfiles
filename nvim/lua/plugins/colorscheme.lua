@@ -22,15 +22,5 @@ else
         vim.o.cursorline = true
       end,
     },
-    -- {
-    --   "Mofiqul/vscode.nvim",
-    --   priority = 1000,
-    --   config = function()
-    --     require("vscode").setup({
-    --       style = "light", -- or "dark"
-    --     })
-    --     vim.cmd.colorscheme("vscode")
-    --   end
-    -- }
   }
 end
