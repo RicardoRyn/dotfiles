@@ -16,6 +16,7 @@ return {
         update_n_lines = "gsn", -- Update `n_lines`
       },
     })
+
     if not vim.g.vscode then
       require("mini.cursorword").setup()
       require("mini.starter").setup()
@@ -26,6 +27,7 @@ return {
       end, { desc = "Zoom (current window)" })
     end
   end,
+
   init = function()
     package.preload["nvim-web-devicons"] = function()
       require("mini.icons").mock_nvim_web_devicons()

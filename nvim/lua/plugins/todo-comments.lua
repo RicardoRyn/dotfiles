@@ -34,9 +34,6 @@ else
         hint = { "DiagnosticHint", "#10B981" },
         default = { "#000000" },
       },
-
-
-
     }
   }
 end

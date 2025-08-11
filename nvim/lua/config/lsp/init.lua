@@ -73,7 +73,7 @@ vim.keymap.set("n", "gd", ":Telescope lsp_definitions<CR>", { desc = "Go to Defi
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
 vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>", { desc = "Go to References" })
 vim.keymap.set("n", "gt", ":Telescope lsp_type_definitions<CR>", { desc = "Go to Type Definition" })
-vim.keymap.set("n", "gi", ":Telescope lsp_implementations<CR>", { desc = "Go to Implementation" })
+vim.keymap.set("n", "gI", ":Telescope lsp_implementations<CR>", { desc = "Go to Implementation" })
 -- 提示
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show Hover Information" })
 vim.keymap.set({ "i" }, "<C-k>", vim.lsp.buf.signature_help, { desc = "Show Signature Help" })

@@ -23,9 +23,19 @@ else
       {
         "<leader>fg",
         function()
+          local current_file = vim.api.nvim_buf_get_name(0)
+          require("telescope.builtin").live_grep({
+            search_dirs = { current_file }, -- 限制范围到当前文件
+          })
+        end,
+        desc = "Live Grep in current buffer",
+      },
+      {
+        "<leader>fG",
+        function()
           require("telescope.builtin").live_grep()
         end,
-        desc = "Find Live Grep",
+        desc = "Find Live Grep (cwd)",
       },
       {
         "<leader>fb",
