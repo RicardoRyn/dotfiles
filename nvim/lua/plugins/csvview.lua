@@ -1,4 +1,3 @@
--- csv查看器
 if vim.g.vscode then
   return {}
 else

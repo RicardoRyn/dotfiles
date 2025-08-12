@@ -20,20 +20,18 @@
 ######################################################
 ####### mannually inserted by RJX on 2025/2/16 #######
 ######################################################
-alias ls = ls
 alias ll = ls -l
 alias la = ls -a
 alias lla = ls -al
-alias cl = clear
 alias vim = nvim
 alias vide = neovide
 alias y = yazi
 alias lg = lazygit
 alias top = btop
+
 alias rjxssh = ssh ruanjx@192.168.22.171
 alias server_proxy = ssh -v -N -R 1080:localhost:7897 ruanjx@192.168.22.171
 
-# nushell主要配置
 $env.config = {
   show_banner: false,  # show/hide banner
   edit_mode: vi,
@@ -61,10 +59,9 @@ $env.config = {
   ]
 }
 
-# conda设置
-# >>> conda initialize >>>
-use ~/.config/nushell/conda/conda.nu
-# <<< conda initialize <<<
+$env.EDITOR = "nvim"
+$env.CONDA_NO_PROMPT = true
 
-# zoxide配置
 source ~/.zoxide.nu
+use ~/.config/nushell/virtual_environments/conda.nu
+

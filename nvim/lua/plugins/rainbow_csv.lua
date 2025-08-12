@@ -1,4 +1,3 @@
--- 彩色csv
 if vim.g.vscode then
   return {}
 else

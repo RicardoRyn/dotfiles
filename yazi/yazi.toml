@@ -11,6 +11,7 @@ cursor_blink = true
 [opener]
 edit = [
 	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+  { run = 'neovide "$@"', desc = "neovide", block = false, for = "unix" },
 ]
 
 [plugin]
