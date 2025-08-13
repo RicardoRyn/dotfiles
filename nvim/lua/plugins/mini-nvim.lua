@@ -25,6 +25,7 @@ return {
       vim.keymap.set("n", "<leader>z", function()
         require("mini.misc").zoom()
       end, { desc = "Zoom (current window)" })
+
     end
   end,
 
