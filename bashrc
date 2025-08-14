@@ -168,6 +168,10 @@ export HCPPIPEDIR_dMRITract=${HCPPIPEDIR}/DiffusionTractography
 export HCPPIPEDIR_Global=${HCPPIPEDIR}/global/scripts
 export HCPPIPEDIR_tfMRIAnalysis=${HCPPIPEDIR}/TaskfMRIAnalysis/scripts
 
+# nvidia-driver
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+
 # # remote_data
 # sshfs ruanjx@192.168.22.171:/media/Data/ruanjx /mnt/remote_data
 
@@ -212,5 +216,7 @@ alias vide='neovide'
 export PATH=$PATH:/home/nhp/python/Projects/gen_FC
 # tmux
 alias cl='clear'
+
+
 
 nu
