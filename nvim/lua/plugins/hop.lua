@@ -1,46 +1,75 @@
 return {
   "smoka7/hop.nvim",
-  event = "VeryLazy",
   version = "*",
-  vscode = true,
   opts = {},
-  config = function()
-    local hop = require("hop")
-    local directions = require("hop.hint").HintDirection
-    local positions = require("hop.hint").HintPosition
-
-    hop.setup({}) -- 初始化插件
-
-    vim.keymap.set({ "n", "v" }, "<leader><leader>w", function()
-      hop.hint_words({ direction = directions.AFTER_CURSOR, hint_position = positions.END })
-    end, { desc = "Go to next any begining of words" })
-
-    vim.keymap.set({ "n", "v" }, "<leader><leader>e", function()
-      hop.hint_words({ direction = directions.AFTER_CURSOR })
-    end, { desc = "Go to next any end of words" })
-
-    vim.keymap.set({ "n", "v" }, "<leader><leader>b", function()
-      hop.hint_words({ direction = directions.BEFORE_CURSOR, hint_position = positions.END })
-    end, { desc = "Go to previous any begining of words" })
-
-    vim.keymap.set({ "n", "v" }, "<leader><leader>v", function()
-      hop.hint_words({ direction = directions.BEFORE_CURSOR })
-    end, { desc = "Go to previous any end of words" })
-
-    vim.keymap.set({ "n", "v" }, "<leader><leader>l", function()
-      hop.hint_camel_case({ direction = directions.AFTER_CURSOR, hint_position = positions.END })
-    end, { desc = "Go to next any begining of words" })
-
-    vim.keymap.set({ "n", "v" }, "<leader><leader>h", function()
-      hop.hint_camel_case({ direction = directions.BEFORE_CURSOR, hint_position = positions.END })
-    end, { desc = "Go to previous any begining of words" })
-
-    vim.keymap.set({ "n", "v" }, "<leader><leader>j", function()
-      hop.hint_lines({ direction = directions.AFTER_CURSOR })
-    end, { desc = "Go to line below" })
-
-    vim.keymap.set({ "n", "v" }, "<leader><leader>k", function()
-      hop.hint_lines({ direction = directions.BEFORE_CURSOR })
-    end, { desc = "Go to line above" })
-  end,
+  keys = {
+    {
+      "<leader><leader>w",
+      function()
+        require("hop").hint_words({
+          direction = require("hop.hint").HintDirection.AFTER_CURSOR,
+          hint_position = require("hop.hint").HintPosition.END,
+        })
+      end,
+      desc = "Go to next beginning of word",
+    },
+    {
+      "<leader><leader>e",
+      function()
+        require("hop").hint_words({ direction = require("hop.hint").HintDirection.AFTER_CURSOR })
+      end,
+      desc = "Go to next end of word",
+    },
+    {
+      "<leader><leader>b",
+      function()
+        require("hop").hint_words({
+          direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
+          hint_position = require("hop.hint").HintPosition.END,
+        })
+      end,
+      desc = "Go to previous beginning of word",
+    },
+    {
+      "<leader><leader>v",
+      function()
+        require("hop").hint_words({ direction = require("hop.hint").HintDirection.BEFORE_CURSOR })
+      end,
+      desc = "Go to previous end of word",
+    },
+    {
+      "<leader><leader>l",
+      function()
+        require("hop").hint_camel_case({
+          direction = require("hop.hint").HintDirection.AFTER_CURSOR,
+          hint_position = require("hop.hint").HintPosition.END,
+        })
+      end,
+      desc = "Go to next camel-case word",
+    },
+    {
+      "<leader><leader>h",
+      function()
+        require("hop").hint_camel_case({
+          direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
+          hint_position = require("hop.hint").HintPosition.END,
+        })
+      end,
+      desc = "Go to previous camel-case word",
+    },
+    {
+      "<leader><leader>j",
+      function()
+        require("hop").hint_lines({ direction = require("hop.hint").HintDirection.AFTER_CURSOR })
+      end,
+      desc = "Go to line below",
+    },
+    {
+      "<leader><leader>k",
+      function()
+        require("hop").hint_lines({ direction = require("hop.hint").HintDirection.BEFORE_CURSOR })
+      end,
+      desc = "Go to line above",
+    },
+  },
 }

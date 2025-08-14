@@ -23,9 +23,9 @@ else
         { "<leader>ft", group = "Find Todo" },
         { "<leader>g", group = "Git" },
         { "<leader>u", group = "UI", icon = { icon = "󰙵 ", color = "cyan" } },
+        { "<leader>v", group = "Virtual Env", icon = { icon = " ", color = "purple" } },
         { "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
         { "g", group = "goto" },
-        { "z", group = "fold" },
         {
           "<leader>w",
           group = "Windows",

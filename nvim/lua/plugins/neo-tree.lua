@@ -31,16 +31,6 @@ else
         desc = "Auto-open Neo-tree on startup and focus main buffer",
         once = true,
         callback = function()
-          -- -- 打开文件时显示neo-tree
-          -- if not package.loaded["neo-tree"] then
-          --   require("neo-tree")
-          -- end
-          -- require("neo-tree.command").execute({ toggle = true, dir = vim.fn.getcwd() })
-          -- vim.schedule(function()
-          --   vim.cmd("wincmd p")
-          -- end) -- 延迟让光标跳回主窗口
-
-          -- 打开文件时不显示neo-tree
           if package.loaded["neo-tree"] then
             return
           else

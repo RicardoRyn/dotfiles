@@ -33,7 +33,7 @@ else
                 error = require("config.icons").diagnostics.error .. " ",
                 warn = require("config.icons").diagnostics.warning .. " ",
                 info = require("config.icons").diagnostics.info .. " ",
-                hint = require("config.icons").diagnostics.hint .. " ",
+                hint = require("config.icons").diagnostics.hint .. " "
               },
             },
             { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
@@ -88,18 +88,7 @@ else
             { "progress", separator = " ", padding = { left = 1, right = 0 } },
             { "location", padding = { left = 0, right = 1 } },
           },
-          lualine_z = {
-            { "encoding" },
-            {
-              function()
-                local ok, status = pcall(require, "molten.status")
-                if ok and status.kernels then
-                  return tostring(status.kernels())
-                end
-                return ""
-              end,
-            },
-          },
+          lualine_z = { "encoding" },
         },
         extensions = { "neo-tree", "lazy", "fzf" },
       }
