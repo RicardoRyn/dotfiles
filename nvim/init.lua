@@ -15,5 +15,6 @@ if not vim.g.vscode then
   require("snippets.lua")
 end
 
--- TODO: 在linux上使用安装kitty终端，然后使用molten.nvim
 -- TODO: 使用codeium.nvim获得代码补全体验
+-- word1 word2 word3 word4 word5 word6
+--
