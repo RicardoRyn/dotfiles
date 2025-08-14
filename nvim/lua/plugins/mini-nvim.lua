@@ -19,8 +19,8 @@ return {
 
     if not vim.g.vscode then
       require("mini.cursorword").setup()
-      require("mini.starter").setup()
-      require("mini.trailspace").setup()
+      -- require("mini.starter").setup()
+      -- require("mini.trailspace").setup()
       require("mini.icons").setup()
       vim.keymap.set("n", "<leader>uz", function()
         require("mini.misc").zoom()

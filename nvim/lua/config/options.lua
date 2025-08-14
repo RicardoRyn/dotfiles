@@ -1,45 +1,92 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-vim.g.autoformat = false
-
-vim.opt.number = true
-vim.opt.wrap = true
-vim.opt.colorcolumn = "120"
-vim.opt.timeoutlen = 500
-vim.opt.list = true
-vim.opt.listchars = { tab = ">-", trail = "-" }
-vim.opt.relativenumber = false
-vim.opt.clipboard = "" -- 禁止neovim寄存器和系统剪贴板共用
+------------------ Gernal ------------------
+vim.g.mapleader = " " -- <leader>键
+vim.g.maplocalleader = "\\" -- <localleader>键
+vim.opt.confirm = true -- 关闭窗口时确认
+vim.opt.mouse = "a" -- 启用鼠标
+vim.opt.number = true -- 行号
+vim.opt.relativenumber = true -- 相对行号
+vim.opt.wrap = true -- 软换行
+vim.opt.linebreak = true -- 软换行时，在合适位置换行
 vim.opt.conceallevel = 0 -- 不隐藏任何文本
+-- vim.opt.clipboard = "" -- 禁止neovim寄存器和系统剪贴板共用
+vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- 同步系统的剪贴板
 
+-------------------- UI --------------------
+vim.o.signcolumn = "yes" -- 在行号左边显示警告、错误、Git 修改等标记的列
+vim.opt.smoothscroll = true -- 启用 平滑滚动（滚动时不会跳动，画面更流畅）
+vim.opt.scrolloff = 4 -- 上下至少保留 4 行可见内容
+vim.opt.laststatus = 3 -- 即使有多个窗口，底部只有一个统一状态栏
+vim.opt.shortmess:append({
+  W = true, -- 禁止显示 “written” 消息（保存文件后的提示信息）
+  I = true, -- 禁止显示启动时的 Neovim 版本信息
+  c = true, -- 在使用 completion-menu 时，不显示额外的完成信息（比如 “match 1 of 2”）
+  C = true, -- 禁止显示完成菜单中的消息提示（更进一步隐藏补全提示信息）
+})
+vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
+vim.opt.inccommand = "nosplit" -- 增量替换（substitute）预览
+vim.opt.jumpoptions = "view" -- 跳转后 恢复光标所在窗口的视图（例如滚动位置、折叠状态）
+vim.opt.cursorline = true -- 显示光标当前行
+vim.opt.pumblend = 10 -- 弹出菜单 0（完全不透明）到 100（完全透明）
+vim.opt.pumheight = 10 -- 弹出菜单显示的最大条目数
+vim.opt.ruler = false -- 如果开启状态栏会显示类似 12,34，因为有statusline，不需要
+vim.opt.showmode = false -- 显示模式，因为有statusline，不需要
+vim.opt.sidescrolloff = 8 -- 保持 左右各 8 列的缓冲区可见，可以避免光标靠边时画面突然左右滚动
+vim.opt.splitbelow = true -- 打开水平分屏时，新窗口会 出现在当前窗口的下方
+vim.opt.splitright = true -- 打开垂直分屏时，新窗口会 出现在当前窗口的右侧
+vim.opt.splitkeep = "screen" -- 保持当前窗口的内容位置不动，屏幕不会因为新窗口而上下或左右移动
+vim.opt.termguicolors = true -- 终端真彩色支持（24-bit RGB color）
+vim.opt.updatetime = 200 -- 光标停止不动多久触发事件，可以让一些插件（比如自动保存、LSP 文本高亮或诊断提示）更及时响应
+vim.opt.winminwidth = 5 -- 窗口的最小宽度为 5 列
+vim.opt.colorcolumn = "120" -- 在编辑器中显示一个虚拟竖线（color column），通常用来提醒代码行不要太长
+vim.opt.list = true -- 显示不可见字符（空格、Tab、换行等）
+vim.opt.listchars = { tab = ">-", trail = "-" } -- 用>-表示tab
+
+------------------- Term -------------------
+vim.opt.shell = "nu" -- 调用外部命令时使用的 shell 为 NuShell
+vim.opt.shellcmdflag = "-c" -- 当 Neovim 执行命令时，会使用 nu -c "command" 的形式
+vim.opt.shellquote = '"' -- 告诉 Neovim 在构造命令时，用双引号把命令包起来，例如：nu -c "ls -l"
+vim.opt.shellxquote = "" -- 用于指定额外的外层引用符，空字符串表示不再额外包裹
+
+------------------- Code ------------------
+vim.g.autoformat = false -- 禁止自动格式化
+vim.g.markdown_recommended_style = 0 -- 不要强制 Markdown 的默认风格
+vim.opt.timeoutlen = vim.g.vscode and 1000 or 300 -- 触发键盘提示时长
+vim.opt.completeopt = "menu,menuone,noselect" -- 打开补全菜单时不自动选中第一项
+vim.opt.wildmode = "longest:full,full" -- 命令行补全模式,第一次按 Tab，会自动补全到 最长公共前缀,再按 Tab，会显示 完整匹配列表
+vim.opt.spelllang = { "en" } -- 拼写检查的语言为英语（English）
+vim.opt.undofile = true -- 即使关闭 Neovim，文件的撤销历史仍会被保留
+vim.opt.undolevels = 10000 -- 最大可撤销操作数量
+vim.opt.virtualedit = "block" -- 光标在可视块模式（Visual Block Mode）中移动到没有文本的位置
+vim.opt.grepformat = "%f:%l:%c:%m" --解析 grep 命令的输出格式为 file_path:line_number:column_number:matched_text
+vim.opt.grepprg = "rg --vimgrep" -- 把 Neovim 的 grep 程序 换成 ripgrep
 vim.opt.ignorecase = true -- 如果输入没有大写，则大小写不敏感
 vim.opt.smartcase = true -- 如果输入有大写，则大小写敏感
+vim.opt.shiftwidth = 2 -- 缩进（Indent）时每一级的空格数为 2
+vim.opt.smartindent = true -- 智能缩进
+vim.opt.tabstop = 2 -- 控制 tab显示宽度
+vim.opt.softtabstop = 2 -- 控制 按键插入/删除tab的空格数量
+vim.opt.shiftround = true -- 自动把缩进量 向 shiftwidth 的倍数对齐
+vim.opt.expandtab = true -- 使用空格而不是真正的tab
 
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-
-vim.opt.shell = "nu"
-vim.opt.shellcmdflag = "-c"
-vim.opt.shellquote = '"'
-vim.opt.shellxquote = ""
-
-vim.o.signcolumn = "yes" -- 行号旁边留出显示标识符的位置
+------------------- Fold ------------------
 vim.o.foldmethod = "expr" -- 设置折叠
+vim.o.foldenable = false -- 打开文件时默认全部展开
+vim.o.foldlevel = 99 -- 设置折叠层级为 99
 vim.o.foldexpr = "nvim_treesitter#foldexpr()" -- 禁止初始折叠，默认展开所有内容
-vim.o.foldenable = false -- 打开文件时默认全部展开 -- 设置折叠层级为 99
-vim.o.foldlevel = 99
+vim.opt.foldtext = "" -- 折叠行的显示文本为空（折叠的行不显示默认的 ... 或其他内容）
+vim.opt.fillchars = {
+  foldopen = "", -- 折叠已打开时显示的符号（默认是 `-` 或 `v`）
+  foldclose = "", -- 折叠未打开时显示的符号（默认是 `+` 或 `>`）
+  fold = " ", -- 折叠行的填充字符（默认可能是 `-`），这里用空格更干净
+  foldsep = " ", -- 折叠列（fold column）之间的分隔符，这里用空格
+  diff = "╱", -- diff 模式中显示差异的填充字符（默认是 `-` 或 `~`）
+  eob = " ", -- End Of Buffer（文件结尾后的 ~ 符号），这里用空格隐藏
+}
 
--- 设置一些原生命令的偏好
-vim.cmd([[cnoreabbrev qa confirm qa]])
-vim.cmd([[cabbrev help vertical rightbelow help]])
-
--- 关于neovide
+----------------- Neovide -----------------
 if vim.g.neovide then
-  -- Put anything you want to happen only in Neovide here
-  -- vim.g.neovide_title_background_color =
-  --   string.format("%x", vim.api.nvim_get_hl(0, { id = vim.api.nvim_get_hl_id_by_name("Normal") }).bg)
+  vim.g.neovide_title_background_color =
+    string.format("%x", vim.api.nvim_get_hl(0, { id = vim.api.nvim_get_hl_id_by_name("Normal") }).bg)
   vim.g.neovide_title_background_color = "#ffffff"
   vim.g.neovide_title_text_color = "#58913d" -- 设置窗口标签的“Neovide”的颜色
   vim.o.guifont = "Maple Mono NF CN:h12" -- neovide字体及其字体大小
