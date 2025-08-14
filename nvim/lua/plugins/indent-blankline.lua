@@ -1,38 +1,45 @@
 if vim.g.vscode then
   return {}
 else
-  return {}
-  -- return {
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   main = "ibl",
-  --   opts = {
-  --     indent = {
-  --       char = "▏", -- 更细
-  --       highlight = {
-  --         "IndentLevel1",
-  --         "IndentLevel2",
-  --         "IndentLevel3",
-  --         "IndentLevel4",
-  --         "IndentLevel5",
-  --         "IndentLevel6",
-  --       },
-  --     },
-  --     scope = { enabled = false },
-  --   },
-  --   config = function(_, opts)
-  --     local colors = {
-  --       "#f4a8ab",
-  --       "#f6d48f",
-  --       "#a8caff",
-  --       "#f6b084",
-  --       "#b5e8b0",
-  --       "#d8b4f8",
-  --       "#a8e9f0",
-  --     }
-  --     for i, color in ipairs(colors) do
-  --       vim.api.nvim_set_hl(0, "IndentLevel" .. i, { fg = color })
-  --     end
-  --     require("ibl").setup(opts)
-  --   end,
-  -- }
+  return {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
+    config = function()
+      local highlight = {
+        "RainbowRed",
+        "RainbowYellow",
+        "RainbowBlue",
+        "RainbowOrange",
+        "RainbowGreen",
+        "RainbowViolet",
+        "RainbowCyan",
+      }
+      local hooks = require("ibl.hooks")
+      -- create the highlight groups in the highlight setup hook, so they are reset
+      -- every time the colorscheme changes
+      hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+        vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+        vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+        vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+        vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+        vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+        vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+        vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+      end)
+
+      vim.g.rainbow_delimiters = { highlight = highlight }
+      require("ibl").setup({
+        indent = { char = "▏" },
+        scope = {
+          highlight = highlight,
+        },
+        exclude = { filetypes = { "dashboard" } }
+      })
+
+      hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+    end,
+  }
 end
