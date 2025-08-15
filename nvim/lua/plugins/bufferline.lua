@@ -41,20 +41,8 @@ else
         },
       },
       keys = {
-        {
-          "L",
-          function()
-            vim.cmd("bnext " .. vim.v.count1)
-          end,
-          desc = "Next buffer",
-        },
-        {
-          "H",
-          function()
-            vim.cmd("bprev " .. vim.v.count1)
-          end,
-          desc = "Previous buffer",
-        },
+        { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
+        { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
         {
           "<leader>bd",
           function()

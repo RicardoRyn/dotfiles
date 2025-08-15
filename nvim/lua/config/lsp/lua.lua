@@ -1,8 +1,11 @@
-local util = require("lspconfig.util")
+local lsp_name = "lua_ls"
 
-local function custom_root_dir(fname)
-  return util.search_ancestors(fname, function(path)
-    for _, marker in ipairs({
+local default_config = dofile(vim.fn.stdpath("data") .. "/lazy/nvim-lspconfig/lsp/" .. lsp_name .. ".lua")
+
+local custom_config = {
+  root_dir = function(bufnr, on_dir)
+    local fname = vim.api.nvim_buf_get_name(bufnr)
+    local root = require("lspconfig.util").root_pattern(
       ".git",
       "init.lua",
       ".luarc.json",
@@ -11,19 +14,8 @@ local function custom_root_dir(fname)
       ".stylua.toml",
       "stylua.toml",
       "selene.toml",
-      "selene.yml",
-    }) do
-      if util.path.exists(util.path.join(path, marker)) then
-        return path
-      end
-    end
-  end) or vim.fn.getcwd()
-end
-
-vim.lsp.config("lua_ls", {
-  root_dir = function(bufnr, on_dir)
-    local fname = vim.api.nvim_buf_get_name(bufnr)
-    local root = custom_root_dir(fname)
+      "selene.yml"
+    )(fname) or vim.fn.getcwd()
     on_dir(root)
   end,
   settings = {
@@ -37,6 +29,8 @@ vim.lsp.config("lua_ls", {
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
   end,
-})
+}
 
-vim.lsp.enable("lua_ls")
+local final_config = vim.tbl_deep_extend("force", default_config, custom_config) -- 深度合并，保证嵌套
+vim.lsp.config(lsp_name, final_config)
+vim.lsp.enable(lsp_name)

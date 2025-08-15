@@ -9,6 +9,7 @@ if not vim.g.vscode then
   require("config.lsp.lua")
   require("config.lsp.python")
   require("config.lsp.bash")
+  require("config.lsp.markdown")
 
   -- snippets
   require("snippets.python")
@@ -16,4 +17,3 @@ if not vim.g.vscode then
 end
 
 -- TODO: 使用codeium.nvim获得代码补全体验
--- word1 word2 word3 word4 word5 word6

@@ -3,13 +3,13 @@ if vim.g.vscode then
 else
   return {
     "folke/trouble.nvim",
-    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    opts = {},
     cmd = "Trouble",
     keys = {
       {
         "<leader>xx",
         "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-        desc = "Trouble (buffer)",
+        desc = "Trouble (Buffer)",
       },
       {
         "<leader>xX",

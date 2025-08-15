@@ -20,6 +20,7 @@ else
         python = { "ruff_format" },
         bash = { "shfmt" },
         sh = { "shfmt" },
+        markdown = { "prettierd" },
       },
     },
   }
