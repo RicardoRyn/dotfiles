@@ -8,8 +8,8 @@ vim.opt.relativenumber = true -- 相对行号
 vim.opt.wrap = true -- 软换行
 vim.opt.linebreak = true -- 软换行时，在合适位置换行
 vim.opt.conceallevel = 0 -- 不隐藏任何文本
--- vim.opt.clipboard = "" -- 禁止neovim寄存器和系统剪贴板共用
-vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- 同步系统的剪贴板
+vim.opt.clipboard = "" -- 禁止neovim寄存器和系统剪贴板共用
+-- vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- 同步系统的剪贴板
 
 -------------------- UI --------------------
 vim.o.signcolumn = "yes" -- 在行号左边显示警告、错误、Git 修改等标记的列
