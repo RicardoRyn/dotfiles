@@ -9,11 +9,11 @@ if not vim.g.vscode then
   require("config.lsp.lua")
   require("config.lsp.python")
   require("config.lsp.bash")
+  require("config.lsp.markdown")
 
   -- snippets
   require("snippets.python")
   require("snippets.lua")
 end
 
--- TODO: 在linux上使用安装kitty终端，然后使用molten.nvim
 -- TODO: 使用codeium.nvim获得代码补全体验

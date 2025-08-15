@@ -1,19 +1,6 @@
-vim.lsp.config("bashls", {
-  cmd = { "bash-language-server", "start" },
-  settings = {
-    bashIde = {
-      -- Glob pattern for finding and parsing shell script files in the workspace.
-      -- Used by the background analysis features across files.
+local lsp_name = "bashls"
 
-      -- Prevent recursive scanning which will cause issues when opening a file
-      -- directly in the home directory (e.g. ~/foo.sh).
-      --
-      -- Default upstream pattern is "**/*@(.sh|.inc|.bash|.command)".
-      globPattern = vim.env.GLOB_PATTERN or "*@(.sh|.inc|.bash|.command)",
-    },
-  },
-  filetypes = { "bash", "sh" },
-  root_markers = { ".git" },
-})
+local default_config = dofile(vim.fn.stdpath("data") .. "/lazy/nvim-lspconfig/lsp/" .. lsp_name .. ".lua")
 
-vim.lsp.enable("bashls")
+vim.lsp.config(lsp_name, default_config)
+vim.lsp.enable(lsp_name)

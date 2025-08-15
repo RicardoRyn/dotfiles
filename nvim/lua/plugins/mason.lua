@@ -19,6 +19,10 @@ else
         "bash-language-server",
         "shellcheck",
         "shfmt",
+
+        "marksman", -- LSP (语法高亮、补全、跳转)
+        "markdownlint-cli2", -- 静态检查
+        "prettierd", -- 格式化
       }
     },
     config = function(_, opts)

@@ -1,4 +1,4 @@
--- NOTE: Neovim和vscode都有效的设置
+-- NOTE: Neovim和Vscode都生效的设置
 vim.keymap.set("n", "<leader>h", "<cmd>:noh<cr>", { desc = "No Highlight" })
 vim.keymap.set({ "n", "v" }, "J", "<Nop>")
 vim.keymap.set({ "v" }, "U", "<Nop>")
@@ -7,7 +7,7 @@ vim.keymap.set("v", "<", "<gv", { desc = "Outdent and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent and reselect" })
 
 if vim.g.vscode then
-  -- NOTE: 仅vscode中生效的设置
+  -- NOTE: Vscode中生效的设置
 
   -- Code
   vim.api.nvim_exec2("nmap j gj", { output = false })
@@ -137,7 +137,7 @@ else
   vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize -2<cr>", { desc = "Increase Window Width" })
 end
 
--- NOTE: Neovide独有的设置
+-- NOTE: Neovide中生效的设置
 if vim.g.neovide then
   -- 让neovide中 ctrl+shift+v 可以粘贴剪贴板内容
   vim.keymap.set({ "n", "v", "s", "x", "o", "i", "l", "c", "t" }, "<C-S-v>", function()
