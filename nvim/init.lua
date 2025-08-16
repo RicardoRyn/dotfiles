@@ -1,19 +1,18 @@
-require("config.lazy")
+require("config.options") -- options要写在keymaps前，否则默认<leader>为`\`
 require("config.keymaps")
-require("config.options")
 require("config.autocmds")
+require("config.lazy")
 
 if not vim.g.vscode then
-  -- LSP
   require("config.lsp")
   require("config.lsp.lua")
   require("config.lsp.python")
   require("config.lsp.bash")
   require("config.lsp.markdown")
 
-  -- snippets
-  require("snippets.python")
   require("snippets.lua")
-end
+  require("snippets.python")
+  require("snippets.markdown")
 
--- TODO: 使用codeium.nvim获得代码补全体验
+  require("utils.newnotebook")
+end

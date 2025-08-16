@@ -6,6 +6,7 @@ vim.keymap.set({ "v" }, "u", "<Nop>")
 vim.keymap.set("v", "<", "<gv", { desc = "Outdent and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent and reselect" })
 
+
 if vim.g.vscode then
   -- NOTE: Vscode中生效的设置
 
