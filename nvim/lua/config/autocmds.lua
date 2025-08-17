@@ -96,11 +96,11 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- jupyter
--- automatically import output chunks from a jupyter notebook
--- tries to find a kernel that matches the kernel in the jupyter notebook
--- falls back to a kernel that matches the name of the active venv (if any)
--- 定义 imb 函数：初始化 molten buffer
-if vim.loop.os_uname().sysname == "Linux" and not vim.g.vscode then
+if vim.loop.os_uname().sysname == "Windows_NT" and not vim.g.vscode then
+  -- automatically import output chunks from a jupyter notebook
+  -- tries to find a kernel that matches the kernel in the jupyter notebook
+  -- falls back to a kernel that matches the name of the active venv (if any)
+  -- 定义 imb 函数：初始化 molten buffer
   local imb = function(e) -- init molten buffer
     vim.schedule(function()
       local kernels = vim.fn.MoltenAvailableKernels()

@@ -42,10 +42,11 @@ vim.opt.list = true -- 显示不可见字符（空格、Tab、换行等）
 vim.opt.listchars = { tab = ">-", trail = "-" } -- 用>-表示tab
 
 ------------------- Term -------------------
-vim.opt.shell = "nu" -- 调用外部命令时使用的 shell 为 NuShell
--- vim.opt.shellcmdflag = "-c" -- 当 Neovim 执行命令时，会使用 nu -c "command" 的形式
--- vim.opt.shellquote = '"' -- 告诉 Neovim 在构造命令时，用双引号把命令包起来，例如：nu -c "ls -l"
--- vim.opt.shellxquote = "" -- 用于指定额外的外层引用符，空字符串表示不再额外包裹
+vim.opt.shell = "nu" -- 使用 Nushell 作为外部 shell
+vim.opt.shellcmdflag = "-c" -- 当 Neovim 执行命令时，用 -c 调用命令
+vim.opt.shellquote = '"' -- 用双引号包裹命令
+vim.opt.shellxquote = "" -- 不使用额外外层引用符（Nushell 不需要）
+vim.opt.shellslash = true -- 可选：防止 Windows 上路径被转义
 
 ------------------- Code ------------------
 vim.g.autoformat = false -- 禁止自动格式化

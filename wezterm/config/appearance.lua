@@ -41,7 +41,7 @@ return {
     border_top_height = '0.1cell',
     border_top_color = 'steelblue',
   },
-  inactive_pane_hsb = { saturation = 0.9, brightness = 0.3 },
+  inactive_pane_hsb = { saturation = 0.9, brightness = 0.9 },
 
   visual_bell = {
     fade_in_function = "EaseIn",

@@ -18,7 +18,7 @@ return {
     -- Your settings go here
     search = {
       anaconda_base = {
-        command = "fd /python$ ~/miniforge3/envs --max-depth 3 --full-path --color never -E /proc",
+        command = "fd python.exe$ E:/python/envs --max-depth 2 --full-path --color never",
         type = "anaconda", -- 这里必须是 anaconda，才能生效
       },
     },
