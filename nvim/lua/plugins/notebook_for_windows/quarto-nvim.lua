@@ -61,13 +61,16 @@ return {
     hydra({
       name = "Quarto Hydra",
       hint = [[
-          _j_/_k_: move down/up  _r_: run cell
-          _l_: run line  _R_: run above
-          ^^     _<esc>_/_q_: exit ]],
+      _j_/_k_: move down/up
+      _r_: run cell
+      _R_: run above
+      _l_: run line
+      _<esc>_/_q_: exit]],
       config = {
         color = "pink",
         invoke_on_body = true,
         hint = {
+          position = "bottom-right",
           float_opts = {
             border = "rounded", -- you can change the border if you want
           },
