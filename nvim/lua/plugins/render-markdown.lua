@@ -1,7 +1,7 @@
 return {
   "MeanderingProgrammer/render-markdown.nvim",
   cond = function()
-    return vim.loop.os_uname().sysname == "Linux" and not vim.g.vscode
+    return not vim.g.vscode
   end,
   ft = { "markdown", "norg", "rmd", "org", "codecompanion" },
   dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
@@ -11,11 +11,13 @@ return {
   ---@type render.md.UserConfig
   opts = {
     code = {
+      sign = false,
       width = "block",
       right_pad = 1,
       border = "thin",
     },
     heading = {
+      sign = false,
       icons = {},
     },
   },

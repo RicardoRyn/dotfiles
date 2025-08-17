@@ -64,15 +64,15 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- 打开文本文件时，软换行并检查拼写
-vim.api.nvim_create_autocmd("FileType", {
-  group = augroup("wrap_spell"),
-  pattern = { "text", "plaintex", "typst", "gitcommit", "markdown" },
-  callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
-  end,
-})
+-- -- 打开文本文件时，软换行并检查拼写
+-- vim.api.nvim_create_autocmd("FileType", {
+--   group = augroup("wrap_spell"),
+--   pattern = { "text", "plaintex", "typst", "gitcommit", "markdown" },
+--   callback = function()
+--     vim.opt_local.wrap = true
+--     vim.opt_local.spell = true
+--   end,
+-- })
 
 -- 禁用 JSON 文件中的“隐藏显示”（conceal）功能，确保内容完全可见
 vim.api.nvim_create_autocmd({ "FileType" }, {

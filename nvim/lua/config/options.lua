@@ -75,6 +75,7 @@ vim.o.foldenable = false -- 打开文件时默认全部展开
 vim.o.foldlevel = 99 -- 设置折叠层级为 99
 vim.o.foldexpr = "nvim_treesitter#foldexpr()" -- 禁止初始折叠，默认展开所有内容
 vim.opt.foldtext = "" -- 折叠行的显示文本为空（折叠的行不显示默认的 ... 或其他内容）
+vim.opt.foldcolumn = "3" -- 显示折叠信息
 vim.opt.fillchars = {
   foldopen = "", -- 折叠已打开时显示的符号（默认是 `-` 或 `v`）
   foldclose = "", -- 折叠未打开时显示的符号（默认是 `+` 或 `>`）

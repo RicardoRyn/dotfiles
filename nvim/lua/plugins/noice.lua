@@ -6,7 +6,7 @@ return {
   event = "VeryLazy",
   dependencies = {
     "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify", -- 太挡视野了吧，但是可以<leader>nd
+    -- "rcarriga/nvim-notify", -- 太挡视野了吧，但是可以<leader>nd
   },
 
   opts = {
