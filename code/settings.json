@@ -27,7 +27,7 @@
   "editor.mouseWheelZoom": false, //  Ctrl + 鼠标滚轮缩放
   "editor.acceptSuggestionOnEnter": "smart", // 智能回车
   "editor.suggestSelection": "recentlyUsed", // 智能提示选择
-  "editor.accessibilitySupport": "auto", // 自动检测使用屏幕辅助功能
+  "editor.accessibilitySupport": "off", // 自动检测使用屏幕辅助功能
   "editor.formatOnSave": false, // 保存时不自动格式化
   "editor.stickyScroll.enabled": true, // 将当前作用域（如函数或类）的标题固定在顶部
   "editor.lineNumbers": "on", // 相对行号
@@ -82,8 +82,8 @@
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.autoFormatStrings": true,
   "python.analysis.inlayHints.callArgumentNames": "partial",
-  "python.defaultInterpreterPath": "E:\\python\\envs\\main",
-  "python.analysis.typeCheckingMode": "standard",
+  "python.defaultInterpreterPath": "d:\\Anaconda",
+  "python.analysis.typeCheckingMode": "basic",
   "debug.inlineValues": "off",
   "debug.enableStatusBarColor": false,
   "debug.showBreakpointsInOverviewRuler": true, // 在概览标尺中显示断点
@@ -216,5 +216,5 @@
   },
   "Lingma.aI Chat.webToolsInAsk/AgentMode": "Auto-execute",
   // misc
-  "redhat.telemetry.enabled": false,
+  "redhat.telemetry.enabled": false
 }

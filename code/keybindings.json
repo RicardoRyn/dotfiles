@@ -201,7 +201,7 @@
         "key": "ctrl+shift+]",
         "command": "-editor.unfold",
         "when": "editorTextFocus && foldingEnabled"
-    },    
+    },
     // 禁止使用 ctrl+n 来新建文件
     {
         "key": "ctrl+n",
@@ -227,5 +227,62 @@
     {
         "key": "ctrl+shift+oem_plus",
         "command": "-workbench.action.zoomIn"
+    },
+    // 在jupyter notebook中ctrl+shift+backspace重启kernel
+    {
+        "key": "shift+alt+backspace",
+        "command": "jupyter.restartkernel"
+    },
+    // 使用类vim快捷键控制笔记本单元格
+    {
+        "key": "y",
+        "command": "notebook.cell.copy",
+        "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+    },
+    {
+        "key": "c",
+        "command": "-notebook.cell.copy",
+        "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+    },
+    {
+        "key": "c",
+        "command": "notebook.cell.changeToCode",
+        "when": "notebookEditorFocused && !inputFocus && !notebookOutputFocused && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'markup'"
+    },
+    {
+        "key": "y",
+        "command": "-notebook.cell.changeToCode",
+        "when": "notebookEditorFocused && !inputFocus && !notebookOutputFocused && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'markup'"
+    },
+    {
+        "key": "p",
+        "command": "notebook.cell.paste",
+        "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+    },
+    {
+        "key": "v",
+        "command": "-notebook.cell.paste",
+        "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+    },
+    // 采用ctrl+h和ctrl+l来切换窗口
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft",
+        "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+    },
+    {
+        "key": "ctrl+w h",
+        "command": "-workbench.action.navigateLeft",
+        "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight",
+        "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+    },
+    {
+        "key": "ctrl+w l",
+        "command": "-workbench.action.navigateRight",
+        "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
     },
 ]
