@@ -265,6 +265,7 @@
         "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
     },
     // 采用ctrl+h和ctrl+l来切换窗口
+    // 以下两项既需要在此处设置，也需要在neovim的keymaps.lua中设置
     {
         "key": "ctrl+h",
         "command": "workbench.action.navigateLeft",
@@ -284,5 +285,5 @@
         "key": "ctrl+w l",
         "command": "-workbench.action.navigateRight",
         "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
-    },
+    }
 ]

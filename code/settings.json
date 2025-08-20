@@ -23,6 +23,7 @@
   "workbench.layoutControl.enabled": false, // 禁用布局控制功能
   "workbench.list.smoothScrolling": true, // 启用列表平滑滚动
   "workbench.startupEditor": "none", // 启动时的行为为"无"
+  "breadcrumbs.enabled": false, // 面包屑
   // 功能
   "editor.mouseWheelZoom": false, //  Ctrl + 鼠标滚轮缩放
   "editor.acceptSuggestionOnEnter": "smart", // 智能回车
@@ -216,5 +217,8 @@
   },
   "Lingma.aI Chat.webToolsInAsk/AgentMode": "Auto-execute",
   // misc
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
