@@ -16,126 +16,198 @@
     --sapphire: #74c7ec;
     --blue: #89b4fa;
     --lavender: #b4befe;
-
-    --surface0: #d5e4ef;
-    --surface1: #bac2de;
-    --surface2: #a6adc8;
-
-    --overlay0: #9399b2;
+    --text: #cdd6f4;
+    --subtext1: #bac2de;
+    --subtext0: #a6adc8;
+    --overlay2: #9399b2;
     --overlay1: #7f849c;
-    --overlay2: #6c7086;
-
-    --text: #585b70;
-    --subtext1: #45475a;
-    --subtext2: #282936;
-
+    --overlay0: #6c7086;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --surface1: #282936;
     --base: #1e1e2e;
-    --mantle: rgba(212, 222, 244, 0.5);
+    --mantle: rgba(24, 24, 37, 0.5);
     --crust: rgba(17, 17, 27, 0.5);
 }
-* {
-    font-size: 10px;
-    color: var(--text);
-    font-weight: 700;
-    font-family: "JetBrainsMono NFP";
+*{
+    color: #bec8e7;
     margin: 0;
     padding: 0;
+    font-family: "Maple Mono NF CN";
+    font-size: 13px;
+    font-weight: 600;
 }
 
-/* general config */
+/*GENERAL CONFIGRATIONS*/
 .yasb-bar {
-    /* background-color: var(--mantle); */
-    border-radius: 10px;
+    padding: 0;
+    margin: 0;
+}
+.widget {
+    padding: 0 2px;
+    margin: 0 2px;
+    border-radius: 12px;
 }
 .widget .icon {
-    font-size: 10px;
+    font-size: 12px;
 }
 .widget .label {
     color: var(--text);
 }
 
-/* glazewm workspaces */
+/*GLAZEWM WORKSPACES WIDGET*/
 .glazewm-workspaces {
-    padding-left: 10px;
-    padding-right: 0px;
+    background-color: var(--surface1);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 6px;
+    padding-left: 6px;
 }
 .glazewm-workspaces .offline-status {
-    color: var(--text);
+    color: #627199;
+    font-size: 12px;
+    padding: 0 4px;
+    font-weight: 600;
+}
+.glazewm-workspaces .ws-btn {
+    border: none;
+    background-color: var(--overlay2);
+    margin: 0px 4px;
+    padding: 0;
+    color: var(--base);
+    border-radius: 5px;
+    height: 15px;
+    width: 15px;
     font-size: 10px;
     font-weight: 900;
 }
-.glazewm-workspaces .ws-btn {
-    margin: 0px 3px;
-    color: var(--base);
-}
 .glazewm-workspaces .ws-btn.populated {
-    background-color: var(--blue);
-    height: 15px;
-    width: 15px;
-    border-radius: 5px;
+    background-color: var(--text);
 }
 .glazewm-workspaces .ws-btn.active_populated {
-    background-color: var(--red);
-    width: 25px;
-    height: 15px;
-    border-radius: 5px;
+    background-color: var(--sky);
 }
-.glazewm-workspaces .ws-btn.active_empty {
-    background-color: var(--red);
-    width: 25px;
-    height: 15px;
-    border-radius: 5px;
+.glazewm-workspaces .ws-btn.active {
+    color: rgba(149, 177, 255, 0);
+    background-color: var(--teal);
+    width: 36px;
+    height: 10px;
+    border-radius: 4px;
 }
-
 /* glazewm tiling direction */
 .glazewm-tiling-direction {
-    background-color: transparent;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.glazewm-tiling-direction .btn {
-    font-size: 17px;
-    color: var(--base);
-    border: none;
-}
-.glazewm-tiling-direction .btn:hover {
+    padding-right: 7px;
+    padding-left: 7px;
     background-color: var(--surface1);
 }
-
-/* cpu */
-.cpu-widget .icon {
-    font-size:17px;
-    color: #40a02b;
-    padding-left: 10px;
-    padding-right: 0px;
-}
-.cpu-widget .label {
-    font-size: 12px;
+.glazewm-tiling-direction .btn {
+    border: none;
     color: var(--text);
-    letter-spacing: 0.5px;
-    font-family: 'Segoe UI';
+    font-family: "JetBrainsMono NFP";
+    font-size: 20px;
 }
 
-/* memory */
+/*ACTIVE WINDOW WIDGET*/
+.active-window-widget {
+    background-color: var(--surface1);
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.active-window-widget .label {
+    font-size: 13px;
+}
+.active-window-widget .icon {
+    padding-right: 6px;
+    border: none;
+}
+
+/*MEMORY WIDGET*/
+.memory-widget {
+    padding-right: 9px;
+    padding-left: 5px;
+    background-color: var(--surface1);
+}
 .memory-widget .icon {
-    font-size:17px;
-    color: #40a02b;
-    padding-left: 10px;
-    padding-right: 0px;
+    padding: 0 6px;
+    font-family: "JetBrainsMono NFP";
+    font-size: 15px;
 }
-.memory-widget .label {
-    font-size: 12px;
-    color: var(--text);
-    letter-spacing: 0.5px;
-    font-family: 'Segoe UI';
+.memory-widget .label.status-low {
+    font-size: 13px;
+    color: var(--green);
+}
+.memory-widget .label.status-medium {
+    font-size: 13px;
+    color: var(--yellow);
+}
+.memory-widget .label.status-high {
+    font-size: 13px;
+    color: var(--peach);
+}
+.memory-widget .label.status-critical {
+    font-size: 13px;
+    color: var(--red);
 }
 
-/* github */
-.github-widget .icon {
-    font-size: 17px;
-    color: var(--text);
+/*CLOCK - CALENDAR WIDGET*/
+.clock-widget {
+    background-color: var(--surface1);
     padding-left: 10px;
     padding-right: 10px;
+}
+.clock-widget .label {
+    font-size: 13px;
+}
+/*CLOCK - CALENDAR WIDGET DROPDOWN*/
+.calendar {
+    background-color: var(--mantle);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: rgba(17, 17, 27, 0);
+    color: rgba(162, 177, 196, 0.85);
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    font-weight: 300;
+}
+.calendar .calendar-table::item:selected {
+    color: rgb(255, 255, 255);
+}
+.calendar .day-label {
+    margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    color: #fff;
+    min-width: 180px;
+    max-width: 180px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.calendar .month-label {
+    font-size: 17px;
+    font-weight: 300;
+}
+.calendar .date-label {
+    color: rgb(255, 255, 255);
+    margin-top: -20px;
+    font-size: 88px;
+    font-weight: 700;
+}
+
+/*GITHUB DROPDOWN*/
+.github-widget {
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: var(--surface1);
+}
+.github-widget .icon {
+    font-family: "JetBrainsMono NFP";
+    font-size: 15px;
 }
 .github-menu    {
     background-color:  rgba(17, 17, 27, 0.2);
@@ -147,7 +219,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 15px;
     font-weight: 400;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     padding: 8px;
     color: white;
     background-color: rgba(17, 17, 27, 0.75);
@@ -156,7 +228,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 12px;
     padding: 4px 8px 6px 8px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     color: #9399b2;
     background-color: rgba(17, 17, 27, 0.75);
 }
@@ -198,4 +270,210 @@
 }
 .github-menu .contents .item.new .icon {
     color: #3fb950;
+}
+
+/*AUDIO WIDGET*/
+.volume-widget {
+    padding-right: 9px;
+    padding-left: 5px;
+    background-color: var(--surface1);
+}
+.volume-widget .icon {
+    padding: 0 6px;
+    color: var(--teal);
+    font-family: "JetBrainsMono NFP";
+    font-size: 15px;
+}
+.volume-widget .label {
+    font-size: 13px;
+}
+/*AUDIO DROPDOWN*/
+.audio-menu {
+    background-color: var(--mantle);
+}
+.audio-container .device {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: 300;
+}
+.audio-container .device.selected {
+    background-color: rgba(255, 255, 255, 0.085);
+}
+.audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/*BRIGHTNESS WIDGET*/
+.brightness-widget {
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: var(--surface1);
+}
+.brightness-widget .icon {
+    color: var(--yellow);
+    font-family: "JetBrainsMono NFP";
+    font-size: 15px;
+}
+.brightness-widget .label {
+    font-size: 13px;
+}
+/*BRIGHTNESS DROPDOWN*/
+.brightness-menu {
+    background-color:rgba(17, 17, 27, 0.4); 
+}
+.brightness-slider {
+    border: none;
+}
+.brightness-slider::groove {}
+.brightness-slider::handle{} 
+/* Brightness progress bar styles if enabled */
+.brightness-widget .progress-circle {}
+
+/*BLUETOOTH WIDGET*/
+.bluetooth-widget {
+    padding-right: 9px;
+    padding-left: 5px;
+    background-color: var(--surface1);
+}
+.bluetooth-widget .icon {
+    padding: 0 6px;
+    color: var(--blue);
+    font-family: "JetBrainsMono NFP";
+    font-size: 15px;
+}
+
+/*DISK WIDGET*/
+.disk-widget {
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: var(--surface1);
+}
+.disk-widget .icon {
+    color: var(--pink);
+    font-family: "JetBrainsMono NFP";
+    font-size: 13px;
+}
+/*DISK DROPDOWN*/
+.disk-group {
+    background-color: var(--mantle);
+}
+.disk-group-row {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 50px;
+    max-height: 50px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0);
+}
+.disk-group-row:hover {
+    background-color:rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.disk-group-label-bar{
+    max-height: 8px;
+    border:0px solid rgba(128, 128, 128, 0);
+    background-color: rgba(148, 226, 213, 0.3);
+    border-radius: 4px;
+}
+.disk-group-label-bar::chunk{
+    background-color: rgba(148, 226, 213, 1);
+    border-radius: 4px;
+}
+.disk-group-label {
+    font-size: 17px;
+    font-weight: 300;
+}
+.disk-group-label-size {
+    color: rgba(205, 214, 244, 0.5);
+    font-size: 15px;
+    font-weight: 300;
+}
+
+/*BATTERY WIDGET*/
+.battery-widget {
+    padding-right: 9px;
+    padding-left: 5px;
+    background-color: var(--surface1);
+}
+.battery-widget .icon {
+    padding: 0 6px;
+    color: var(--peach);
+    font-family: "JetBrainsMono NFP";
+    font-size: 15px;
+}
+.battery-widget .label {
+    font-size: 13px;
+}
+
+/*RECYCLE BIN WIDGET*/
+.recycle-bin-widget {
+    padding-right: 9px;
+    padding-left: 5px;
+    background-color: var(--surface1);
+}
+.recycle-bin-widget .icon {
+    padding: 0 6px;
+    color: var(--subtext0);
+    font-family: "JetBrainsMono NFP";
+    font-size: 15px;
+}
+.recycle-bin-widget .label {
+    font-size: 13px;
+}
+
+/*POWER WIDGET*/
+.power-menu-widget {
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: var(--surface1);
+}
+.power-menu-widget .label {
+    color: var(--red);
+    font-family: "JetBrainsMono NFP";
+    font-size: 15px;
+}
+/*POWER MENU POPUP*/
+.uptime {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: rgba(191, 202, 219, 0.726);
+    font-weight: 600;
+}
+.power-menu-popup .button {
+    padding: 0;
+    width: 160px;
+    height: 240px;
+    border-radius: 4px;
+    background-color: rgba(41, 42, 58, 0.75);
+    color: white;
+    border: 4px solid rgba(255, 255, 255, 0);
+}
+.power-menu-popup .button.hover {
+    background-color: rgb(55, 56, 75);
+    border: 4px solid rgb(55, 56, 75);
+}
+.power-menu-popup .button .label {
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 17px;
+    font-weight: 300;
+}
+.power-menu-popup .button .icon {
+    padding-top: 54px;
+    color: rgba(255, 255, 255, 0.25);
+    font-family: "JetBrainsMono NFP";
+    font-size: 64px;
+}
+.power-menu-popup .button.cancel .icon {
+    color: rgba(243, 139, 168, 0.55);
+}
+.power-menu-popup .button.cancel .label {
+    color: rgba(243, 139, 168, 0.95);
 }

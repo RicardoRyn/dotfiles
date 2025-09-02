@@ -33,7 +33,7 @@ return {
   switch_to_last_active_tab_when_closing_tab = true,
 
   -- window
-  -- window_decorations = "INTEGRATED_BUTTONS | RESIZE",
+  window_decorations = "INTEGRATED_BUTTONS | RESIZE",
   window_padding = { left = 10, right = 3, top = 0, bottom = 7 },
   adjust_window_size_when_changing_font_size = false,
   window_close_confirmation = "NeverPrompt",

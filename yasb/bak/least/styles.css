@@ -1,0 +1,201 @@
+/*VARIABLES AND SOME DEFAULT SETTINGS*/
+:root {
+    --rosewater: #f5e0dc;
+    --flamingo: #f2cdcd;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --peachedit: #ecd093;
+    --peachedit2: #e9bb77;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
+    --sky: #89dceb;
+    --sapphire: #74c7ec;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+
+    --surface0: #d5e4ef;
+    --surface1: #bac2de;
+    --surface2: #a6adc8;
+
+    --overlay0: #9399b2;
+    --overlay1: #7f849c;
+    --overlay2: #6c7086;
+
+    --text: #585b70;
+    --subtext1: #45475a;
+    --subtext2: #282936;
+
+    --base: #1e1e2e;
+    --mantle: rgba(212, 222, 244, 0.5);
+    --crust: rgba(17, 17, 27, 0.5);
+}
+* {
+    font-size: 10px;
+    color: var(--text);
+    font-weight: 700;
+    font-family: "JetBrainsMono NFP";
+    margin: 0;
+    padding: 0;
+}
+
+/* general config */
+.yasb-bar {
+    /* background-color: var(--mantle); */
+    border-radius: 10px;
+}
+.widget .icon {
+    font-size: 10px;
+}
+.widget .label {
+    color: var(--text);
+}
+
+/* glazewm workspaces */
+.glazewm-workspaces {
+    padding-left: 10px;
+    padding-right: 0px;
+}
+.glazewm-workspaces .offline-status {
+    color: var(--text);
+    font-size: 10px;
+    font-weight: 900;
+}
+.glazewm-workspaces .ws-btn {
+    margin: 0px 3px;
+    color: var(--base);
+}
+.glazewm-workspaces .ws-btn.populated {
+    background-color: var(--blue);
+    height: 15px;
+    width: 15px;
+    border-radius: 5px;
+}
+.glazewm-workspaces .ws-btn.active_populated {
+    background-color: var(--red);
+    width: 25px;
+    height: 15px;
+    border-radius: 5px;
+}
+.glazewm-workspaces .ws-btn.active_empty {
+    background-color: var(--red);
+    width: 25px;
+    height: 15px;
+    border-radius: 5px;
+}
+
+/* glazewm tiling direction */
+.glazewm-tiling-direction {
+    background-color: transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.glazewm-tiling-direction .btn {
+    font-size: 17px;
+    color: var(--base);
+    border: none;
+}
+.glazewm-tiling-direction .btn:hover {
+    background-color: var(--surface1);
+}
+
+/* cpu */
+.cpu-widget .icon {
+    font-size:17px;
+    color: #40a02b;
+    padding-left: 10px;
+    padding-right: 0px;
+}
+.cpu-widget .label {
+    font-size: 12px;
+    color: var(--text);
+    letter-spacing: 0.5px;
+    font-family: 'Segoe UI';
+}
+
+/* memory */
+.memory-widget .icon {
+    font-size:17px;
+    color: #40a02b;
+    padding-left: 10px;
+    padding-right: 0px;
+}
+.memory-widget .label {
+    font-size: 12px;
+    color: var(--text);
+    letter-spacing: 0.5px;
+    font-family: 'Segoe UI';
+}
+
+/* github */
+.github-widget .icon {
+    font-size: 17px;
+    color: var(--text);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.github-menu    {
+    background-color:  rgba(17, 17, 27, 0.2);
+    max-height: 500px;
+    min-height: 500px;
+    min-width: 420px;
+}
+.github-menu .header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 8px;
+    color: white;
+    background-color: rgba(17, 17, 27, 0.75);
+}
+.github-menu .footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+    padding: 4px 8px 6px 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #9399b2;
+    background-color: rgba(17, 17, 27, 0.75);
+}
+.github-menu .contents {
+    background-color:  rgba(17, 17, 27, 0.2);
+}
+.github-menu .contents .item {
+    min-height: 40px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+}
+.github-menu .contents .item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+.github-menu .contents .item .title,
+.github-menu .contents .item .description {
+    color: #9399b2;
+    font-family: Segoe UI;
+}
+.github-menu .contents .item .title {
+    font-size: 14px;
+    font-weight: 600; 
+}
+.github-menu .contents .item .description {
+    font-size: 12px;
+    font-weight: 500
+}
+.github-menu .contents .item.new .title,
+.github-menu .contents .item.new .description {
+    color: #ffffff
+}
+.github-menu .contents .item .icon {
+    font-size: 16px;
+    padding-right: 0;
+    padding-left: 8px;
+    padding-right: 4px;
+    color: #9399b2;
+}
+.github-menu .contents .item.new .icon {
+    color: #3fb950;
+}
