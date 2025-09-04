@@ -8,7 +8,7 @@ return {
   front_end = "WebGpu",
   webgpu_power_preference = "HighPerformance",
   webgpu_preferred_adapter = gpu_adapters:pick_best(),
-  underline_thickness = "1.5pt",
+  underline_thickness = "1.7pt",
 
   -- cursor
   animation_fps = 144,
@@ -22,7 +22,7 @@ return {
   color_scheme = "Catppuccin Latte",
 
   -- scrollbar
-  enable_scroll_bar = true,
+  enable_scroll_bar = false,
 
   -- tab bar
   enable_tab_bar = true,
@@ -33,8 +33,8 @@ return {
   switch_to_last_active_tab_when_closing_tab = true,
 
   -- window
-  window_decorations = "INTEGRATED_BUTTONS | RESIZE",
-  window_padding = { left = 10, right = 3, top = 0, bottom = 7 },
+  -- window_decorations = "INTEGRATED_BUTTONS | RESIZE",
+  window_padding = { left = 0, right = 0, top = 0, bottom = 0 },
   adjust_window_size_when_changing_font_size = false,
   window_close_confirmation = "NeverPrompt",
   window_frame = {
