@@ -3,7 +3,7 @@ local platform = require("utils.platform")
 
 local font_family = "Maple Mono NF CN" -- English: ABC, !@#$%^&*()_+. 中文：永，！@#￥%……&*（）——+
 -- local font_family = 'JetBrainsMono Nerd Font'  -- English: ABC, !@#$%^&*()_+. 中文：永，！@#￥%……&*（）——+
-local font_size = platform.is_win and 10 or 13
+local font_size = platform.is_win and 9 or 12
 
 return {
   font = wezterm.font({
