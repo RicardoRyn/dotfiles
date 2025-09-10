@@ -1,7 +1,7 @@
 {
   // 通用
   "editor.wordWrap": "on", // 自动换行
-  "editor.fontSize": 13, // 字体大小
+  "editor.fontSize": 12, // 字体大小
   "editor.fontFamily": "Maple Mono NF CN", // 字体
   "editor.fontWeight": "300", // 字体粗细
   // UI

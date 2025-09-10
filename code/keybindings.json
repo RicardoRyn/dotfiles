@@ -42,28 +42,6 @@
         "key": "ctrl+backspace",
         "command": "notebook.clearAllCellsOutputs"
     },
-    // 使用 alt+l 来展开cell
-    {
-        "key": "alt+l",
-        "command": "notebook.unfold",
-        "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'"
-    },
-    {
-        "key": "ctrl+shift+oem_6",
-        "command": "-notebook.unfold",
-        "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'"
-    },
-    // 使用 alt+h 来折叠cell
-    {
-        "key": "alt+h",
-        "command": "notebook.fold",
-        "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'"
-    },
-    {
-        "key": "ctrl+shift+oem_4",
-        "command": "-notebook.fold",
-        "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'"
-    },
     // 使用原生neovim ctrl+o 或者 ctrl+i 来返回
     {
         "key": "ctrl+o",

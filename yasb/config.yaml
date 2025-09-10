@@ -4,7 +4,7 @@ debug: false
 bars:
   primary-bar:
     enabled: true
-    screens: ['*']
+    screens: ["*"]
     class_name: "yasb-bar"
     alignment:
       position: "bottom"
@@ -29,11 +29,20 @@ bars:
       right: 8
     widgets:
       left:
-        [ "glazewm_tiling_direction", "glazewm_workspaces", "bluetooth", "bin", "cpu", "gpu", "memory", "github" ]
-      center:
-        []
-      right:
-        []
+        [
+          "glazewm_tiling_direction",
+          "glazewm_workspaces",
+          "bluetooth",
+          "bin",
+          "cpu",
+          "gpu",
+          "memory",
+          "github",
+          "volume",
+          "weather"
+        ]
+      center: []
+      right: []
 widgets:
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
@@ -42,12 +51,12 @@ widgets:
       hide_empty_workspaces: true
       hide_if_offline: false
     blur_effect:
-      enabled: true          # 开启模糊效果
-      acrylic: true          # 启用 Windows 10 的 Acrylic 模糊（若使用 Windows 11 则自动启用更高级效果）
-      dark_mode: true        # 深色主题模式下增强阴影
-      round_corners: false   # 是否使用圆角（可选）
-      round_corners_type: 'normal'
-      border_color: None     # 可配置边框颜色（如 “System” 或 HEX 值）
+      enabled: true # 开启模糊效果
+      acrylic: true # 启用 Windows 10 的 Acrylic 模糊（若使用 Windows 11 则自动启用更高级效果）
+      dark_mode: true # 深色主题模式下增强阴影
+      round_corners: false # 是否使用圆角（可选）
+      round_corners_type: "normal"
+      border_color: None # 可配置边框颜色（如 “System” 或 HEX 值）
   glazewm_tiling_direction:
     type: "glazewm.tiling_direction.GlazewmTilingDirectionWidget"
     options:
@@ -149,7 +158,7 @@ widgets:
       label_alt: "Notifications {data}" # {data} return number of unread notification
       token: env # GitHub Personal access tokens (classic) https://github.com/settings/tokens
       max_notification: 20 # Max number of notification displaying in menu max: 50
-      only_unread: false # Show only unread or all notifications; 
+      only_unread: false # Show only unread or all notifications;
       max_field_size: 54 # Max characters in title before truncation.
       update_interval: 300 # Check for new notification in seconds
       menu:
@@ -166,11 +175,11 @@ widgets:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
       volume_icons:
-        - "\ueee8"  # Icon for muted
-        - "\uf026"  # Icon for 0-10% volume
-        - "\uf027"  # Icon for 11-30% volume
-        - "\uf027"  # Icon for 31-60% volume
-        - "\uf028"  # Icon for 61-100% volume
+        - "\ueee8" # Icon for muted
+        - "\uf026" # Icon for 0-10% volume
+        - "\uf027" # Icon for 11-30% volume
+        - "\uf027" # Icon for 31-60% volume
+        - "\uf028" # Icon for 61-100% volume
       callbacks:
         on_right: "exec cmd.exe /c start ms-settings:sound"
   brightness:
@@ -188,11 +197,11 @@ widgets:
       auto_light_night_end_time: "06:45"
       auto_light_day_level: 75
       brightness_icons: [
-        "\udb80\udcde",  # Icon for 0-25% brightness
-        "\udb80\udcdd",  # Icon for 26-50% brightness
-        "\udb80\udcdf",  # Icon for 51-75% brightness
-        "\udb80\udce0"   # Icon for 76-100% brightness
-      ]
+          "\udb80\udcde", # Icon for 0-25% brightness
+          "\udb80\udcdd", # Icon for 26-50% brightness
+          "\udb80\udcdf", # Icon for 51-75% brightness
+          "\udb80\udce0", # Icon for 76-100% brightness
+        ]
       brightness_menu:
         blur: true
         round_corners: true
@@ -201,7 +210,7 @@ widgets:
         alignment: "right"
         direction: "down"
       callbacks:
-          on_left: "toggle_label"
+        on_left: "toggle_label"
   bluetooth:
     type: "yasb.bluetooth.BluetoothWidget"
     options:
@@ -211,7 +220,7 @@ widgets:
       label_device_separator: ", "
       max_length: 10
       max_length_ellipsis: "..."
-      icons: 
+      icons:
         bluetooth_on: "\udb80\udcaf"
         bluetooth_off: "\udb80\udcb2"
         bluetooth_connected: "\udb80\udcb1"
@@ -285,14 +294,14 @@ widgets:
       uptime: True
       blur: False
       blur_background: True
-      animation_duration: 250 # Milisecond 
+      animation_duration: 250 # Milisecond
       button_row: 5 # Number of buttons in row, min 1 max 5
       buttons:
-        signout: ["\udb80\udf43","Sign out"]
-        shutdown: ["\uf011","Shut Down"]
-        restart: ["\uead2","Restart"]
-        hibernate: ["\uf28e","Hibernate"]
-        cancel: ["\udb81\udf3a","Cancel"]
+        signout: ["\udb80\udf43", "Sign out"]
+        shutdown: ["\uf011", "Shut Down"]
+        restart: ["\uead2", "Restart"]
+        hibernate: ["\uf28e", "Hibernate"]
+        cancel: ["\udb81\udf3a", "Cancel"]
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
@@ -320,14 +329,14 @@ widgets:
       ethernet_label: "<span>{wifi_icon}</span>"
       ethernet_label_alt: "<span>{wifi_icon}</span>{ip_addr}"
       ethernet_icon: "\ueba9"
-      get_exact_wifi_strength: false  # Optional. Will require location access permission if true.
+      get_exact_wifi_strength: false # Optional. Will require location access permission if true.
       wifi_icons: [
-        "\udb82\udd2e",  # Icon for 0% strength
-        "\udb82\udd1f",  # Icon for 1-24% strength
-        "\udb82\udd22",  # Icon for 25-49% strength
-        "\udb82\udd25",  # Icon for 50-74% strength
-        "\udb82\udd28"   # Icon for 75-100% strength
-      ]
+          "\udb82\udd2e", # Icon for 0% strength
+          "\udb82\udd1f", # Icon for 1-24% strength
+          "\udb82\udd22", # Icon for 25-49% strength
+          "\udb82\udd25", # Icon for 50-74% strength
+          "\udb82\udd28", # Icon for 75-100% strength
+        ]
       menu_config:
         blur: true
         round_corners: true
@@ -337,15 +346,59 @@ widgets:
         direction: "down"
         offset_top: 6
         offset_left: 0
-        wifi_icons_secured: [
-          "\ue670",
-          "\ue671",
-          "\ue672",
-          "\ue673",
-        ]
-        wifi_icons_unsecured: [
-          "\uec3c",
-          "\uec3d",
-          "\uec3e",
-          "\uec3f",
-        ]
+        wifi_icons_secured: ["\ue670", "\ue671", "\ue672", "\ue673"]
+        wifi_icons_unsecured: ["\uec3c", "\uec3d", "\uec3e", "\uec3f"]
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      api_key: "3bf4cf9a7c3f40d6b31174128242807" # Get your free API key from https://www.weatherapi.com/
+      show_alerts: true
+      tooltip: true
+      update_interval: 600 # Update interval in seconds, Min 600 seconds
+      hide_decimal: true
+      units: "metric" # Can be 'metric' or 'imperial'
+      location: "Beijing, Beijing, CN" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      callbacks:
+        on_left: "toggle_card"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      icons:
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
+        cloudyDay: "\ue312"
+        cloudyNight: "\ue311"
+        rainyDay: "\ue308"
+        rainyNight: "\ue333"
+        snowyIcyDay: "\ue30a"
+        snowyIcyNight: "\ue335"
+        blizzardDay: "\udb83\udf36"
+        blizzardNight: "\udb83\udf36"
+        foggyDay: "\ue303"
+        foggyNight: "\ue346"
+        thunderstormDay: "\ue30f"
+        thunderstormNight: "\ue338"
+        default: "\uebaa"
+      weather_card:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "up"
+        icon_size: 64
+        show_hourly_forecast: true # Set to False to disable hourly forecast
+        time_format: "24h" # can be 12h or 24h
+        hourly_point_spacing: 76
+        hourly_icon_size: 32 # better to set 16, 32 or 64 for better quality
+        icon_smoothing: true # should be true for smoother icon or false for sharper icon if using 16, 32 or 64 for hourly_icon_size
+        temp_line_width: 2 # can be 0 to hide the temperature line
+        current_line_color: "#8EAEE8"
+        current_line_width: 1 # can be 0 to hide the current hour line
+        current_line_style: "dot"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
