@@ -1,4 +1,3 @@
-// 将键绑定放在此文件中以覆盖默认值auto[]
 [
     // 取消shift+l的默认行为
     {
@@ -242,8 +241,7 @@
         "command": "-notebook.cell.paste",
         "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
     },
-    // 采用ctrl+h和ctrl+l来切换窗口
-    // 以下两项既需要在此处设置，也需要在neovim的keymaps.lua中设置
+    // 采用ctrl+h和ctrl+l来切换窗口。以下两项既需要在此处设置，也需要在neovim的keymaps.lua中设置
     {
         "key": "ctrl+h",
         "command": "workbench.action.navigateLeft",
@@ -263,5 +261,47 @@
         "key": "ctrl+w l",
         "command": "-workbench.action.navigateRight",
         "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
-    }
+    },
+    // 单元格内代码的折叠和展开
+    {
+        "key": "alt+h",
+        "command": "editor.fold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "-editor.fold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "alt+l",
+        "command": "editor.unfold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+shift+]",
+        "command": "-editor.unfold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    // jupyter中cell的折叠和展开
+    {
+        "key": "alt+l",
+        "command": "notebook.unfold",
+        "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'"
+    },
+    {
+        "key": "ctrl+shift+oem_6",
+        "command": "-notebook.unfold",
+        "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'"
+    },
+    {
+        "key": "alt+h",
+        "command": "notebook.fold",
+        "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'"
+    },
+    {
+        "key": "ctrl+shift+oem_4",
+        "command": "-notebook.fold",
+        "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'"
+    },
 ]

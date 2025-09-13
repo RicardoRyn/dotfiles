@@ -275,6 +275,7 @@ dirs  = [
 	{ name = "Videos", text = "" },
   # 自定义
 	{ name = "python", text = "" },
+	{ name = "rust", text = "" },
 	{ name = "lua", text = "" },
 	{ name = "pycharm", text = "" },
 	{ name = "Ricardo", text = "" },

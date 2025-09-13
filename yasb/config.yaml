@@ -32,14 +32,13 @@ bars:
         [
           "glazewm_tiling_direction",
           "glazewm_workspaces",
-          "bluetooth",
-          "bin",
           "cpu",
           "gpu",
           "memory",
+          "bluetooth",
+          "bin",
+          "weather",
           "github",
-          "volume",
-          "weather"
         ]
       center: []
       right: []

@@ -83,7 +83,7 @@
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.autoFormatStrings": true,
   "python.analysis.inlayHints.callArgumentNames": "partial",
-  "python.defaultInterpreterPath": "d:\\Anaconda",
+  "python.defaultInterpreterPath": "e:\\python\\envs\\main\\python.exe",
   "python.analysis.typeCheckingMode": "basic",
   "debug.inlineValues": "off",
   "debug.enableStatusBarColor": false,
@@ -216,12 +216,13 @@
     "scminput": false
   },
   "Lingma.aI Chat.webToolsInAsk/AgentMode": "Auto-execute",
+  // html
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // misc
   "redhat.telemetry.enabled": false,
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 }
