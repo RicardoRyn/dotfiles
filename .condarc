@@ -1,0 +1,8 @@
+show_channel_urls: true
+envs_dirs:
+  - E:\vscode\jupyter_notebook_env
+  - E:\python\envs
+channel_priority: strict
+channels:
+  - conda-forge
+  - defaults
