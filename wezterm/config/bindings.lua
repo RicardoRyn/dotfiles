@@ -53,8 +53,8 @@ end
 local keys = {
   -- 通过smart-splits在panels之间移动
   split_nav('move', 'h'),
-  split_nav('move', 'j'),
-  split_nav('move', 'k'),
+  -- split_nav('move', 'j'),
+  -- split_nav('move', 'k'),
   split_nav('move', 'l'),
   split_nav("resize", "LeftArrow"),
   split_nav("resize", "DownArrow"),
