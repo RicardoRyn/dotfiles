@@ -189,6 +189,7 @@ bindsym $mod+o resize shrink height 50 px or 50 ppt
 bindsym $mod+p resize grow width 4 px or 4 ppt
 bindsym $mod+Shift+m scratchpad show
 bindsym $mod+m move scratchpad
+bindsym Print exec flameshot gui
 
 # 设置部分第三方程序为浮动窗口，可通过xprop来查看class名称
 for_window [class="AFNI"] floating enable

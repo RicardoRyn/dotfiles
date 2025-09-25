@@ -36,17 +36,15 @@ $env.config = {
   show_banner: false,  # show/hide banner
   edit_mode: vi,
   keybindings: [
-    # ctrl+v，按单词接受提示
     {
       name: Accept_HistoryHintWordComplete
       modifier: control
-      keycode: char_v
+      keycode: char_w
       mode: [ emacs, vi_insert, vi_normal ]
       event: {
         send: HistoryHintWordComplete
       }
     },
-    # ctrl+y，接受全部提示
     {
       name: Accept_HistoryHintComplete
       modifier: control
