@@ -17,9 +17,6 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
-###############################
-####### Inserted by RJX #######
-###############################
 alias ll = ls -l
 alias la = ls -a
 alias lla = ls -al
@@ -54,7 +51,7 @@ $env.config = {
   ]
 }
 $env.EDITOR = "nvim"
-$env.CONDA_NO_PROMPT = true
+$env.CONDA_NO_PROMPT = true  # 不显示conda的环境提示，由starship接管
 $env.config.shell_integration.osc133 = false  # 修复按下任何键时屏幕滚动的问题
 
 source ~/.zoxide.nu

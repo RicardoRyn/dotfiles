@@ -83,7 +83,7 @@
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.autoFormatStrings": true,
   "python.analysis.inlayHints.callArgumentNames": "partial",
-  "python.defaultInterpreterPath": "e:\\python\\envs\\main\\python.exe",
+  "python.defaultInterpreterPath": "d:\\Anaconda",
   "python.analysis.typeCheckingMode": "basic",
   "debug.inlineValues": "off",
   "debug.enableStatusBarColor": false,
