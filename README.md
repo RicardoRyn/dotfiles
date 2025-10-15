@@ -4,6 +4,8 @@
 kanata.kbd手动复制到装有kanata_gui.exe的文件夹下
 
 # 文件
+mklink "%USERPROFILE%\.zshrc" "%USERPROFILE%\dotfiles\.zshrc"
+
 mklink "%USERPROFILE%\.config\starship.toml" "%USERPROFILE%\dotfiles\starship.toml"
 
 mklink "%USERPROFILE%\AppData\Roaming\Code\User\settings.json" "%USERPROFILE%\dotfiles\code\settings.json"

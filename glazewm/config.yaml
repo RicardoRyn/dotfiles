@@ -167,6 +167,7 @@ window_rules:
       - window_process: { regex: "msrdc" }
       - window_process: { regex: "python" }
       - window_process: { regex: "pot" }
+      - window_process: { regex: "Microsoft" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -280,8 +281,8 @@ keybindings:
   #   bindings: ['alt+s']
 
   # Focus the workspace that last had focus.
-  - commands: ["focus --recent-workspace"]
-    bindings: ["alt+d"]
+  # - commands: ["focus --recent-workspace"]
+  #   bindings: ["alt+d"]
 
   # Change focus to a workspace defined in `workspaces` config.
   - commands: ["focus --workspace 1"]
