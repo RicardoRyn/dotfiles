@@ -1,0 +1,35 @@
+# 用户信息，用于标识提交者身份
+[user]
+  name = Ricardo_MI_arch
+  email = ricardoryn1317@gmail.com
+
+# Gitee 的凭据设置，使用通用方式（generic）管理凭据
+[credential "https://gitee.com"]
+  provider = generic
+
+# 初始化仓库时默认分支名为 main（而不是 master）
+[init]
+  defaultBranch = main
+
+# 设置默认编辑器为 neovim（nvim）
+[core]
+  editor = nvim
+
+# 分栏设置：自动在支持的终端中使用列式输出
+[column]
+  ui = auto
+
+# 分支列表排序：按最近提交时间倒序显示
+[branch]
+  sort = -committerdate
+
+# tag 列表排序方式：按版本号+引用名排序
+[tag]
+  sort = version:refname
+
+# diff 比较行为设置
+[diff]
+  # 使用 histogram 算法（更智能地识别改动块）
+  algorithm = histogram
+  # 不高亮移动代码块（用 plain 显示移动行）
+  colorMoved = plain

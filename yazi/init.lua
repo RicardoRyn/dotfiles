@@ -1,0 +1,12 @@
+th.git = th.git or {}
+th.git.modified_sign = "󰏭 "
+th.git.added_sign = "󰜄 "
+th.git.untracked_sign = " "
+th.git.ignored_sign = " "
+th.git.deleted_sign = "󰛲 "
+th.git.updated_sign = " "
+require("git"):setup { order = 0 }
+require("full-border"):setup()
+require("starship"):setup()
+-- cloese preview panel when start yazi
+require("toggle-pane"):entry("min-preview")

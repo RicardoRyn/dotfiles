@@ -1,0 +1,21 @@
+[mgr]
+  linemode = "size"
+
+[preview]
+  wrap = "yes"
+  sort_by = "natural"
+
+[input]
+cursor_blink = true
+
+[opener]
+edit = [
+  { run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+  { run = 'neovide "$@"', desc = "neovide", block = false, for = "unix" },
+]
+
+[plugin]
+prepend_fetchers = [
+  { id = "git", name = "*", run = "git" },
+  { id = "git", name = "*/", run = "git" },
+]

@@ -1,0 +1,95 @@
+format = """
+$conda\
+$directory\
+$git_branch\
+$git_status\
+$python\
+$rust\
+$lua\
+$fill\
+$cmd_duration\
+$line_break\
+$character
+"""
+
+add_newline = true
+palette = "catppuccin_latte"
+command_timeout = 2000
+
+[conda]
+symbol = " "         # 可选：显示一个符号，代表 conda
+format = "[$symbol$environment]($style) "  # 显示环境名
+style = 'bold green'
+
+[directory]
+style = 'bold lavender'
+format = '[$path ]($style)'
+truncation_length = 5
+truncation_symbol = '…/'
+truncate_to_repo = false
+
+[directory.substitutions]
+'Documents' = '󰈙'
+'Downloads' = ' '
+'Music' = ' '
+'Pictures' = ' '
+
+[git_branch]
+symbol = ' '
+style = 'teal'
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = 'red'
+
+[python]
+symbol = ' '
+style = 'sky'
+
+[rust]
+symbol = ' '
+style = 'maroon'
+
+[lua]
+symbol = ' '
+style = 'blue'
+
+[fill]
+symbol = ' '
+
+[cmd_duration]
+format = '[$duration]($style)'
+style = 'overlay0'
+min_time = 500
+
+[character]
+success_symbol = '[ ](bold green)'
+error_symbol = '[ ](bold red)'
+
+[palettes.catppuccin_latte]
+rosewater = "#dc8a78"
+flamingo = "#dd7878"
+pink = "#ea76cb"
+mauve = "#8839ef"
+red = "#d20f39"
+maroon = "#e64553"
+peach = "#fe640b"
+yellow = "#df8e1d"
+green = "#40a02b"
+teal = "#179299"
+sky = "#04a5e5"
+sapphire = "#209fb5"
+blue = "#1e66f5"
+lavender = "#7287fd"
+text = "#4c4f69"
+subtext1 = "#5c5f77"
+subtext0 = "#6c6f85"
+overlay2 = "#7c7f93"
+overlay1 = "#8c8fa1"
+overlay0 = "#9ca0b0"
+surface2 = "#acb0be"
+surface1 = "#bcc0cc"
+surface0 = "#ccd0da"
+base = "#eff1f5"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
