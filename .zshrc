@@ -2,6 +2,7 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -37,3 +38,11 @@ alias y='yazi'
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# if [ -f '/d/Anaconda/Scripts/conda.exe' ]; then
+#    # eval "$('/d/Anaconda/Scripts/conda.exe' 'shell.zsh' 'hook')"
+#    eval "$('/d/Anaconda/Scripts/conda.exe' 'shell.zsh' 'hook' | sed -e 's/"$CONDA_EXE" $_CE_M $_CE_CONDA "$@"/"$CONDA_EXE" $_CE_M $_CE_CONDA "$@" | tr -d \x27\\r\x27/g' | sed -e 's/"$CONDA_EXE" "$@"/"$CONDA_EXE" "$@" | tr -d \x27\\r\x27/g')"
+# fi
+# # <<< conda initialize <<<

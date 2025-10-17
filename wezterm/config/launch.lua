@@ -6,13 +6,13 @@ local options = {
 }
 
 if platform.is_win then -- 如果是windows系统
-  options.default_prog = { "bash" }
+  options.default_prog = { "nu" }
   options.launch_menu = {
+    { label = "NuShell", args = { "nu" } },
     {
       label = "Git Bash",
       args = { "D:\\Git\\Git\\bin\\bash.exe", "-l" },
     },
-    { label = "NuShell", args = { "nu" } },
     { label = "PowerShell", args = { "powershell" } },
     { label = "Command Prompt", args = { "cmd" } },
     --   { label = 'Msys2', args = { 'ucrt64.cmd' } },
