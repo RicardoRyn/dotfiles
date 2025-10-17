@@ -1,0 +1,14 @@
+# Rime user dictionary
+#@/db_name	luna_pinyin
+#@/db_type	userdb
+#@/rime_version	1.12.0
+#@/tick	8
+#@/user_id	75e113b6-15e1-4610-862b-e87c7177b302
+dai 	帶	c=1 d=0.995012 t=8
+dai yi zhi 	代議制	c=1 d=0.99005 t=8
+de 	的	c=1 d=0.970446 t=8
+gei 	給	c=1 d=0.980199 t=8
+hen hen 	狠狠	c=1 d=0.965605 t=8
+ni jie 	你姐	c=1 d=0.985112 t=8
+shu ru fa 	輸入法	c=1 d=0.97531 t=8
+yi zhi 	一隻	c=1 d=1 t=8
