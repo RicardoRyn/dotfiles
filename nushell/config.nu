@@ -36,3 +36,4 @@ $env.EDITOR = "nvim"
 source ~/.zoxide.nu
 use ~/.config/nushell/virtual_environments/nu_conda_2/conda.nu
 use ~/.config/nushell/completions-jj.nu *
+source $"($nu.home-path)/.cargo/env.nu"

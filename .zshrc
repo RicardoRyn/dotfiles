@@ -32,7 +32,7 @@ alias y='yazi'
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-# . "$HOME/.local/bin/env"
+. "$HOME/.local/bin/env"
 
 # node.js 和 npm
 export NVM_DIR="$HOME/.nvm"
