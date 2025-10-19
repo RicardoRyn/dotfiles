@@ -17,6 +17,12 @@
     },
     "modules": [
         "title",
+        "break",
+        {
+            "type": "colors",
+            "key": " COLORS",
+            "symbol": "circle"
+        },
         "separator",
         {
             "type": "os",
@@ -112,7 +118,6 @@
             "key": "└󰅐",
             "keyColor": "green"
         },
-
         "break",
         {
             "type": "sound",
@@ -128,13 +133,6 @@
             "type": "media",
             "key": "└󰝚",
             "keyColor": "cyan"
-        },
-
-        "break",
-        {
-            "type": "colors",
-            "key": " COLORS",
-            "symbol": "circle"
         },
     ]
 }
