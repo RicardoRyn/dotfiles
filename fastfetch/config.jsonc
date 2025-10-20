@@ -17,7 +17,6 @@
     },
     "modules": [
         "title",
-        "break",
         {
             "type": "colors",
             "key": " COLORS",
@@ -57,18 +56,13 @@
             "keyColor": "blue"
         },
         {
-            "type": "wmtheme",
+            "type": "theme",
             "key": "├󰉼",
             "keyColor": "blue"
         },
         {
             "type": "icons",
             "key": "├󰀻",
-            "keyColor": "blue"
-        },
-        {
-            "type": "wallpaper",
-            "key": "├󰸉",
             "keyColor": "blue"
         },
         {
