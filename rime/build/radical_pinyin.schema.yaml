@@ -8,8 +8,8 @@ __build_info:
     punctuation: 1758176996
     punctuation.custom: 0
     radical_pinyin.custom: 0
-    radical_pinyin.schema: 1760444380
-    rime_ice_suggestion: 1760444380
+    radical_pinyin.schema: 1760906032
+    rime_ice_suggestion: 1760906032
     rime_ice_suggestion.custom: 0
 algebra_abc:
   - "xform/^zh/<a>/"

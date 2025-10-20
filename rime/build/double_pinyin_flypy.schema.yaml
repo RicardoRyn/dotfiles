@@ -4,14 +4,14 @@ __build_info:
     default: 1758176996
     default.custom: 1760703026
     double_pinyin_flypy.custom: 0
-    double_pinyin_flypy.schema: 1760444380
+    double_pinyin_flypy.schema: 1760906032
     key_bindings: 1758176996
     key_bindings.custom: 0
     punctuation: 1758176996
     punctuation.custom: 0
-    rime_ice_suggestion: 1760444380
+    rime_ice_suggestion: 1760906032
     rime_ice_suggestion.custom: 0
-    symbols_caps_v: 1760444380
+    symbols_caps_v: 1760906032
     symbols_caps_v.custom: 0
 cn_en:
   comment_format:
