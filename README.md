@@ -23,6 +23,10 @@ ln -s ~/dotfiles/yazi ~/.config/yazi
 ln -s ~/dotfiles/lazygit ~/.config/lazygit
 ln -s ~/dotfiles/gtk-3.0 ~/.config/gtk-3.0
 ln -s ~/dotfiles/gtk-4.0 ~/.config/gtk-4.0
+ln -s ~/dotfiles/qt5ct ~/.config/qt5ct
+ln -s ~/dotfiles/qt6ct ~/.config/qt6ct
+ln -s ~/dotfiles/DankMaterialShell ~/.config/DankMaterialShell
 
 ln -s ~/dotfiles/rime ~/.local/share/fcitx5/rime
 ```
+

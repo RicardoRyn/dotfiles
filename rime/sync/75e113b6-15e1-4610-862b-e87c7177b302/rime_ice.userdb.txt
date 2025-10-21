@@ -447,7 +447,7 @@ jie shou 	接受	c=1 d=0.451581 t=3598
 jie shu 	结束	c=1 d=0.271173 t=3598
 jie tu 	截图	c=1 d=0.847894 t=3598
 jie wei 	结尾	c=1 d=0.771052 t=3598
-jie xia 	接下	c=1 d=1 t=3592
+jie xia 	接下	c=1 d=0.970446 t=3598
 jie xia lai 	接下来	c=2 d=1.03557 t=3598
 jie ya 	解压	c=1 d=0.790571 t=3598
 jin 	进	c=0 d=0.0690734 t=3598
@@ -516,7 +516,7 @@ kuai su da yi duan zi 	快速打一段子	c=1 d=0.970446 t=3598
 kuai su da yi duan zi mu 	快速打一段字母	c=1 d=0.951229 t=3598
 kuai zhao 	快照	c=1 d=0.362402 t=3598
 kuo hao 	括号	c=1 d=0.798516 t=3598
-la 	啦	c=1 d=1 t=3593
+la 	啦	c=1 d=0.97531 t=3598
 lai 	来	c=8 d=3.1691 t=3598
 lan de 	懒得	c=0 d=0.0744532 t=3598
 lao 	佬	c=1 d=0.88692 t=3598
@@ -807,7 +807,7 @@ shi zhe yang 	是这样	c=1 d=0.970446 t=3598
 shi zheng 	时政	c=0 d=0.0733447 t=3598
 shi zheng de 	时政的	c=1 d=0.737123 t=3598
 shou dong 	手动	c=1 d=0.955997 t=3598
-shu biao 	鼠标	c=1 d=1 t=3597
+shu biao 	鼠标	c=1 d=0.995012 t=3598
 shu chu 	输出	c=0 d=0.0891366 t=3598
 shu ru 	输入	c=6 d=3.53521 t=3598
 shu ru fa 	输入法	c=7 d=2.40353 t=3598
