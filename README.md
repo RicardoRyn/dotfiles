@@ -21,5 +21,8 @@ ln -s ~/dotfiles/niri ~/.config/niri
 ln -s ~/dotfiles/nushell ~/.config/nushell
 ln -s ~/dotfiles/yazi ~/.config/yazi
 ln -s ~/dotfiles/lazygit ~/.config/lazygit
+ln -s ~/dotfiles/gtk-3.0 ~/.config/gtk-3.0
+ln -s ~/dotfiles/gtk-4.0 ~/.config/gtk-4.0
+
 ln -s ~/dotfiles/rime ~/.local/share/fcitx5/rime
 ```
