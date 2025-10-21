@@ -1,0 +1,176 @@
+// Load with --load-config examples/2.jsonc
+// Note that you must replace the image path to an existing image to display it.
+
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    // "type": "kitty",
+    // "source": "/home/ricardo/.config/fastfetch/png/nyarch.png",
+    "width": 30,
+    "height": 15,
+    "padding": {
+      "top": 2
+    }
+  },
+  "display": {
+    "separator": " -> "
+  },
+  "modules": [
+    "title",
+    "separator",
+    {
+      "type": "os",
+      "key": " OS", // Just get your distro's logo off nerdfonts.com
+      "keyColor": "yellow",
+    },
+    {
+      "type": "kernel",
+      "key": "├ kernel",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "packages",
+      "key": "├󰏖 packages",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "shell",
+      "key": "├ shell",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "uptime",
+      "key": "└󰅐 uptime",
+      "keyColor": "yellow"
+    },
+    "break",
+    {
+      "type": "wm",
+      "key": " WM",
+      "keyColor": "blue"
+    },
+    {
+      "type": "de",
+      "key": "├󰧨 de",
+      "keyColor": "blue"
+    },
+    {
+      "type": "lm",
+      "key": "├󰧨 lm",
+      "keyColor": "blue"
+    },
+    {
+      "type": "wmtheme",
+      "key": "├󰉼 wmtheme",
+      "keyColor": "blue"
+    },
+    {
+      "type": "theme",
+      "key": "├󰉼 theme",
+      "keyColor": "blue"
+    },
+    {
+      "type": "icons",
+      "key": "├󰀻 icons",
+      "keyColor": "blue"
+    },
+    {
+      "type": "font",
+      "key": "├ font",
+      "keyColor": "blue"
+    },
+    {
+      "type": "cursor",
+      "key": "├󰳽 cursor",
+      "keyColor": "blue"
+    },
+    {
+      "type": "editor",
+      "key": "├ editor",
+      "keyColor": "blue"
+    },
+    {
+      "type": "terminalfont",
+      "key": "├ terminalfont",
+      "keyColor": "blue"
+    },
+    {
+      "type": "terminalsize",
+      "key": "├ terminalsize",
+      "keyColor": "blue"
+    },
+    {
+      "type": "terminaltheme",
+      "key": "├ terminaltheme",
+      "keyColor": "blue"
+    },
+    {
+      "type": "terminal",
+      "key": "└ terminal",
+      "keyColor": "blue"
+    },
+    "break",
+    {
+      "type": "host",
+      "key": "󰌢 HOST",
+      "keyColor": "green"
+    },
+    {
+      "type": "cpu",
+      "key": "├󰻠 cpu",
+      "keyColor": "green"
+    },
+    {
+      "type": "gpu",
+      "key": "├󰍛 gpu",
+      "keyColor": "green"
+    },
+    {
+      "type": "memory",
+      "key": "├󰑭 mem",
+      "keyColor": "green"
+    },
+    {
+      "type": "disk",
+      "key": "├ disk",
+      "keyColor": "green"
+    },
+    {
+      "type": "display",
+      "key": "├󰍹 display",
+      "keyColor": "green"
+    },
+    {
+      "type": "swap",
+      "key": "└󰓡 swap",
+      "keyColor": "green"
+    },
+    "break",
+    {
+      "type": "sound",
+      "key": " SOUND",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "player",
+      "key": "├󰥠 player",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "media",
+      "key": "└󰝚 media",
+      "keyColor": "cyan"
+    },
+    "separator",
+    {
+      "type": "custom",
+      "key": " ",
+      "format": "{#91}{#} {#92}C{#}{#93}O{#}{#94}L{#}{#95}O{#}{#96}U{#}{#97}R{#}{#90}S{#}",
+    },
+    {
+      "type": "custom",
+      "format": "{#31}●{#}  {#32}●{#}  {#33}●{#}  {#34}●{#}  {#35}●{#}  {#36}●{#}  {#37}●{#}  {#30}●{#}  {#91}●{#}  {#92}●{#}  {#93}●{#}  {#94}●{#}  {#95}●{#}  {#96}●{#}  {#97}●{#}  {#90}●{#}"
+    },
+  ]
+}
+
