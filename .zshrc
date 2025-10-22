@@ -11,6 +11,11 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# 私人环境变量
+if [ -f "$HOME/.zsh_private" ]; then
+  source "$HOME/.zsh_private"
+fi
+
 ZVM_INIT_MODE=sourcing
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
