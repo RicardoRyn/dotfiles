@@ -3,9 +3,9 @@ patch:
   __include: rime_ice_suggestion:/
   # 以下根据自己所需自行定义
   __patch:
-    menu/page_size: 5   #候选词个数
-
-    # 句号逗号切换翻页
+    schema_list:
+      - schema: rime_ice
+    menu/page_size: 5
     key_binder:
       bindings:
         - when: composing
@@ -14,3 +14,11 @@ patch:
         - when: composing
           accept: "."
           send: Page_Down
+    ascii_composer:
+      good_old_caps_lock: true
+      switch_key:
+        Caps_Lock: clear
+        Control_L: noop
+        Control_R: noop
+        Shift_L: noop
+        Shift_R: noop

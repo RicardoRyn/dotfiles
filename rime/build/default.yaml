@@ -1,8 +1,8 @@
 __build_info:
-  rime_version: 1.12.0
+  rime_version: 1.14.0
   timestamps:
     default: 1758176996
-    default.custom: 1760703026
+    default.custom: 1761141552
     key_bindings: 1758176996
     key_bindings.custom: 0
     punctuation: 1758176996
@@ -15,7 +15,7 @@ ascii_composer:
     Caps_Lock: clear
     Control_L: noop
     Control_R: noop
-    Shift_L: commit_code
+    Shift_L: noop
     Shift_R: noop
 config_version: "2025-02-24"
 key_binder:
@@ -100,13 +100,6 @@ recognizer:
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
 schema_list:
   - schema: rime_ice
-  - schema: double_pinyin
-  - schema: double_pinyin_abc
-  - schema: double_pinyin_mspy
-  - schema: double_pinyin_sogou
-  - schema: double_pinyin_flypy
-  - schema: double_pinyin_ziguang
-  - schema: double_pinyin_jiajia
 switcher:
   abbreviate_options: true
   caption: "「方案选单」"
