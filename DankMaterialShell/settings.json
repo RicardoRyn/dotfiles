@@ -82,13 +82,14 @@
   "showWorkspacePadding": false,
   "showWorkspaceApps": false,
   "maxWorkspaceIcons": 3,
-  "workspacesPerMonitor": true,
+  "workspacesPerMonitor": false,
   "workspaceNameIcons": {},
   "waveProgressEnabled": true,
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
   "runningAppsCompactMode": true,
   "runningAppsCurrentWorkspace": false,
+  "runningAppsGroupByApp": false,
   "clockDateFormat": "",
   "lockDateFormat": "",
   "mediaSize": 1,
@@ -97,8 +98,14 @@
       "id": "launcherButton",
       "enabled": true
     },
-    "workspaceSwitcher",
-    "focusedWindow"
+    {
+      "id": "workspaceSwitcher",
+      "enabled": true
+    },
+    {
+      "id": "focusedWindow",
+      "enabled": true
+    }
   ],
   "dankBarCenterWidgets": [
     "music",
@@ -131,7 +138,7 @@
   "spotlightModalViewMode": "list",
   "sortAppsAlphabetically": false,
   "networkPreference": "wifi",
-  "iconTheme": "System Default",
+  "iconTheme": "breeze",
   "launcherLogoMode": "apps",
   "launcherLogoCustomPath": "",
   "launcherLogoColorOverride": "primary",
@@ -143,7 +150,7 @@
   "monoFontFamily": "Maple Mono NF CN ExtraLight",
   "fontWeight": 200,
   "fontScale": 1.2000000000000002,
-  "dankBarFontScale": 1,
+  "dankBarFontScale": 1.0000000000000004,
   "notepadUseMonospace": true,
   "notepadFontFamily": "",
   "notepadFontSize": 14,
@@ -151,7 +158,7 @@
   "notepadTransparencyOverride": -1,
   "notepadLastCustomTransparency": 0.7,
   "soundsEnabled": true,
-  "useSystemSoundTheme": true,
+  "useSystemSoundTheme": false,
   "soundNewNotification": true,
   "soundVolumeChanged": true,
   "soundPluggedIn": true,
@@ -162,10 +169,11 @@
   "dockAutoHide": true,
   "dockGroupByApp": true,
   "dockOpenOnOverview": false,
-  "dockPosition": 0,
+  "dockPosition": 1,
   "dockSpacing": 4,
   "dockBottomGap": 0,
   "dockIconSize": 40,
+  "dockIndicatorStyle": "circle",
   "cornerRadius": 12,
   "notificationOverlayEnabled": false,
   "dankBarAutoHide": false,
@@ -190,6 +198,7 @@
   "hideBrightnessSlider": false,
   "widgetBackgroundColor": "sth",
   "surfaceBase": "sc",
+  "wallpaperFillMode": "Fill",
   "notificationTimeoutLow": 5000,
   "notificationTimeoutNormal": 5000,
   "notificationTimeoutCritical": 0,
@@ -206,7 +215,9 @@
   "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
   "screenPreferences": {},
+  "showOnLastDisplay": {},
   "animationSpeed": 3,
+  "customAnimationDuration": 500,
   "acMonitorTimeout": 0,
   "acLockTimeout": 0,
   "acSuspendTimeout": 0,
@@ -218,5 +229,6 @@
   "lockBeforeSuspend": false,
   "loginctlLockIntegration": true,
   "launchPrefix": "",
+  "brightnessDevicePins": {},
   "configVersion": 1
 }
