@@ -86,7 +86,7 @@
   "workspaceNameIcons": {},
   "waveProgressEnabled": true,
   "clockCompactMode": false,
-  "focusedWindowCompactMode": false,
+  "focusedWindowCompactMode": true,
   "runningAppsCompactMode": true,
   "runningAppsCurrentWorkspace": false,
   "runningAppsGroupByApp": false,

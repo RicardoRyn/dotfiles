@@ -17,7 +17,8 @@
   },
   "modules": [
     "title",
-    "separator",
+    // "separator",
+    "break",
     {
       "type": "os",
       "key": " OS",
@@ -151,7 +152,7 @@
       "key": "└󰝚 media",
       "keyColor": "cyan"
     },
-    "separator",
+    "break",
     {
       "type": "custom",
       "key": " ",
