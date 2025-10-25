@@ -442,4 +442,15 @@ binds {
     // === System Controls ===
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Ctrl+P { power-off-monitors; }
+    // === 自定义 ===
+    Ctrl+Shift+M { spawn "curl" "127.0.0.1:60828/selection_translate"; }
+    Ctrl+Shift+P { spawn "curl" "127.0.0.1:60828/"; }
+    Ctrl+Shift+L { spawn "curl" "127.0.0.1:60828/ocr_translate"; }
+}
+// === 自定义 ===
+window-rule {
+    match app-id=r#"^pot$"#
+    open-floating true
+    default-column-width { fixed 1000; }
+    default-window-height { fixed 700; }
 }
