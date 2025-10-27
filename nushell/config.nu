@@ -23,7 +23,7 @@ alias lla = ls -al
 alias vim = nvim
 alias vide = neovide
 alias y = yazi
-alias lg = lazygit
+# alias lg = lazygit
 alias lj = lazyjj
 
 $env.config = {
