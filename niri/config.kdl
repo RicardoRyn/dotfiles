@@ -161,7 +161,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
+        width 3
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -276,10 +276,10 @@ spawn-at-startup "waybar"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
-// hotkey-overlay {
-//     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-//     // skip-at-startup
-// }
+hotkey-overlay {
+    // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
+    skip-at-startup
+}
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -543,15 +543,18 @@ debug {
     honor-xdg-activation-with-invalid-serial
 }
 
-spawn-at-startup "qs" "-c" "noctalia-shell"
-
-// === 自定义 ===
 gestures {
     hot-corners {
         off
     }
 }
 
+spawn-at-startup "qs" "-c" "noctalia-shell"
+
+spawn-at-startup "fcitx5"
+spawn-at-startup "pot"
+
+// pot
 window-rule {
     match app-id=r#"^pot$"#
     open-floating true
