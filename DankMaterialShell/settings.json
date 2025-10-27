@@ -199,7 +199,7 @@
   "widgetBackgroundColor": "sth",
   "surfaceBase": "sc",
   "wallpaperFillMode": "Fill",
-  "blurredWallpaperLayer": true,
+  "blurredWallpaperLayer": false,
   "blurWallpaperOnOverview": false,
   "notificationTimeoutLow": 3000,
   "notificationTimeoutNormal": 5000,
