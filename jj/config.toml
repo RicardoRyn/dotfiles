@@ -4,5 +4,13 @@
 name = "Ricardo"
 email = "ricardoryn1317@gmail.com"
 
+[lazyjj]
+highlight-color = "#dce0e8"
+
 [ui]
 editor = "nvim"
+paginate = "auto"
+default-command = "log"
+
+[git]
+private-commits = '''description(glob:'WIP:*')''' # 以“WIP:”开头的为私有提交
