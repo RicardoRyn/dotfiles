@@ -2,8 +2,8 @@ format = """
 $conda\
 $directory\
 ${custom.jj}\
-$git_branch\
-$git_status\
+${custom.git_branch}\
+${custom.git_status}\
 $python\
 $rust\
 $lua\
@@ -35,14 +35,6 @@ truncate_to_repo = false
 'Downloads' = ' '
 'Music' = ' '
 'Pictures' = ' '
-
-[git_branch]
-symbol = ' '
-style = 'teal'
-
-[git_status]
-format = '([$all_status$ahead_behind]($style) )'
-style = 'pink'
 
 [python]
 symbol = ' '
@@ -108,7 +100,7 @@ crust = "#dce0e8"
 [custom.jj]
 description = "The current jj status"
 when = "jj --ignore-working-copy root"
-symbol = " "
+symbol = " "
 command = '''
 jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 --template '
   separate(" ",
@@ -129,3 +121,28 @@ jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 -
   )
 '
 '''
+
+[git_branch]
+disabled = true
+symbol = ' '
+style = 'teal'
+
+[custom.git_branch]
+description = "Only show git_branch if we're not in a jj repo"
+when = "! jj --ignore-working-copy root"
+command = "starship module git_branch"
+symbol = ' '
+style = 'teal'
+os = 'windows'
+
+[git_status]
+disabled = true
+format = '([$all_status$ahead_behind]($style) )'
+style = 'pink'
+
+[custom.git_status]
+description = "Only show git_status if we're not in a jj repo"
+when = "! jj --ignore-working-copy root"
+command = "starship module git_status"
+format = '([$all_status$ahead_behind]($style) )'
+style = 'pink'
