@@ -374,6 +374,7 @@ binds {
     Mod+Shift+Minus hotkey-overlay-title="Power Menu" { 
       spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; 
     }
+    Mod+Shift+C { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "calculator"; }
 
     // === Security ===
     Mod+Super+L hotkey-overlay-title="Lock Screen" { 
@@ -531,7 +532,22 @@ binds {
     Ctrl+Shift+P { spawn "curl" "127.0.0.1:60828/"; }
     Ctrl+Shift+L { spawn "curl" "127.0.0.1:60828/ocr_translate"; }
 }
+// 左上角不触发overview
+gestures {
+    hot-corners {
+        off
+    }
+}
 
+// pot
+window-rule {
+    match app-id=r#"^pot$"#
+    open-floating true
+    default-column-width { fixed 1000; }
+    default-window-height { fixed 700; }
+}
+
+// noctalia-shell
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
@@ -546,21 +562,4 @@ debug {
     honor-xdg-activation-with-invalid-serial
 }
 
-gestures {
-    hot-corners {
-        off
-    }
-}
-
 spawn-at-startup "qs" "-c" "noctalia-shell"
-
-spawn-at-startup "fcitx5"
-spawn-at-startup "pot"
-
-// pot
-window-rule {
-    match app-id=r#"^pot$"#
-    open-floating true
-    default-column-width { fixed 1000; }
-    default-window-height { fixed 700; }
-}
