@@ -1,16 +1,17 @@
 format = """
+[╭─](bold green) $os\
 $conda\
 $directory\
-$git_branch\
+${custom.git_branch}\
 $git_status\
+${custom.jj}\
 $python\
 $rust\
 $lua\
 $fill\
 $cmd_duration\
 $line_break\
-$os\
-$character
+[╰─](bold green)$character
 """
 
 add_newline = true
@@ -34,14 +35,6 @@ truncate_to_repo = false
 'Downloads' = ' '
 'Music' = ' '
 'Pictures' = ' '
-
-[git_branch]
-symbol = ' '
-style = 'teal'
-
-[git_status]
-format = '([$all_status$ahead_behind]($style) )'
-style = 'pink'
 
 [python]
 symbol = ' '
@@ -103,3 +96,43 @@ surface0 = "#ccd0da"
 base = "#eff1f5"
 mantle = "#e6e9ef"
 crust = "#dce0e8"
+
+[custom.jj]
+description = "The current jj status"
+when = "jj --ignore-working-copy root"
+symbol = " "
+command = '''
+jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 --template '
+  separate(" ",
+    change_id.shortest(4),
+    bookmarks,
+    "|",
+    concat(
+      if(conflict, "💥"),
+      if(divergent, "🚧"),
+      if(hidden, "👻"),
+      if(immutable, "🔒"),
+    ),
+    raw_escape_sequence("\x1b[1;32m") ++ if(empty, "(empty)"),
+    raw_escape_sequence("\x1b[1;32m") ++ coalesce(
+      truncate_end(29, description.first_line(), "…"),
+      "(no description set)",
+    ) ++ raw_escape_sequence("\x1b[0m"),
+  )
+'
+'''
+
+[git_branch]
+disabled = true
+symbol = ' '
+style = 'teal'
+
+[custom.git_branch]
+description = "Only show git_branch if we're not in a jj repo"
+when = "! jj --ignore-working-copy root"
+command = "starship module git_branch"
+
+[git_status]
+# disabled = true
+format = '([$all_status$ahead_behind]($style) )'
+style = 'red'
