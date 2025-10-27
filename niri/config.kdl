@@ -368,6 +368,9 @@ binds {
     Mod+N hotkey-overlay-title="Notification Center" { 
       spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "toggleHistory"; 
     }
+    Mod+Shift+N hotkey-overlay-title="Notification Center" { 
+      spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "clear"; 
+    }
     Mod+Shift+Minus hotkey-overlay-title="Power Menu" { 
       spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; 
     }
