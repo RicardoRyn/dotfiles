@@ -33,7 +33,7 @@ $env.config = {
     {
       name: Accept_HistoryHintWordComplete
       modifier: control
-      keycode: char_v
+      keycode: char_w
       mode: [ emacs, vi_insert, vi_normal ]
       event: {
         send: HistoryHintWordComplete
