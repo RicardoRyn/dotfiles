@@ -11,6 +11,8 @@ ln -s ~/dotfiles/locale.conf ~/.config/locale.conf
 ln -s ~/dotfiles/user-dirs.dirs ~/.config/user-dirs.dirs
 ln -s ~/dotfiles/user-dirs.locale ~/.config/user-dirs.locale
 
+ln -s ~/dotfiles/default.custom.yaml ~/.local/share/fcitx5/rime/default.custom.yaml
+
 # 文件夹
 ln -s ~/dotfiles/kitty ~/.config/kitty
 ln -s ~/dotfiles/environment.d ~/.config/environment.d
