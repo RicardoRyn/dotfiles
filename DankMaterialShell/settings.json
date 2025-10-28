@@ -1,7 +1,7 @@
 {
   "currentThemeName": "dynamic",
   "customThemeFile": "",
-  "matugenScheme": "scheme-rainbow",
+  "matugenScheme": "scheme-tonal-spot",
   "runUserMatugenTemplates": true,
   "dankBarTransparency": 1,
   "dankBarWidgetTransparency": 1,
@@ -85,7 +85,7 @@
   "workspacesPerMonitor": false,
   "workspaceNameIcons": {},
   "waveProgressEnabled": true,
-  "clockCompactMode": false,
+  "clockCompactMode": true,
   "focusedWindowCompactMode": true,
   "runningAppsCompactMode": true,
   "runningAppsCurrentWorkspace": false,
@@ -108,17 +108,27 @@
     }
   ],
   "dankBarCenterWidgets": [
-    "music",
-    "clock",
-    "weather"
+    {
+      "id": "music",
+      "enabled": true
+    },
+    {
+      "id": "cpuUsage",
+      "enabled": true,
+      "minimumWidth": true
+    },
+    {
+      "id": "clock",
+      "enabled": true
+    },
+    {
+      "id": "weather",
+      "enabled": true
+    }
   ],
   "dankBarRightWidgets": [
     {
       "id": "notificationButton",
-      "enabled": true
-    },
-    {
-      "id": "colorPicker",
       "enabled": true
     },
     {
@@ -200,7 +210,7 @@
   "surfaceBase": "sc",
   "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
-  "blurWallpaperOnOverview": false,
+  "blurWallpaperOnOverview": true,
   "notificationTimeoutLow": 3000,
   "notificationTimeoutNormal": 5000,
   "notificationTimeoutCritical": 0,
@@ -213,8 +223,8 @@
   "customPowerActionHibernate": "",
   "customPowerActionReboot": "",
   "customPowerActionPowerOff": "",
-  "updaterUseCustomCommand": false,
-  "updaterCustomCommand": "",
+  "updaterUseCustomCommand": true,
+  "updaterCustomCommand": "paru -Syu",
   "updaterTerminalAdditionalParams": "",
   "screenPreferences": {},
   "showOnLastDisplay": {},
