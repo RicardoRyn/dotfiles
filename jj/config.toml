@@ -5,7 +5,7 @@ name = "Ricardo"
 email = "ricardoryn1317@gmail.com"
 
 [lazyjj]
-highlight-color = "#dce0e8"
+highlight-color = "#cccccc"
 
 [ui]
 editor = "nvim"
