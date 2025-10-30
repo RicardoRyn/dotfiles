@@ -328,16 +328,16 @@ binds {
     Mod+T { toggle-column-tabbed-display; }
     
     // === Focus Navigation ===
-    Mod+H     { focus-column-left; }
-    Mod+Shift+U     { focus-window-down; }
-    Mod+Shift+I     { focus-window-up; }
-    Mod+L     { focus-column-right; }
+    Mod+H            { focus-column-left; }
+    Mod+BracketLeft  { focus-window-down; }
+    Mod+BracketRight { focus-window-up; }
+    Mod+L            { focus-column-right; }
     
     // === Window Movement ===
-    Mod+Shift+H     { move-column-left; }
-    Ctrl+Shift+J     { move-window-down; }
-    Ctrl+Shift+K     { move-window-up; }
-    Mod+Shift+L     { move-column-right; }
+    Mod+Shift+H            { move-column-left; }
+    Mod+Shift+BracketLeft  { move-window-down; }
+    Mod+Shift+BracketRight { move-window-up; }
+    Mod+Shift+L            { move-column-right; }
     
     // === Column Navigation ===
     Mod+Home { focus-column-first; }
@@ -416,7 +416,6 @@ binds {
     // === Column Management ===
     Mod+Comma  { consume-or-expel-window-left; }
     Mod+Period { consume-or-expel-window-right; }
-    Mod+BracketLeft{ expel-window-from-column; }
     
     // === Sizing & Layout ===
     Mod+R { switch-preset-column-width; }
