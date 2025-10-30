@@ -14,6 +14,7 @@
 # 设置默认编辑器为 neovim（nvim）
 [core]
   editor = nvim
+  pager = delta
 
 # 分栏设置：自动在支持的终端中使用列式输出
 [column]
@@ -33,3 +34,13 @@
   algorithm = histogram
   # 不高亮移动代码块（用 plain 显示移动行）
   colorMoved = plain
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  line-numbers = true
+
+[merge]
+  conflictStyle = zdiff3
