@@ -32,7 +32,7 @@ alias lla='ls -la'
 alias vim='nvim'
 alias vide='neovide'
 alias lg='lazygit'
-alias lj='lazyjj'
+alias lj='lazyjj -r ::'
 alias y='yazi'
 
 eval "$(zoxide init zsh)"
