@@ -9,7 +9,7 @@ highlight-color = "#cccccc"
 
 [ui]
 editor = "nvim"
-paginate = "auto"
+paginate = "never"
 default-command = "log"
 
 [git]
