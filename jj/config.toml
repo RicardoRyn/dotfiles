@@ -4,14 +4,13 @@
 name = "Ricardo_T8"
 email = "ricardoryn1317@gmail.com"
 
-[lazyjj]
-highlight-color = "#dce0e8"
-
 [ui]
-diff-editor = ":builtin"
-pager = ["D:\\Git\\Git\\usr\\bin\\less.exe", "-FRX"]
-paginate = "auto"
 default-command = "log"
+editor = "nvim"
+paginate = "never"
+
+[lazyjj]
+highlight-color = "#cccccc"
 
 [git]
-private-commits = '''description(glob:'private:*')'''
+private-commits = '''description(glob:'WIP:*')'''

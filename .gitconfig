@@ -14,11 +14,7 @@
 # 设置默认编辑器为 neovim（nvim）
 [core]
   editor = nvim
-
-# 自定义命令别名
-[alias]
-  # `git ac "msg"` = add all + commit with message
-  ac = "!f() { git add . && git commit -m \"$1\"; }; f"
+  pager = delta
 
 # 标记为“安全”的仓库目录，避免 Git 报 unsafe repository 错
 [safe]
@@ -29,10 +25,6 @@
 
 [safe]
   directory = E:/jupyter_notebook/jupyter_notebook_code
-
-# # Git 凭据助手设置为 store，会以明文保存在磁盘（~/.git-credentials）
-# [credential]
-#   helper = store
 
 # 分栏设置：自动在支持的终端中使用列式输出
 [column]
@@ -52,3 +44,14 @@
   algorithm = histogram
   # 不高亮移动代码块（用 plain 显示移动行）
   colorMoved = plain
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  line-numbers = true
+  light = true      # or light = true, or omit for auto-detection
+
+[merge]
+  conflictStyle = zdiff3

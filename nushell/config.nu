@@ -24,7 +24,7 @@ alias vim = nvim
 alias vide = neovide
 alias y = yazi
 # alias lg = lazygit
-alias lj = lazyjj
+alias lj = lazyjj -r ::@
 
 $env.config = {
   show_banner: false,

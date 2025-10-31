@@ -33,7 +33,6 @@ bars:
           "glazewm_tiling_direction",
           "glazewm_workspaces",
           "bin",
-          "github",
           "taskbar",
         ]
       center: []

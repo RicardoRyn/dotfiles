@@ -65,7 +65,7 @@ local keys = {
   { key = "Enter", mods = "CTRL", action = wezterm.action.SendString("\x1b[13;5u") },
 
   -- misc/useful --
-  { key = "c", mods = "LEADER", action = "ActivateCopyMode" },
+  { key = "h", mods = "CTRL|SHIFT", action = "ActivateCopyMode" },
   { key = "F2", mods = "NONE", action = act.ShowLauncher },
   -- { key = "F3", mods = "NONE", action = act.ActivateCommandPalette },
   -- { key = "F4", mods = "NONE", action = act.ShowLauncherArgs({ flags = "FUZZY|TABS" }) },
