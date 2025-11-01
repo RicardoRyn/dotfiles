@@ -37,7 +37,6 @@ config-notification {
     position x=1280 y=0
 }
 
-
 gestures {
     hot-corners {
         off
@@ -121,7 +120,7 @@ layout {
         urgent-color   "#cc4444"      // Softer red
     }
     focus-ring {
-        width 2
+        width 0
         active-color   "#808080"      // Medium gray
         inactive-color "#505050"      // Dark gray
     }
@@ -239,7 +238,7 @@ window-rule {
     match app-id="kitty"
     draw-border-with-background false
 }
-window-rule { 
+window-rule {
     match is-active=false
     opacity 0.9
 }
@@ -248,7 +247,7 @@ window-rule {
     match app-id="zoom"
     open-floating true
 }
-window-rule {
+window-rule { 
     geometry-corner-radius 12
     clip-to-geometry true
 }
@@ -318,7 +317,7 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true {
        spawn "dms" "ipc" "call" "brightness" "decrement" "5" "";
     }  
-    
+
     // === Window Management ===
     Mod+Shift+Q repeat=false { close-window; }
     Mod+F { maximize-column; }
