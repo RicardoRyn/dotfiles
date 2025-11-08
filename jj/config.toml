@@ -7,10 +7,12 @@ email = "ricardoryn1317@gmail.com"
 [ui]
 default-command = "log"
 editor = "nvim"
-paginate = "never"
-
-[lazyjj]
-highlight-color = "#cccccc"
+pager = ["delta", "--pager", "less -FRX"]
+diff-formatter = ":git"
 
 [git]
 private-commits = '''description(glob:'WIP:*')'''
+
+[lazyjj]
+highlight-color = "#cccccc"
+diff-tool = "delta"

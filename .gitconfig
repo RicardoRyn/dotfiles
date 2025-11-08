@@ -11,11 +11,6 @@
 [init]
   defaultBranch = main
 
-# 设置默认编辑器为 neovim（nvim）
-[core]
-  editor = nvim
-  pager = delta
-
 # 标记为“安全”的仓库目录，避免 Git 报 unsafe repository 错
 [safe]
   directory = E:/git_repositories
@@ -38,20 +33,23 @@
 [tag]
   sort = version:refname
 
-# diff 比较行为设置
+[core]
+  editor = nvim
+  pager = delta
+
 [diff]
-  # 使用 histogram 算法（更智能地识别改动块）
-  algorithm = histogram
-  # 不高亮移动代码块（用 plain 显示移动行）
-  colorMoved = plain
+  colorMoved = default
+  oldMoved = bold purple
+  newMoved = bold cyan
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [delta]
   navigate = true  # use n and N to move between diff sections
   line-numbers = true
   light = true      # or light = true, or omit for auto-detection
+  map-styles = bold purple => syntax "#e5dff6", bold cyan => syntax "#d8fdf6"
 
 [merge]
   conflictStyle = zdiff3
