@@ -1,20 +1,9 @@
-# 用户信息，用于标识提交者身份
 [user]
   name = Ricardo_MI_arch
   email = ricardoryn1317@gmail.com
 
-# Gitee 的凭据设置，使用通用方式（generic）管理凭据
-[credential "https://gitee.com"]
-  provider = generic
-
-# 初始化仓库时默认分支名为 main（而不是 master）
 [init]
   defaultBranch = main
-
-# 设置默认编辑器为 neovim（nvim）
-[core]
-  editor = nvim
-  pager = delta
 
 # 分栏设置：自动在支持的终端中使用列式输出
 [column]
@@ -28,12 +17,23 @@
 [tag]
   sort = version:refname
 
-# diff 比较行为设置
+[credential "https://gitee.com"]
+  provider = generic
+[credential "https://github.com"]
+  helper = 
+  helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+  helper = 
+  helper = !/usr/bin/gh auth git-credential
+
+[core]
+  editor = nvim
+  pager = delta
+
 [diff]
-  # 使用 histogram 算法（更智能地识别改动块）
-  algorithm = histogram
-  # 不高亮移动代码块（用 plain 显示移动行）
-  colorMoved = plain
+  colorMoved = default
+  oldMoved = bold purple
+  newMoved = bold cyan
 
 [interactive]
   diffFilter = delta --color-only
@@ -41,6 +41,8 @@
 [delta]
   navigate = true  # use n and N to move between diff sections
   line-numbers = true
+  light = true      # or light = true, or omit for auto-detection
+  map-styles = bold purple => syntax "#e5dff6", bold cyan => syntax "#d8fdf6"
 
 [merge]
   conflictStyle = zdiff3

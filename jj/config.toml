@@ -7,10 +7,12 @@ email = "ricardoryn1317@gmail.com"
 [ui]
 default-command = "log"
 editor = "nvim"
-paginate = "never"
+pager = ["delta", "--pager", "less -FRX"]
+diff-formatter = ":git"
+
+[git]
+private-commits = '''description(glob:'WIP:*')'''
 
 [lazyjj]
 highlight-color = "#cccccc"
-
-[git]
-private-commits = '''description(glob:'WIP:*')''' # 以“WIP:”开头的为私有提交
+diff-tool = "delta"
