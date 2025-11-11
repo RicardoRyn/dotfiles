@@ -3,7 +3,7 @@ format = """
 $conda\
 $directory\
 ${custom.git_branch}\
-$git_status\
+${custom.git_status}\
 ${custom.jj}\
 $python\
 $rust\
@@ -133,5 +133,11 @@ when = "! jj --ignore-working-copy root"
 command = "starship module git_branch"
 
 [git_status]
+disabled = true
 format = '([$all_status$ahead_behind]($style) )'
 style = 'red'
+
+[custom.git_status]
+description = "Only show git_status if we're not in a jj repo"
+when = "! jj --ignore-working-copy root"
+command = "starship module git_status"

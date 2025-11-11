@@ -8,7 +8,7 @@ return {
   front_end = "WebGpu",
   webgpu_power_preference = "HighPerformance",
   webgpu_preferred_adapter = gpu_adapters:pick_best(),
-  underline_thickness = "1.7pt",
+  underline_thickness = "1.5pt",
 
   -- cursor
   animation_fps = 144,
@@ -22,7 +22,7 @@ return {
   color_scheme = "Catppuccin Latte",
 
   -- scrollbar
-  enable_scroll_bar = false,
+  enable_scroll_bar = true,
 
   -- tab bar
   enable_tab_bar = true,
@@ -41,7 +41,7 @@ return {
     border_top_height = '0.1cell',
     border_top_color = 'steelblue',
   },
-  inactive_pane_hsb = { saturation = 0.9, brightness = 0.9 },
+  inactive_pane_hsb = { saturation = 0.9, brightness = 0.3 },
 
   visual_bell = {
     fade_in_function = "EaseIn",

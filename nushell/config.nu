@@ -1,14 +1,39 @@
+# config.nu
+#
+# Installed by:
+# version = "0.102.0"
+#
+# This file is used to override default Nushell settings, define
+# (or import) custom commands, or run any other startup tasks.
+# See https://www.nushell.sh/book/configuration.html
+#
+# This file is loaded after env.nu and before login.nu
+#
+# You can open this file in your default editor using:
+# config nu
+#
+# See `help config nu` for more options
+#
+# You can remove these comments if you want or leave
+# them for future reference.
+
+######################################################
+####### mannually inserted by RJX on 2025/2/16 #######
+######################################################
 alias ll = ls -l
 alias la = ls -a
 alias lla = ls -al
 alias vim = nvim
 alias vide = neovide
 alias y = yazi
-# alias lg = lazygit
-alias lj = lazyjj -r ::@
+alias lg = lazygit
+alias top = btop
+
+alias rjxssh = ssh ruanjx@192.168.22.171
+alias server_proxy = ssh -v -N -R 1080:localhost:7897 ruanjx@192.168.22.171
 
 $env.config = {
-  show_banner: false,
+  show_banner: false,  # show/hide banner
   edit_mode: vi,
   keybindings: [
     {
@@ -28,13 +53,13 @@ $env.config = {
       event: {
         send: HistoryHintComplete
       }
-    }
+    },
   ]
 }
+
 $env.EDITOR = "nvim"
-$env.CONDA_NO_PROMPT = true  # 不显示conda的环境提示，由starship接管
-$env.config.shell_integration.osc133 = false  # 修复按下任何键时屏幕滚动的问题
+$env.CONDA_NO_PROMPT = true
 
 source ~/.zoxide.nu
-use ~/appdata/roaming/nushell/virtual_environments/nu_conda_2/conda.nu
-use ~/appdata/roaming/nushell/completions-jj.nu *
+use ~/.config/nushell/virtual_environments/conda.nu
+

@@ -6,7 +6,7 @@ return {
       distribution = "Ubuntu",
       username = "ricardo",
       default_cwd = "/home/ricardo",
-      default_prog = { "bash", "-l" },
+      default_prog = { "zsh", "-l" },
     },
   },
 
