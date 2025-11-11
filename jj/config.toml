@@ -18,4 +18,5 @@ highlight-color = "#cccccc"
 diff-tool = "delta"
 
 [template-aliases]
+"format_short_signature(signature)" = "signature.name()"
 "format_timestamp(timestamp)" = "timestamp.ago()"
