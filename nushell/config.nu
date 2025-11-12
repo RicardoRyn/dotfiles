@@ -34,6 +34,7 @@ $env.config = {
 $env.EDITOR = "nvim"
 $env.CONDA_NO_PROMPT = true  # 不显示conda的环境提示，由starship接管
 $env.config.shell_integration.osc133 = false  # 修复按下任何键时屏幕滚动的问题
+$env.NHP_SAMBASHARE = "\\\\172.28.178.224\\nhp_sambashare"
 
 source ~/.zoxide.nu
 use ~/appdata/roaming/nushell/virtual_environments/nu_conda_2/conda.nu
