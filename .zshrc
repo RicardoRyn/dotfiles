@@ -34,6 +34,7 @@ alias vide='neovide'
 alias lg='lazygit'
 alias lj='lazyjj -r ::'
 alias y='yazi'
+alias top='btop'
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
