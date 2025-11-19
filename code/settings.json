@@ -83,7 +83,6 @@
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.autoFormatStrings": true,
   "python.analysis.inlayHints.callArgumentNames": "partial",
-  "python.defaultInterpreterPath": "d:\\Anaconda",
   "python.analysis.typeCheckingMode": "basic",
   "debug.inlineValues": "off",
   "debug.enableStatusBarColor": false,
@@ -225,4 +224,5 @@
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
+  "python.defaultInterpreterPath": "d:\\Anaconda",
 }
