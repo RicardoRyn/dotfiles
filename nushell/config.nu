@@ -6,6 +6,8 @@ alias vide = neovide
 alias y = yazi
 # alias lg = lazygit
 alias lj = lazyjj -r ::@
+alias jf = jj git fetch
+alias jp = jj git push
 alias avante = nvim -c "lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)"
 
 $env.config = {
