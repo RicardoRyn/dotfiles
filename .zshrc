@@ -33,6 +33,8 @@ alias vim='nvim'
 alias vide='neovide'
 alias lg='lazygit'
 alias lj='lazyjj -r ::'
+alias jf='jj git fetch'
+alias jp='jj git push'
 alias y='yazi'
 alias top='btop'
 
