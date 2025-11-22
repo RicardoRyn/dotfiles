@@ -250,7 +250,7 @@ keybindings:
 
   # Minimize focused window.
   - commands: ["toggle-minimized"]
-    bindings: ["alt+m"]
+    bindings: ["alt+-"]
 
   # Close focused window.
   - commands: ["close"]
