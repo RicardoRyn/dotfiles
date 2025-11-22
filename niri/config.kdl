@@ -452,3 +452,10 @@ window-rule {
     default-column-width { fixed 1000; }
     default-window-height { fixed 700; }
 }
+window-rule {
+    match app-id=r#"^one\.alynx\.showmethekey$"#
+    match title=r#"^Floating Window - Show Me The Key$"#
+    open-floating true
+    default-column-width { fixed 200; }
+    default-window-height { fixed 70; }
+}
