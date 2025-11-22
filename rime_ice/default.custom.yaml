@@ -5,11 +5,28 @@ customization:
   modified_time: "Tue Apr 29 20:55:07 2025"
   rime_version: 1.11.2
 patch:
+  ascii_composer:
+    switch_key:
+      Caps_Lock: clear      # commit_code | commit_text | clear
+      Shift_L: noop         # commit_code | commit_text | inline_ascii | clear | noop
+      Shift_R: noop         # commit_code | commit_text | inline_ascii | clear | noop
+      Control_L: noop       # commit_code | commit_text | inline_ascii | clear | noop
+      Control_R: noop       # commit_code | commit_text | inline_ascii | clear | noop
+  punctuator/full_shape/+:
+    '[' : '['
+    ']' : ']'
+    '{' : '{'
+    '}' : '}'
+  punctuator/half_shape/+:
+    '[' : '['
+    ']' : ']'
+    '{' : '{'
+    '}' : '}'
   schema_list:
     - {schema: rime_ice}
-  recognizer:
-    patterns:
-      email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"                            # email @ 之后不上屏
-      url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"  # URL
-      underscore: "^[A-Za-z]+_.*"  # 下划线不上屏
+  recognizer/patterns/+:
       uppercase: ".*[A-Z].*"
+  key_binder/bindings/+:
+    # 开启逗号句号翻页
+    - { when: paging, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }

@@ -5,4 +5,4 @@ customization:
   modified_time: "Tue Jul  1 15:39:54 2025"
   rime_version: 1.13.1
 patch:
-  "style/color_scheme": google
+  "style/color_scheme": brisk
