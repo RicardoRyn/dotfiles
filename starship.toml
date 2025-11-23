@@ -10,6 +10,7 @@ $rust\
 $lua\
 $fill\
 $cmd_duration\
+$time\
 $line_break\
 [╰─](bold green)$character
 """
@@ -17,7 +18,15 @@ $line_break\
 add_newline = true
 palette = "catppuccin_latte"
 command_timeout = 2000
-scan_timeout = 2000
+
+[os]
+disabled = false
+style = 'green'
+
+[os.symbols]
+Windows = " "
+Ubuntu = "󰕈 "
+Arch = "󰣇 "
 
 [conda]
 symbol = " "
@@ -37,66 +46,25 @@ truncate_to_repo = false
 'Music' = ' '
 'Pictures' = ' '
 
-[python]
-symbol = ' '
-style = 'lavender'
+[git_branch]
+disabled = true
+symbol = ' '
+style = 'teal'
 
-[rust]
-symbol = ' '
-style = 'maroon'
+[custom.git_branch]
+description = "Only show git_branch if we're not in a jj repo"
+when = "! jj --ignore-working-copy root"
+command = "starship module git_branch"
 
-[lua]
-symbol = ' '
-style = 'blue'
+[git_status]
+disabled = true
+format = '([$all_status$ahead_behind]($style) )'
+style = 'red'
 
-[fill]
-symbol = ' '
-
-[cmd_duration]
-format = '[$duration]($style)'
-style = 'overlay0'
-min_time = 500
-
-[os]
-disabled = false
-style = 'green'
-
-[os.symbols]
-Windows = " "
-Ubuntu = "󰕈 "
-Arch = "󰣇 "
-
-[character]
-success_symbol = '[](bold green)'
-error_symbol = '[!](bold red)'
-
-[palettes.catppuccin_latte]
-rosewater = "#dc8a78"
-flamingo = "#dd7878"
-pink = "#ea76cb"
-mauve = "#8839ef"
-red = "#d20f39"
-maroon = "#e64553"
-peach = "#fe640b"
-yellow = "#df8e1d"
-green = "#40a02b"
-teal = "#179299"
-sky = "#04a5e5"
-sapphire = "#209fb5"
-blue = "#1e66f5"
-lavender = "#7287fd"
-text = "#4c4f69"
-subtext1 = "#5c5f77"
-subtext0 = "#6c6f85"
-overlay2 = "#7c7f93"
-overlay1 = "#8c8fa1"
-overlay0 = "#9ca0b0"
-surface2 = "#acb0be"
-surface1 = "#bcc0cc"
-surface0 = "#ccd0da"
-base = "#eff1f5"
-mantle = "#e6e9ef"
-crust = "#dce0e8"
+[custom.git_status]
+description = "Only show git_status if we're not in a jj repo"
+when = "! jj --ignore-working-copy root"
+command = "starship module git_status"
 
 [custom.jj]
 description = "The current jj status"
@@ -130,22 +98,61 @@ jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 -
 '
 '''
 
-[git_branch]
-disabled = true
-symbol = ' '
-style = 'teal'
+[python]
+symbol = ' '
+style = 'lavender'
 
-[custom.git_branch]
-description = "Only show git_branch if we're not in a jj repo"
-when = "! jj --ignore-working-copy root"
-command = "starship module git_branch"
+[rust]
+symbol = ' '
+style = 'maroon'
 
-[git_status]
-disabled = true
-format = '([$all_status$ahead_behind]($style) )'
-style = 'red'
+[lua]
+symbol = ' '
+style = 'blue'
 
-[custom.git_status]
-description = "Only show git_status if we're not in a jj repo"
-when = "! jj --ignore-working-copy root"
-command = "starship module git_status"
+[fill]
+symbol = ' '
+
+[cmd_duration]
+format = 'took [$duration](overlay0) '
+style = 'overlay0'
+min_time = 60000
+
+[time]
+disabled = false
+time_format = "%T"
+style = "overlay0"
+format = '  [$time ]($style)'
+
+
+[character]
+success_symbol = '[](bold green)'
+error_symbol = '[!](bold red)'
+
+[palettes.catppuccin_latte]
+rosewater = "#dc8a78"
+flamingo = "#dd7878"
+pink = "#ea76cb"
+mauve = "#8839ef"
+red = "#d20f39"
+maroon = "#e64553"
+peach = "#fe640b"
+yellow = "#df8e1d"
+green = "#40a02b"
+teal = "#179299"
+sky = "#04a5e5"
+sapphire = "#209fb5"
+blue = "#1e66f5"
+lavender = "#7287fd"
+text = "#4c4f69"
+subtext1 = "#5c5f77"
+subtext0 = "#6c6f85"
+overlay2 = "#7c7f93"
+overlay1 = "#8c8fa1"
+overlay0 = "#9ca0b0"
+surface2 = "#acb0be"
+surface1 = "#bcc0cc"
+surface0 = "#ccd0da"
+base = "#eff1f5"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
