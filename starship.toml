@@ -18,6 +18,7 @@ $line_break\
 add_newline = true
 palette = "catppuccin_latte"
 command_timeout = 2000
+scan_timeout = 2000
 
 [os]
 disabled = false
