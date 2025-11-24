@@ -168,6 +168,7 @@ window_rules:
       - window_process: { regex: "python" }
       - window_process: { regex: "pot" }
       - window_process: { regex: "Microsoft" }
+      - window_process: { regex: "Everywhere" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
