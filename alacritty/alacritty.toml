@@ -3,6 +3,7 @@ import = [
   "~/.config/alacritty/catppuccin-latte.toml"
   # "~/.config/alacritty/dank-theme.toml"
 ]
+working_directory = "E:/"
 
 [font]
 size = 13
@@ -12,4 +13,9 @@ italic = { family = "Maple Mono NF CN", style = "Italic" }
 bold_italic = { family = "Maple Mono NF CN", style = "Bold Italic" }
 
 [cursor]
-style = { blinking = "Always" }
+style = { shape = "Beam", blinking = "Always" }
+vi_mode_style = { shape = "Block", blinking = "Always" }
+unfocused_hollow = true
+
+[selection]
+save_to_clipboard = true
