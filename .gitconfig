@@ -11,36 +11,8 @@
 [init]
   defaultBranch = main
 
-# 标记为“安全”的仓库目录，避免 Git 报 unsafe repository 错
-[safe]
-  directory = E:/git_repositories
-
-[safe]
-  directory = E:/python
-
-[safe]
-  directory = E:/jupyter_notebook/jupyter_notebook_code
-
-# 分栏设置：自动在支持的终端中使用列式输出
-[column]
-  ui = auto
-
-# 分支列表排序：按最近提交时间倒序显示
-[branch]
-  sort = -committerdate
-
-# tag 列表排序方式：按版本号+引用名排序
-[tag]
-  sort = version:refname
-
 [core]
-  editor = nvim
   pager = delta
-
-[diff]
-  colorMoved = default
-  oldMoved = bold purple
-  newMoved = bold cyan
 
 [interactive]
   diffFilter = delta --color-only
@@ -48,8 +20,10 @@
 [delta]
   navigate = true  # use n and N to move between diff sections
   line-numbers = true
-  light = true      # or light = true, or omit for auto-detection
-  map-styles = bold purple => syntax "#e5dff6", bold cyan => syntax "#d8fdf6"
+  features = catppuccin-latte
 
 [merge]
   conflictStyle = zdiff3
+
+[include]
+  path = C:/Users/RicardoRyn/dotfiles/catppuccin.gitconfig
