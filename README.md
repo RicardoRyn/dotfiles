@@ -16,6 +16,7 @@ ln -s ~/dotfiles/rime-ice/rime_ice.custom.yaml ~/.local/share/fcitx5/rime/rime_i
 
 # 文件夹
 ln -s ~/dotfiles/kitty ~/.config/kitty
+ln -s ~/dotfiles/bat ~/.config/bat
 ln -s ~/dotfiles/alacritty ~/.config/alacritty
 
 ln -s ~/dotfiles/environment.d ~/.config/environment.d
