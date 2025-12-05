@@ -224,5 +224,5 @@
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
-  "python.defaultInterpreterPath": "d:\\Anaconda",
+  "python.defaultInterpreterPath": "e:\\python\\envs\\main\\python.exe",
 }
