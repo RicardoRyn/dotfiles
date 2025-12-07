@@ -9,6 +9,9 @@ default-command = "log"
 editor = "nvim"
 pager = ["delta", "--pager", "less -FRX"]
 diff-formatter = ":git"
+diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
+diff-instructions = false
+merge-editor = "meld"
 
 [git]
 private-commits = '''description(glob:'WIP:*')'''
@@ -20,3 +23,6 @@ diff-tool = "delta"
 [template-aliases]
 "format_short_signature(signature)" = "signature.name()"
 "format_timestamp(timestamp)" = "timestamp.ago()"
+
+[aliases]
+l = ["log", "-r", "::", "-n", "7"]
