@@ -176,17 +176,17 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-# bar {
-#         status_command i3status
-# }
+bar {
+        status_command i3status
+}
 
 # 自定义键位
 bindsym $mod+d exec rofi -no-config -no-lazy-grab -show drun -theme $HOME/.config/polybar/forest/scripts/rofi/launcher.rasi
 bindsym $mod+Shift+minus exec bash $HOME/.config/polybar/forest/scripts/powermenu.sh
-bindsym $mod+u resize shrink width 4 px or 4 ppt
-bindsym $mod+i resize grow height 50 px or 50 ppt
-bindsym $mod+o resize shrink height 50 px or 50 ppt
-bindsym $mod+p resize grow width 4 px or 4 ppt
+bindsym $mod+y resize shrink width 4 px or 4 ppt
+bindsym $mod+u resize grow height 50 px or 50 ppt
+bindsym $mod+i resize shrink height 50 px or 50 ppt
+bindsym $mod+o resize grow width 4 px or 4 ppt
 bindsym $mod+Shift+m scratchpad show
 bindsym $mod+m move scratchpad
 bindsym Print exec flameshot gui
@@ -205,17 +205,15 @@ for_window [title="Perferences$"] floating enable
 ### 开机启动程序 ###
 ####################
 # 常规
-# exec --no-startup-id xset m 0.1
-exec --no-startup-id bash $HOME/.config/polybar/launch.sh --forest
-exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
+# exec --no-startup-id bash $HOME/.config/polybar/launch.sh --forest
+# exec --no-startup-id kanata -c /home/nhp/ricardo/kanata/kanata.kbd
+# exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id feh --bg-fill /usr/share/backgrounds/Jammy-Jellyfish_WP_4096x2304_Grey.png
-exec --no-startup-id sunshine
-exec --no-startup-id kanata -c /home/nhp/ricardo/kanata/kanata.kbd
-# 鼠标光标
+# 使用Bibata鼠标光标样式
 exec --no-startup-id xrdb -merge ~/.Xresources 
 # 禁止黑屏
-exec --no-startup-id xset s off -dpms s noblank
+# exec --no-startup-id xset s off -dpms s noblank
 exec --no-startup-id caffeine
 
 focus_follows_mouse no
@@ -225,4 +223,4 @@ default_border pixel 5
 default_floating_border pixel 5
 
 client.focused #81a1c1 #81a1c1 #f8f8f2 #fab387 #f38ba8
-client.unfocused #2e3440 #2e3440 #f8f8f2 #2e3440 #2e3440
+# client.unfocused #2e3440 #2e3440 #f8f8f2 #2e3440 #2e3440
