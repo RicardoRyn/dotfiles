@@ -11,6 +11,7 @@ pager = ["delta", "--pager", "less -FRX"]
 diff-formatter = ":git"
 diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
 diff-instructions = false
+merge-editor = "vimdiff"
 
 [git]
 private-commits = '''description(glob:'WIP:*')'''
@@ -25,3 +26,11 @@ diff-tool = "delta"
 
 [aliases]
 l = ["log", "-r", "::", "-n", "7"]
+
+[merge-tools.vimdiff]
+program = "nvim"
+merge-args = ["-f", "-d", "$output", "-M",
+    "$left", "$base", "$right",
+    "-c", "wincmd J", "-c", "set modifiable",
+    "-c", "set write"]
+merge-tool-edits-conflict-markers = true
