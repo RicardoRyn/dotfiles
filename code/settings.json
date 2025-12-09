@@ -80,6 +80,7 @@
   "git.confirmSync": false, // 同步时不提示
   "git.openRepositoryInParentFolders": "never",
   // python
+  "python.defaultInterpreterPath": "d:\\Anaconda",
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.autoFormatStrings": true,
   "python.analysis.inlayHints.callArgumentNames": "partial",
@@ -220,9 +221,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // misc
-  "redhat.telemetry.enabled": false,
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
-  "python.defaultInterpreterPath": "d:\\Anaconda",
 }

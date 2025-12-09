@@ -5,7 +5,8 @@ alias vim = nvim
 alias vide = neovide
 alias y = yazi
 alias lg = lazygit
-alias lj = lazyjj -r ::@
+alias lj = lazyjj -r "all()"
+alias ju = jjui -r "all()"
 alias jf = jj git fetch
 alias jp = jj git push
 
