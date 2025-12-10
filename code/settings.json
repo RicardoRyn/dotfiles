@@ -80,7 +80,7 @@
   "git.confirmSync": false, // 同步时不提示
   "git.openRepositoryInParentFolders": "never",
   // python
-  "python.defaultInterpreterPath": "d:\\Anaconda",
+  "python.defaultInterpreterPath": "e:\\python\\envs\\main\\python.exe",
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.autoFormatStrings": true,
   "python.analysis.inlayHints.callArgumentNames": "partial",
