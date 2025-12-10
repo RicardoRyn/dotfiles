@@ -20,5 +20,5 @@ ln -s ~/dotfiles/flameshot ~/.config/flameshot
 ln -s ~/dotfiles/niri ~/.config/niri
 ln -s ~/dotfiles/yazi ~/.config/yazi
 ln -s ~/dotfiles/jj ~/.config/jj
-
+ln -s ~/dotfiles/jjui ~/.config/jjui
 ```

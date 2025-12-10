@@ -1,0 +1,33 @@
+[preview]
+show_at_start = true
+width_percentage = 50.0
+width_increment_percentage = 5.0
+revision_command = [
+  "util",
+  "exec",
+  "--",
+  "bash",
+  "-c",
+  "jj show $change_id --no-pager --stat --git --color=always | delta --paging=never",
+]
+file_command = [
+  "util",
+  "exec",
+  "--",
+  "bash",
+  "-c",
+  "jj diff --color always -r $change_id $file | delta --paging=never",
+]
+oplog_command = ["op", "show", "$operation_id", "--color", "always"]
+
+[custom_commands]
+"move commit down" = { key = ["J"], args = ["rebase", "-r", "$change_id", "--insert-before", "$change_id-"] }
+"move commit up" = { key = ["K"], args = ["rebase", "-r", "$change_id", "--insert-after", "$change_id+"] }
+
+"new main" = { key = ["N"], args = ["new", "main"] }
+"show after revisions" = { key = ["M"], revset = "::$change_id" }
+"resolve" = { key = ["R"], args = ["resolve"], show = "interactive" }
+# "toggle parent" = { key = ["ctrl+p"], args = ["rebase", "-r", "@", "-d", "all:(parents(@) | $change_id) ~ (parents(@) & $change_id)"] }
+
+[ui.tracer]
+enabled = true
