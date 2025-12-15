@@ -26,5 +26,6 @@ mklink /D "%USERPROFILE%\AppData\Roaming\yazi" "%USERPROFILE%\dotfiles\yazi"
 mklink /D "%USERPROFILE%\.config\fastfetch" "%USERPROFILE%\dotfiles\fastfetch"
 
 mklink /D "%USERPROFILE%\AppData\Roaming\jj" "%USERPROFILE%\dotfiles\jj"
+mklink /D "%USERPROFILE%\AppData\Roaming\Zed" "%USERPROFILE%\dotfiles\Zed"
 mklink /D "%USERPROFILE%\AppData\Roaming\jjui" "%USERPROFILE%\dotfiles\jjui"
 ```
