@@ -191,37 +191,34 @@ export LD_LIBRARY_PATH=/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 ###########################
 ####### MY PROGRAMS #######
 ###########################
-export AVANTE_DEEPSEEK_API_KEY="sk-67796f30d46f411abde6113e59deaaa8"
-export AVANTE_QWEN_API_KEY="sk-980c549fe17443978f2869821c9650a7"
-
-# nvim
-export PATH=$PATH:/home/nhp/ricardo/nvim/nvim-linux-x86_64/bin
-alias vim='nvim'
-export EDITOR=nvim
-# homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# zoxide
-eval "$(zoxide init bash)"
-# rust
-. "$HOME/.cargo/env"
-# yazi
 alias y='yazi'
-# btop
 alias top='btop'
-# neovide
 alias vide='neovide'
-# python
-export PATH=$PATH:/home/nhp/python/Projects/gen_FC
-# tmux
+alias vim='nvim'
 alias cl='clear'
-# jj
 alias jf='jj git fetch'
 alias jp='jj git push'
+export EDITOR=nvim
+
+# 密钥文件
+[ -f "$HOME/.bash_private" ] && source "$HOME/.bash_private"
+
+# homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# zoxide
+eval "$(zoxide init bash)"
+
+# rust
+. "$HOME/.cargo/env"
+
+# python
+export PATH=$PATH:/home/nhp/python/Projects/gen_FC
+
 # nodejs
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-nu

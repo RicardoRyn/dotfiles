@@ -213,7 +213,7 @@ exec --no-startup-id feh --bg-fill /usr/share/backgrounds/Jammy-Jellyfish_WP_409
 # 使用Bibata鼠标光标样式
 exec --no-startup-id xrdb -merge ~/.Xresources 
 # 禁止黑屏
-# exec --no-startup-id xset s off -dpms s noblank
+exec --no-startup-id xset s off -dpms s noblank
 exec --no-startup-id caffeine
 
 focus_follows_mouse no

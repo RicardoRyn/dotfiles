@@ -8,8 +8,6 @@ alias vide='neovide'
 alias y='yazi'
 alias rjxssh='ssh ruanjx@192.168.22.171'
 alias top='btop'
-# 设置AI Key
-export DEEPSEEK_API_KEY=sk-6dd2db9f15f54afeaf42f148479cd9f6
 # auto-inserted by @update.afni.binaries :
 export PATH=$PATH:/home/nhp/abin
 # auto-inserted by @update.afni.binaries :
