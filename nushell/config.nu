@@ -15,6 +15,10 @@ alias server_proxy = ssh -v -N -R 1080:localhost:7897 ruanjx@192.168.22.171
 $env.config = {
   show_banner: false,  # show/hide banner
   edit_mode: vi,
+  cursor_shape: {
+    vi_insert: line
+    vi_normal: block
+  },
   keybindings: [
     {
       name: Accept_HistoryHintWordComplete
@@ -42,3 +46,4 @@ $env.CONDA_NO_PROMPT = true
 
 source ~/.zoxide.nu
 use ~/.config/nushell/virtual_environments/conda.nu
+use ~/.config/nushell/completions-jj.nu *

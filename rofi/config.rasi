@@ -1,15 +1,17 @@
 configuration {
-	font:							"Iosevka Nerd Font 13";
-    show-icons:                     true;
-	icon-theme: 					"Papirus";
-    display-drun: 					" ";
-    display-window: 					" ";
-    display-run: 					" ";
-    display-ssh: 					"󰣀 ";
-    drun-display-format:            "{name}";
-    disable-history:                false;
-	sidebar-mode: 					false;
-  modi: [window, run, ssh, drun];
-}
+font: "Maple Mono NF CN 15";
+show-icons: true;
+icon-theme: "Adwaita";
 
-@theme "$HOME/.local/share/rofi/themes/rjx.rasi"
+display-drun: " ";
+display-window: " ";
+display-run:  " ";
+display-ssh: "󰣀 ";
+display-clipboard: " ";
+drun-display-format: "{name}";
+
+disable-history: false;
+sidebar-mode: true;
+modi:  [drun, window, run, ssh];
+}
+@theme "/usr/share/rofi/themes/paper-float.rasi"

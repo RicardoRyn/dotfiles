@@ -53,7 +53,8 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+bindcode $mod+40 exec "rofi -show drun"
+bindsym $mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -85,7 +86,7 @@ bindsym $mod+Shift+Right move right
 
 # split in horizontal/vertical orientation
 bindsym $mod+semicolon  split h
-bindsym $mod+v split v
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -181,7 +182,6 @@ bar {
 }
 
 # 自定义键位
-bindsym $mod+d exec rofi -no-config -no-lazy-grab -show drun -theme $HOME/.config/polybar/forest/scripts/rofi/launcher.rasi
 bindsym $mod+Shift+minus exec bash $HOME/.config/polybar/forest/scripts/powermenu.sh
 bindsym $mod+y resize shrink width 4 px or 4 ppt
 bindsym $mod+u resize grow height 50 px or 50 ppt
@@ -208,6 +208,7 @@ for_window [title="Perferences$"] floating enable
 # exec --no-startup-id bash $HOME/.config/polybar/launch.sh --forest
 # exec --no-startup-id kanata -c /home/nhp/ricardo/kanata/kanata.kbd
 # exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
+exec --no-startup-id greenclip daemon
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id feh --bg-fill /usr/share/backgrounds/Jammy-Jellyfish_WP_4096x2304_Grey.png
 # 使用Bibata鼠标光标样式
