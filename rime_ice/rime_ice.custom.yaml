@@ -1,4 +1,4 @@
 patch:
   speller/algebra/+:
-    - derive/in$/ing/
-    - derive/ing$/in/
+      - derive/in$/ing/
+      - derive/ing$/in/

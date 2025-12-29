@@ -45,7 +45,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec GLFW_IM_MODULE=ibus kitty
+# bindsym $mod+Return exec GLFW_IM_MODULE=ibus kitty
+# bindsym $mod+Return exec GLFW_IM_MODULE=ibus gnome-terminal
+bindsym $mod+Return exec GLFW_IM_MODULE=ibus alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -190,16 +192,19 @@ bindsym $mod+o resize grow width 4 px or 4 ppt
 bindsym $mod+Shift+m scratchpad show
 bindsym $mod+m move scratchpad
 bindsym Print exec flameshot gui
+bindsym Ctrl+Shift+m exec curl 127.0.0.1:60828/selection_translate
+bindsym Ctrl+Shift+p exec curl 127.0.0.1:60828/
+bindsym Ctrl+Shift+l exec curl 127.0.0.1:60828/ocr_translate
 
 # 设置部分第三方程序为浮动窗口，可通过xprop来查看class名称
 for_window [class="AFNI"] floating enable
 for_window [class="TopLevelShell"] floating enable
 for_window [class="Clash-verge"] floating enable
-for_window [class="ToDesk"] floating enable
 for_window [window_role="app"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task-dialog"] floating enable
 for_window [title="Perferences$"] floating enable
+for_window [class="Pot"] floating enable, move position center, resize set 600 800
 
 ####################
 ### 开机启动程序 ###
@@ -215,7 +220,7 @@ exec --no-startup-id feh --bg-fill /usr/share/backgrounds/Jammy-Jellyfish_WP_409
 exec --no-startup-id xrdb -merge ~/.Xresources 
 # 禁止黑屏
 exec --no-startup-id xset s off -dpms s noblank
-exec --no-startup-id caffeine
+exec --no-startup-id pot
 
 focus_follows_mouse no
 gaps inner 5
