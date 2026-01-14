@@ -10,7 +10,11 @@ alias ju = jjui -r "all()"
 alias jf = jj git fetch
 alias jp = jj git push
 
-$env.config = { show_banner: false,
+$env.config = {
+  hooks: {
+    display_output: { table --icons }
+  }
+  show_banner: false,
   edit_mode: vi,
   cursor_shape: {
     vi_insert: line
@@ -37,9 +41,9 @@ $env.config = { show_banner: false,
     }
   ]
 }
+
 $env.EDITOR = "nvim"
 $env.CONDA_NO_PROMPT = true  # 不显示conda的环境提示，由starship接管
-$env.config.shell_integration.osc133 = false  # 修复按下任何键时屏幕滚动的问题
 $env.NHP_SAMBASHARE = "\\\\172.28.178.224\\nhp_sambashare"
 $env.MI_SAMBASHARE = "\\\\192.168.3.102\\MI_sambashare"
 
