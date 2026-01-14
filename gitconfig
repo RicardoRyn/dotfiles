@@ -15,15 +15,6 @@
 [core]
   editor = nvim
 
-# 自定义命令别名
-[alias]
-  # `git ac "msg"` = add all + commit with message
-  ac = "!f() { git add . && git commit -m \"$1\"; }; f"
-
-# # Git 凭据助手设置为 store，会以明文保存在磁盘（~/.git-credentials）
-# [credential]
-#   helper = store
-
 # 分栏设置：自动在支持的终端中使用列式输出
 [column]
   ui = auto

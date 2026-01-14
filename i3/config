@@ -214,7 +214,7 @@ for_window [class="Pot"] floating enable, move position center, resize set 600 8
 # exec --no-startup-id kanata -c /home/nhp/ricardo/kanata/kanata.kbd
 # exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 exec --no-startup-id greenclip daemon
-exec --no-startup-id fcitx5 -d
+exec --no-startup-id env LD_LIBRARY_PATH=/home/linuxbrew/.linuxbrew/lib fcitx5 -d
 exec --no-startup-id feh --bg-fill /usr/share/backgrounds/Jammy-Jellyfish_WP_4096x2304_Grey.png
 # 使用Bibata鼠标光标样式
 exec --no-startup-id xrdb -merge ~/.Xresources 
