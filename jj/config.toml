@@ -25,7 +25,7 @@ diff-tool = "delta"
 "format_timestamp(timestamp)" = "timestamp.ago()"
 
 [aliases]
-l = ["log", "-r", "::", "-n", "7"]
+l = ["log", "-r", "::", "-n", "10"]
 
 [merge-tools.vimdiff]
 program = "nvim"
