@@ -169,6 +169,8 @@ window_rules:
       - window_process: { regex: "pot" }
       - window_process: { regex: "Microsoft" }
       - window_process: { regex: "Taskmgr" }
+      - window_process: { equals: "zotero" }
+        window_class: { regex: "MozillaDialogClass" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
