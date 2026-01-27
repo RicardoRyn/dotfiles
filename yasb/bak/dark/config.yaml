@@ -33,8 +33,6 @@ bars:
           "glazewm_tiling_direction",
           "glazewm_workspaces",
           "bin",
-          "github",
-          "copilot",
           "taskbar",
         ]
       center: []
@@ -354,7 +352,7 @@ widgets:
   github:
     type: "yasb.github.GithubWidget"
     options:
-      label: "<span></span>"
+      label: "<span>\ueba1</span>"
       label_alt: "Notifications {data}" # {data} return number of unread notification
       token: env # GitHub Personal access tokens (classic) https://github.com/settings/tokens
       max_notification: 20 # Max number of notification displaying in menu max: 50
@@ -372,15 +370,15 @@ widgets:
   copilot:
     type: "yasb.copilot.CopilotWidget"
     options:
-      label: "{icon} {used}/{allowance}"
-      label_alt: "<span>{icon}</span>"
+      label: "{icon}"
+      label_alt: "{used}/{allowance}"
       token: env
       plan: "pro" #Set your plan "pro" or "pro_plus"
       tooltip: true
       update_interval: 120
       icons:
-        copilot: ""
-        error: ""
+        copilot: "\uf113"
+        error: "\uf071"
       thresholds:
         warning: 75
         critical: 90
@@ -390,7 +388,7 @@ widgets:
         round_corners_type: "normal"
         border_color: "System"
         alignment: "right"
-        direction: "up"
+        direction: "down"
         offset_top: 6
         offset_left: 0
         chart: true
