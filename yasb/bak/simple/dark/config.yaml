@@ -7,7 +7,7 @@ bars:
     screens: ["*"]
     class_name: "yasb-bar"
     alignment:
-      position: "top"
+      position: "bottom"
       center: false
     blur_effect:
       enabled: false
@@ -23,9 +23,9 @@ bars:
       width: "100%"
       height: 24
     padding:
-      top: 5
+      top: 2
       left: 8
-      bottom: 0
+      bottom: 12
       right: 8
     widgets:
       left:
@@ -33,13 +33,10 @@ bars:
           "glazewm_tiling_direction",
           "glazewm_workspaces",
           "bin",
-          "github",
-          "copilot",
-          "todo",
           "taskbar",
         ]
-      center: ["clock"]
-      right: ["bluetooth", "systray"]
+      center: []
+      right: []
 widgets:
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
@@ -355,18 +352,11 @@ widgets:
   github:
     type: "yasb.github.GithubWidget"
     options:
-      label: "<span></span>"
+      label: "<span>\ueba1</span>"
       label_alt: "Notifications {data}" # {data} return number of unread notification
       token: env # GitHub Personal access tokens (classic) https://github.com/settings/tokens
-      max_notification: 30 # Max number of notification displaying in menu max: 50
-      notification_dot:
-        enabled: True
-        corner: "bottom_left" # Can be "top_left", "top_right", "bottom_left", "bottom_right"
-        color: "red" # Can be hex color or string
-        margin: [ 1, 1 ] # x and y margin for the dot
-      only_unread: false # Show only unread or all notifications; 
-      show_comment_count: false # Summarize comment totals for issues, PRs, and discussions
-      reason_filters: [] # e.g. ['mention', 'assign'] to limit notifications by reason
+      max_notification: 20 # Max number of notification displaying in menu max: 50
+      only_unread: false # Show only unread or all notifications;
       max_field_size: 54 # Max characters in title before truncation.
       update_interval: 300 # Check for new notification in seconds
       menu:
@@ -375,26 +365,20 @@ widgets:
         round_corners_type: "normal" # Set the type of round corners for the menu (normal, small) (this option is not supported on Windows 10)
         border_color: "System" # Set the border color for the menu (this option is not supported on Windows 10)
         alignment: "left"
-        direction: "down"
-        show_categories: false
-        categories_order: ["PullRequest", "Issue", "CheckSuite", "Release", "Discussion"]
-      label_shadow:
-        enabled: True
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
+        direction: "up"
+        distance: 6
   copilot:
     type: "yasb.copilot.CopilotWidget"
     options:
-      label: "{icon} {used}/{allowance}"
-      label_alt: "<span>{icon}</span>"
+      label: "{icon}"
+      label_alt: "{used}/{allowance}"
       token: env
       plan: "pro" #Set your plan "pro" or "pro_plus"
       tooltip: true
       update_interval: 120
       icons:
-        copilot: ""
-        error: ""
+        copilot: "\uf113"
+        error: "\uf071"
       thresholds:
         warning: 75
         critical: 90
@@ -403,7 +387,7 @@ widgets:
         round_corners: true
         round_corners_type: "normal"
         border_color: "System"
-        alignment: "left"
+        alignment: "right"
         direction: "down"
         offset_top: 6
         offset_left: 0
@@ -412,43 +396,3 @@ widgets:
         enabled: true
         type: "fadeInOut"
         duration: 200
-  todo:
-    type: "yasb.todo.TodoWidget"
-    options:
-      label: "\uf0ae {count}/{completed}"
-      label_alt: "\uf0ae Tasks: {count}"
-      # data_path: "~/Documents/my-todos.json"  # Optional: custom JSON file path
-      menu:
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "system"
-        alignment: "left"
-        direction: "down"
-        offset_top: 6
-        offset_left: 0
-      icons:
-        add: "\uf501 New Task"
-        edit: "Edit"
-        delete: "Delete"
-        date: "\ue641"
-        category: "\uf412"
-        checked: "\udb80\udd34"
-        unchecked: "\udb80\udd30"
-        sort: "\ueab4"
-        no_tasks: "\uf4a0"
-      categories:
-        default:
-          label: "General"
-        soon:
-          label: "Complete soon"
-        today:
-          label: "End of day"
-        urgent:
-          label: "Urgent"
-        important:
-          label: "Important"
-      callbacks:
-        on_left: "toggle_menu"
-        on_middle: "do_nothing"
-        on_right: "toggle_label"

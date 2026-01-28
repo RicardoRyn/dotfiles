@@ -50,13 +50,13 @@ gaps:
   outer_gap:
     top: "10px"
     right: "10px"
-    bottom: "0px"
+    bottom: "5px"
     left: "10px"
   # Overrides `outer_gap` when there is just one window on a workspace.
   single_window_outer_gap:
     top: "10px"
     right: "10px"
-    bottom: "10px"
+    bottom: "5px"
     left: "10px"
 
 window_effects:

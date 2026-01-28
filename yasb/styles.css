@@ -1,1203 +1,921 @@
-/*VARIABLES AND SOME DEFAULT SETTINGS*/
+/* ==================== FONT CONFIG ==================== */
 :root {
-    --rosewater: #f5e0dc;
-    --flamingo: #f2cdcd;
-    --pink: #f5c2e7;
-    --mauve: #cba6f7;
-    --red: #f38ba8;
-    --maroon: #eba0ac;
-    --peach: #fab387;
-    --peachedit: #ecd093;
-    --peachedit2: #e9bb77;
-    --yellow: #f9e2af;
-    --green: #a6e3a1;
-    --teal: #94e2d5;
-    --sky: #89dceb;
-    --sapphire: #74c7ec;
-    --blue: #89b4fa;
-    --lavender: #b4befe;
-    --text: #cdd6f4;
-    --subtext1: #bac2de;
-    --subtext0: #a6adc8;
-    --overlay2: #9399b2;
-    --overlay1: #7f849c;
-    --overlay0: #6c7086;
-    --surface2: #585b70;
-    --surface0: #45475a;
-    --surface1: #282936;
-    --base: #1e1e2e;
-    --mantle: rgba(24, 24, 37, 0.5);
-    --crust: rgba(17, 17, 27, 0.5);
-    --font-bar: "Maple Mono NF CN", "JetBrainsMono NFP";
-    --font-menu: "Maple Mono NF CN";
-    --font-icon: "JetBrainsMono NFP";
-    --font-icon-ui: "Segoe Fluent Icons";
-}
-*{
-    color: #bec8e7;
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-bar);
-    font-size: 13px;
-    font-weight: 600;
+  --font-main: "Maple Mono NF CN";
+  --font-icon: "JetBrainsMono NFP", "Segoe Fluent Icons";
+
+  /* Font sizes */
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-md: 13px;
+  --font-size-lg: 14px;
+  --font-size-xl: 15px;
+  --font-size-2xl: 16px;
+  --font-size-3xl: 18px;
+  --font-size-4xl: 20px;
+
+  /* Icon sizes */
+  --icon-size-sm: 15px;
+  --icon-size-md: 16px;
+  --icon-size-lg: 18px;
+  --icon-size-xl: 26px;
+
+  /* Special sizes */
+  --icon-size-power: 48px;
+  --icon-size-calendar-date: 88px;
+  --icon-size-empty: 80px;
+
+  /* Spacing */
+  --spacing-xs: 2px;
+  --spacing-sm: 4px;
+  --spacing-md: 8px;
+  --spacing-lg: 12px;
+  --spacing-xl: 16px;
 }
 
-/*GENERAL CONFIGRATIONS*/
+* {
+  font-size: var(--font-size-md);
+  color: #cdd6f4;
+  font-weight: 600;
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+}
+
+/* ==================== GENERAL CONFIG ==================== */
 .yasb-bar {
-    padding: 0;
-    margin: 0;
+  padding: 0 var(--spacing-md);
+  margin: 0;
+  background-color: rgba(30, 30, 46, 0.25);
 }
 .widget {
-    padding: 0 2px;
-    margin: 0 2px;
-    border-radius: 12px;
-}
-.widget .icon {
-    font-size: 12px;
+  padding: 0 var(--spacing-md);
+  margin: 0;
 }
 .widget .label {
-    color: var(--text);
+  padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs) var(--spacing-xs);
+}
+.widget .label.alt {
+  padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xs) var(--spacing-md);
 }
 
-/*FONT CONFIG*/
-.calendar,
-.audio-menu,
-.brightness-menu,
-.disk-group,
-.power-menu-popup,
-.wifi-menu,
-.taskbar-preview,
-.github-menu,
-.copilot-menu,
-.todo-menu {
-    font-family: var(--font-menu);
-}
+/* ==================== GLAZEWM WIDGETS ==================== */
 
-/*GLAZEWM WORKSPACES WIDGET*/
+/* Workspaces widget */
 .glazewm-workspaces {
-    background-color: var(--surface1);
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-right: 6px;
-    padding-left: 6px;
+  margin: 0;
+  padding: 0;
 }
 .glazewm-workspaces .offline-status {
-    color: #627199;
-    font-size: 12px;
-    padding: 0 4px;
-    font-weight: 600;
+  color: #95a0ad;
+  font-size: var(--font-size-md);
+  padding: 0 var(--spacing-sm);
+  font-weight: 600;
 }
 .glazewm-workspaces .ws-btn {
-    border: none;
-    background-color: var(--overlay2);
-    margin: 0px 4px;
-    padding: 0;
-    color: var(--base);
-    border-radius: 5px;
-    height: 15px;
-    width: 15px;
-    font-size: 10px;
-    font-weight: 900;
+  font-size: var(--icon-size-md);
+  background-color: transparent;
+  margin: 0 var(--spacing-sm) 0 var(--spacing-sm);
+  color: #cdd6f4;
+  font-weight: 600;
 }
 .glazewm-workspaces .ws-btn.populated {
-    background-color: var(--text);
+  color: #cdd6f4;
 }
 .glazewm-workspaces .ws-btn.active_populated {
-    background-color: var(--sky);
+  background-color: transparent;
+  color: #89b4fa;
+  font-weight: 800;
 }
 .glazewm-workspaces .ws-btn.active {
-    color: rgba(149, 177, 255, 0);
-    background-color: var(--teal);
-    width: 36px;
-    height: 10px;
-    border-radius: 4px;
+  color: #89b4fa;
+  font-weight: 800;
 }
-/* glazewm tiling direction */
+.glazewm-workspaces .ws-btn:hover,
+.glazewm-workspaces .ws-btn.populated:hover {
+  color: #ffffff;
+}
+.glazewm-workspaces .ws-btn.active_populated:hover,
+.glazewm-workspaces .ws-btn.active:hover {
+  color: #74c7ec;
+}
+
+/* Tiling direction widget */
 .glazewm-tiling-direction {
-    padding-right: 7px;
-    padding-left: 7px;
-    background-color: var(--surface1);
+  padding: 0 var(--spacing-sm);
 }
 .glazewm-tiling-direction .btn {
-    border: none;
-    color: var(--text);
-    font-family: var(--font-icon);
-    font-size: 20px;
+  border: none;
+  color: #cdd6f4;
+  font-family: var(--font-main);
+  font-size: var(--font-size-3xl);
 }
 
-/*ACTIVE WINDOW WIDGET*/
+/* ==================== ACTIVE WINDOW WIDGET ==================== */
 .active-window-widget {
-    background-color: var(--surface1);
-    padding-right: 10px;
-    padding-left: 10px;
+  padding: 0 var(--spacing-md);
 }
 .active-window-widget .label {
-    font-size: 13px;
-}
-.active-window-widget .icon {
-    padding-right: 6px;
-    border: none;
+  font-size: var(--font-size-md);
 }
 
-/*CPU WIDGET*/
-.cpu-widget {
-    padding-right: 9px;
-    padding-left: 5px;
-    background-color: var(--surface1);
-}
-.cpu-widget .icon {
-    padding: 0 6px;
-    font-family: var(--font-icon);
-    font-size: 15px;
-}
-.cpu-widget .label.status-low {
-    font-size: 13px;
-    color: var(--green);
-}
-.cpu-widget .label.status-medium {
-    font-size: 13px;
-    color: var(--yellow);
-}
-.cpu-widget .label.status-high {
-    font-size: 13px;
-    color: var(--peach);
-}
-.cpu-widget .label.status-critical {
-    font-size: 13px;
-    color: var(--red);
-}
-
-/*GPU WIDGET*/
-.gpu-widget {
-    padding-right: 9px;
-    padding-left: 5px;
-    background-color: var(--surface1);
-}
-.gpu-widget .icon {
-    padding: 0 6px;
-    font-family: var(--font-icon);
-    font-size: 15px;
-}
-.gpu-widget .label.status-low {
-    font-size: 13px;
-    color: var(--green);
-}
-.gpu-widget .label.status-medium {
-    font-size: 13px;
-    color: var(--yellow);
-}
-.gpu-widget .label.status-high {
-    font-size: 13px;
-    color: var(--peach);
-}
-.gpu-widget .label.status-critical {
-    font-size: 13px;
-    color: var(--red);
-}
-
-/*MEMORY WIDGET*/
-.memory-widget {
-    padding-right: 9px;
-    padding-left: 5px;
-    background-color: var(--surface1);
-}
-.memory-widget .icon {
-    padding: 0 6px;
-    font-family: var(--font-icon);
-    font-size: 15px;
-}
-.memory-widget .label.status-low {
-    font-size: 13px;
-    color: var(--green);
-}
-.memory-widget .label.status-medium {
-    font-size: 13px;
-    color: var(--yellow);
-}
-.memory-widget .label.status-high {
-    font-size: 13px;
-    color: var(--peach);
-}
-.memory-widget .label.status-critical {
-    font-size: 13px;
-    color: var(--red);
-}
-
-/*CLOCK - CALENDAR WIDGET*/
-.clock-widget {
-    background-color: var(--surface1);
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.clock-widget .label {
-    font-size: 13px;
-}
-/*CLOCK - CALENDAR WIDGET DROPDOWN*/
-.calendar {
-    background-color: var(--mantle);
-}
-.calendar .calendar-table,
-.calendar .calendar-table::item {
-    background-color: rgba(17, 17, 27, 0);
-    color: rgba(162, 177, 196, 0.85);
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-    font-size: 17px;
-    font-weight: 300;
-}
-.calendar .calendar-table::item:selected {
-    color: rgb(255, 255, 255);
-}
-.calendar .day-label {
-    margin-top: 20px;
-}
-.calendar .day-label,
-.calendar .month-label,
-.calendar .date-label {
-    color: #fff;
-    min-width: 180px;
-    max-width: 180px;
-    font-size: 20px;
-    font-weight: 300;
-}
-.calendar .month-label {
-    font-size: 17px;
-    font-weight: 300;
-}
-.calendar .date-label {
-    color: rgb(255, 255, 255);
-    margin-top: -20px;
-    font-size: 88px;
-    font-weight: 700;
-}
-
-
-/*AUDIO WIDGET*/
-.volume-widget {
-    padding-right: 9px;
-    padding-left: 5px;
-    background-color: var(--surface1);
-}
-.volume-widget .icon {
-    padding: 0 6px;
-    color: var(--teal);
-    font-family: var(--font-icon);
-    font-size: 15px;
-}
-.volume-widget .label {
-    font-size: 13px;
-}
-/*AUDIO DROPDOWN*/
-.audio-menu {
-    background-color: var(--mantle);
-}
-.audio-container .device {
-    font-size: 20px;
-    background-color: transparent;
-    border: none;
-    padding:6px 8px 6px 4px;
-    margin: 2px 0;
-    border-radius: 4px;
-    font-size: 17px;
-    font-weight: 300;
-}
-.audio-container .device.selected {
-    background-color: rgba(255, 255, 255, 0.085);
-}
-.audio-container .device:hover {
-    background-color: rgba(255, 255, 255, 0.06);
-}
-
-/*BRIGHTNESS WIDGET*/
-.brightness-widget {
-    padding-right: 7px;
-    padding-left: 7px;
-    background-color: var(--surface1);
-}
-.brightness-widget .icon {
-    color: var(--yellow);
-    font-family: var(--font-icon);
-    font-size: 15px;
-}
-.brightness-widget .label {
-    font-size: 13px;
-}
-/*BRIGHTNESS DROPDOWN*/
-.brightness-menu {
-    background-color:rgba(17, 17, 27, 0.4);
-}
-.brightness-slider {
-    border: none;
-}
-.brightness-slider::groove {}
-.brightness-slider::handle{}
-/* Brightness progress bar styles if enabled */
-.brightness-widget .progress-circle {}
-
-/*BLUETOOTH WIDGET*/
-.bluetooth-widget {
-    padding-right: 9px;
-    padding-left: 5px;
-    background-color: var(--surface1);
-}
-.bluetooth-widget .icon {
-    padding: 0 6px;
-    color: var(--blue);
-    font-family: var(--font-icon);
-    font-size: 15px;
-}
-
-/*DISK WIDGET*/
-.disk-widget {
-    padding-right: 7px;
-    padding-left: 7px;
-    background-color: var(--surface1);
-}
-.disk-widget .icon {
-    color: var(--pink);
-    font-family: var(--font-icon);
-    font-size: 13px;
-}
-/*DISK DROPDOWN*/
-.disk-group {
-    background-color: var(--mantle);
-}
-.disk-group-row {
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 50px;
-    max-height: 50px;
-    margin: 0;
-    padding: 0;
-    border-radius: 6px;
-    border: 1px solid rgba(128, 128, 128, 0);
-}
-.disk-group-row:hover {
-    background-color:rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.disk-group-label-bar{
-    max-height: 8px;
-    border:0px solid rgba(128, 128, 128, 0);
-    background-color: rgba(148, 226, 213, 0.3);
-    border-radius: 4px;
-}
-.disk-group-label-bar::chunk{
-    background-color: rgba(148, 226, 213, 1);
-    border-radius: 4px;
-}
-.disk-group-label {
-    font-size: 17px;
-    font-weight: 300;
-}
-.disk-group-label-size {
-    color: rgba(205, 214, 244, 0.5);
-    font-size: 15px;
-    font-weight: 300;
-}
-
-/*BATTERY WIDGET*/
-.battery-widget {
-    padding-right: 9px;
-    padding-left: 5px;
-    background-color: var(--surface1);
-}
-.battery-widget .icon {
-    padding: 0 6px;
-    color: var(--peach);
-    font-family: var(--font-icon);
-    font-size: 15px;
-}
-.battery-widget .label {
-    font-size: 13px;
-}
-
-/*RECYCLE BIN WIDGET*/
-.recycle-bin-widget {
-    padding-right: 9px;
-    padding-left: 5px;
-    background-color: var(--surface1);
-}
+/* ==================== RECYCLE BIN WIDGET ==================== */
 .recycle-bin-widget .icon {
-    padding: 0 6px;
-    color: var(--text);
-    font-family: var(--font-icon);
-    font-size: 15px;
-}
-.recycle-bin-widget .label {
-    font-size: 13px;
+  font-family: var(--font-icon);
+  font-size: var(--icon-size-md);
 }
 
-/*POWER WIDGET*/
-.power-menu-widget {
-    padding-right: 7px;
-    padding-left: 7px;
-    background-color: var(--surface1);
-}
-.power-menu-widget .label {
-    color: var(--red);
-    font-family: var(--font-icon);
-    font-size: 15px;
-}
-/*POWER MENU POPUP*/
-.uptime {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: rgba(191, 202, 219, 0.726);
-    font-weight: 600;
-}
-.power-menu-popup .button {
-    padding: 0;
-    width: 160px;
-    height: 240px;
-    border-radius: 4px;
-    background-color: rgba(41, 42, 58, 0.75);
-    color: white;
-    border: 4px solid rgba(255, 255, 255, 0);
-}
-.power-menu-popup .button.hover {
-    background-color: rgb(55, 56, 75);
-    border: 4px solid rgb(55, 56, 75);
-}
-.power-menu-popup .button .label {
-    margin-bottom: 8px;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 17px;
-    font-weight: 300;
-}
-.power-menu-popup .button .icon {
-    padding-top: 54px;
-    color: rgba(255, 255, 255, 0.25);
-    font-family: var(--font-icon);
-    font-size: 64px;
-}
-.power-menu-popup .button.cancel .icon {
-    color: rgba(243, 139, 168, 0.55);
-}
-.power-menu-popup .button.cancel .label {
-    color: rgba(243, 139, 168, 0.95);
-}
+/* ==================== GITHUB WIDGET ==================== */
 
-/*SYSTRAY WIDGET*/
-.systray {
-    padding-right: 7px;
-    padding-left: 7px;
-    background-color: var(--surface1);
-}
-.systray .button {
-    background-color: var(--surface1);
-}
-.systray .button:hover {
-    border-radius: 4px;
-    background: var(--text);
-}
-.systray .unpinned-visibility-btn {
-    background-color: var(--surface1);
-}
-.systray .unpinned-visibility-btn:checked {
-    background: var(--surface1);
-}
-
-/*WIFI WIDGET*/
-.wifi-widget {
-    padding-right: 7px;
-    padding-left: 7px;
-    background-color: var(--surface1);
-}
-.wifi-widget .icon {
-    color: var(--green);
-    font-family: var(--font-icon);
-    font-size: 15px;
-}
-/*WIFI DROPDOWN*/
-.wifi-menu {
-    background-color: rgba(17, 17, 27, 0.4);
-    max-height: 350px;
-    min-height: 375px;
-    min-width: 375px;
-}
-.wifi-menu .progress-bar {
-    max-height: 2px;
-}
-.wifi-menu .progress-bar::chunk {
-    background-color: #4cc2ff;
-}
-.wifi-menu .header {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 2px;
-    padding: 12px;
-    background-color: rgba(17, 17, 27, 0.6);
-    color: white;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.wifi-menu .error-message {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 2px;
-    padding: 12px;
-    background-color: red;
-    color: white;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.wifi-menu .wifi-list {
-    background-color: rgba(17, 17, 27, 0.8);
-    margin-right: 3px;
-}
-.wifi-menu .wifi-item {
-    min-height: 35px;
-    padding: 2px 12px;
-    margin: 2px 4px;
-}
-.wifi-menu .wifi-item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 6px;
-}
-.wifi-menu .wifi-item[active=true] {
-    background-color: rgba(255, 255, 255, 0.15);
-    font-size: 14px;
-    border-radius: 6px;
-    min-height: 80px;
-}
-.wifi-menu .wifi-item .icon {
-    font-family: var(--font-icon-ui);
-    font-size: 26px;
-    margin-right: 10px;
-}
-.wifi-menu .wifi-item .name {
-    font-size: 14px;
-    margin-right: 10px;
-}
-.wifi-menu .wifi-item .password {
-    background-color: transparent;
-    font-size: 14px;
-}
-.wifi-menu .wifi-item .status {
-    font-size: 14px;
-}
-.wifi-menu .wifi-item .strength {
-    font-size: 14px;
-}
-.wifi-menu .wifi-item .controls-container {
-    padding-top: 8px;
-}
-.wifi-menu .wifi-item .connect {
-    background-color: rgba(255, 255, 255, 0.15);
-    padding: 4px 30px;
-    border-radius: 4px;
-    border: none;
-    font-size: 14px;
-}
-.wifi-menu .wifi-item .connect:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-.wifi-menu .wifi-item .connect:pressed {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-.wifi-menu .footer {
-    font-size: 12px;
-    font-weight: 600;
-    padding: 12px;
-    margin-top: 2px;
-    color: #9399b2;
-    background-color: rgba(17, 17, 27, 0.6);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-.wifi-menu .footer .settings-button {
-    background-color: transparent;
-    border: none;
-    padding: 0 2px;
-    min-width: 26px;
-    min-height: 26px;
-    color: #fff;
-}
-.wifi-menu .footer .refresh-icon {
-    font-family: var(--font-icon-ui);
-    background-color: transparent;
-    border: none;
-    min-width: 26px;
-    min-height: 26px;
-    color: #fff;
-}
-.wifi-menu .footer .refresh-icon:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-
-
-/*TASKBAR WIDGET*/
-.taskbar-widget .app-container {
-    margin: 4px 2px;
-    border-radius: 4px;
-    padding: 0 4px;
-}
-.taskbar-widget .app-container.foreground {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-.taskbar-widget .app-container.flashing {
-    background-color: rgba(255, 106, 106, 0.63);
-}
-.taskbar-widget .app-container .app-title {
-    padding-left: 4px;
-}
-/* Taskbar preview popup is very limited in styling options, do not use margins/paddings here */
-.taskbar-preview {
-    border-radius: 8px; 
-    background-color: #2b2c2d; 
-}
-.taskbar-preview.flashing { 
-    background-color: #7f434a;
-}
-.taskbar-preview .header {
-    padding-bottom: 12px;
-    padding-top: 4px;
-}
-.taskbar-preview .header .title {
-    color: #d6d6d6;
-    font-weight: 600;
-    font-size: 13px;
-}
-
-/*GITHUB DROPDOWN*/
-.github-widget {
-    padding-right: 7px;
-    padding-left: 7px;
-    background-color: var(--surface1);
-}
+/* Bar widget */
 .github-widget .icon {
-    font-family: var(--font-icon);
-    font-size: 15px;
+  font-family: var(--font-icon);
+  font-size: var(--icon-size-md);
 }
-.github-menu    {
-    background-color:  rgba(17, 17, 27, 0.2);
-    max-height: 500px;
-    min-height: 500px;
-    min-width: 420px;
+
+/* Dropdown menu */
+.github-menu {
+  background-color: rgba(24, 24, 37, 0.9);
+  border-radius: 12px;
+  border: 4px solid rgb(41, 42, 58);
+  max-height: 500px;
+  min-height: 500px;
+  min-width: 420px;
 }
 .github-menu .header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 15px;
-    font-weight: 400;
-    padding: 8px;
-    color: white;
-    background-color: rgba(17, 17, 27, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: var(--icon-size-sm);
+  font-weight: 400;
+  padding: 8px;
+  color: white;
+  background-color: rgba(17, 17, 27, 0.75);
 }
 .github-menu .footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 12px;
-    padding: 4px 8px 6px 8px;
-    color: #9399b2;
-    background-color: rgba(17, 17, 27, 0.75);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: var(--font-size-sm);
+  padding: 4px 8px 6px 8px;
+  color: #9399b2;
+  background-color: rgba(17, 17, 27, 0.75);
 }
 .github-menu .contents {
-    background-color:  rgba(17, 17, 27, 0.2);
+  background-color: rgba(17, 17, 27, 0.2);
 }
 .github-menu .contents .item {
-    min-height: 40px;
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+  min-height: 40px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.075);
 }
 .github-menu .contents .item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
 }
 .github-menu .contents .item .title,
 .github-menu .contents .item .description {
-    color: #9399b2;
+  color: #9399b2;
 }
 .github-menu .contents .item .title {
-    font-size: 14px;
-    font-weight: 600; 
+  font-size: var(--font-size-lg);
+  font-weight: 600;
 }
 .github-menu .contents .item .description {
-    font-size: 12px;
-    font-weight: 500
+  font-size: var(--font-size-sm);
+  font-weight: 500
 }
 .github-menu .contents .item.new .title,
 .github-menu .contents .item.new .description {
-    color: #ffffff
+  color: #ffffff
 }
 .github-menu .contents .item .icon {
-    font-size: 16px;
-    padding-right: 0;
-    padding-left: 8px;
-    padding-right: 4px;
-    color: #9399b2;
+  font-size: var(--icon-size-md);
+  padding-right: 0;
+  padding-left: 8px;
+  padding-right: 4px;
+  color: #9399b2;
 }
 .github-menu .contents .item.new .icon {
-    color: #3fb950;
+  color: #3fb950;
 }
 
-/*COPILOT*/
+/* ==================== COPILOT WIDGET ==================== */
+
 /* Bar widget */
-.copilot-widget {
-    padding-right: 7px;
-    padding-left: 7px;
-    background-color: var(--surface1);
-}
 .copilot-widget .icon {
-    font-family: var(--font-icon);
-    font-size: 15px;
+  font-family: var(--font-icon);
+  font-size: var(--icon-size-md);
 }
 .copilot-widget .label.warning,
 .copilot-widget .icon.warning {
-    font-family: var(--font-icon);
-    color: #f59e0b;
+  font-family: var(--font-main);
+  color: #f59e0b;
 }
 .copilot-widget .label.critical,
 .copilot-widget .icon.critical {
-    font-family: var(--font-icon);
-    color: #ffba44;
-}
-/* Menu container */
-.copilot-menu {
-    background: rgba(24, 25, 27, 0.5);
-    min-width: 400px;
+  font-family: var(--font-main);
+  color: #ffba44;
 }
 
-/* Header */
-.copilot-menu .header {
-    font-size: 18px;
-    font-weight: 400;
-    padding: 12px 0 12px 12px;
-    color: white;
+/* Dropdown menu */
+.copilot-menu {
+  background: rgba(24, 25, 27, 0.9);
+  border-radius: 12px;
+  border: 4px solid rgb(41, 42, 58);
+  min-width: 400px;
 }
- 
-/* Section containers */
+.copilot-menu .header {
+  font-size: var(--font-size-3xl);
+  font-weight: 400;
+  padding: 12px 0 12px 12px;
+  color: white;
+}
 .copilot-menu .section {
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 14px;
-    margin: 6px 12px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  margin: 6px 12px;
 }
 .copilot-menu .section.progress-section{
-    background-color:transparent;
-    border: none
+  background-color:transparent;
+  border: none
 }
- 
 .copilot-menu .section-title {
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    margin-left: -3px;
-    color: #fff;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-left: -3px;
+  color: #fff;
 }
 .copilot-menu .section.progress-section .section-title {
-    margin-bottom: 0;
-    margin-left: 0;
+  margin-bottom: 0;
+  margin-left: 0;
 }
-/* Progress bar - track (background) */
 .copilot-menu .progress-bar {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
-
-/* Progress bar - fill (foreground) */
 .copilot-menu .progress-bar .fill {
-    background-color: #6366f1;
-    border-radius: 4px;
+  background-color: #6366f1;
+  border-radius: 4px;
 }
-
-/* Progress bar states */
 .copilot-menu .progress-bar.warning .fill {
-    background-color: #f59e0b;
+  background-color: #f59e0b;
 }
-
 .copilot-menu .progress-bar.critical .fill {
-    background-color: #ef4444;
+  background-color: #ef4444;
 }
-
-/* Progress section text */
 .copilot-menu .usage-count {
-    font-size: 12px;
-    color: #b1b1b1;
-    font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: #b1b1b1;
+  font-weight: 600;
 }
-
 .copilot-menu .usage-percent {
-    font-size: 12px;
-    color: #b1b1b1;
-    font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: #b1b1b1;
+  font-weight: 600;
 }
-
 .copilot-menu .reset-date {
-    font-size: 11px;
-    color: #b1b1b1;
-    font-weight: 600;
+  font-size: var(--font-size-xs);
+  color: #b1b1b1;
+  font-weight: 600;
 }
-
-/* Spending section */
 .copilot-menu .stat-label {
-    color: #b1b1b1;
-    font-weight: 600;
-    font-size: 12px;
+  color: #b1b1b1;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
 }
-
 .copilot-menu .stat-value {
-    color: #b1b1b1;
-    font-weight: 600;
-    font-size: 12px;
+  color: #b1b1b1;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
 }
-
 .copilot-menu .stat-row.total .stat-value {
-    font-weight: 600;
-    font-size: 12px;
-    color: #10b981;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: #10b981;
 }
-/* Model section - different colors for each model */
 .copilot-menu .model-name {
-    color: #b1b1b1;
-    font-weight: 600;
-    font-size: 12px;
+  color: #b1b1b1;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
 }
-
 .copilot-menu .model-count {
-    color: #b1b1b1;
-    font-weight: 600;
-    font-size: 12px;
+  color: #b1b1b1;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
 }
-
 .copilot-menu .progress-bar.model-0 .fill {
-    background-color: #6366f1;
+  background-color: #6366f1;
 }
-
 .copilot-menu .progress-bar.model-1 .fill {
-    background-color: #8b5cf6;
+  background-color: #8b5cf6;
 }
-
 .copilot-menu .progress-bar.model-2 .fill {
-    background-color: #ec4899;
+  background-color: #ec4899;
 }
-
 .copilot-menu .progress-bar.model-3 .fill {
-    background-color: #f59e0b;
+  background-color: #f59e0b;
 }
-
 .copilot-menu .progress-bar.model-4 .fill {
-    background-color: #10b981;
+  background-color: #10b981;
 }
-
-/* Chart - line and fill color controlled by 'color' property */
- .copilot-menu .usage-chart {
-    color: #6366f1;
+.copilot-menu .usage-chart {
+  color: #6366f1;
 }
-
-/* Error section */
 .copilot-menu .error-section {
-    background:transparent;
-    border: none;
-    padding: 32px 0;
+  background:transparent;
+  border: none;
+  padding: 32px 0;
 }
-
 .copilot-menu .error-icon {
-    color: #c0c0c0;
-    font-size: 88px;
+  color: #c0c0c0;
+  font-size: var(--icon-size-calendar-date);
 }
-
 .copilot-menu .error-message {
-    color: #c0c0c0;
-    font-size: 14px;
-    font-weight: 600;
+  color: #c0c0c0;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
 }
-
-/* Empty/loading state */
 .copilot-menu .empty-icon {
-    padding-top: 32px;
-    color: #c0c0c0;
-    font-size: 88px;
+  padding-top: 32px;
+  color: #c0c0c0;
+  font-size: var(--icon-size-calendar-date);
 }
-
 .copilot-menu .empty-message {
-    color: #c0c0c0;
-    font-size: 14px;
-    font-weight: 600;
-    padding-bottom: 32px;
+  color: #c0c0c0;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  padding-bottom: 32px;
 }
 
-/* Todo Widget Styles */
-.todo-widget {
-    padding-right: 7px;
-    padding-left: 7px;
-    background-color: var(--surface1);
-}
+/* ==================== TODO WIDGET ==================== */
+
+/* Bar widget */
 .todo-widget .icon {
-    font-family: var(--font-icon);
-    font-size: 15px;
+  font-family: var(--font-icon);
+  font-size: var(--icon-size-md);
 }
 .todo-widget .label {
-    font-size: 12px;
-    padding: 0;
+  font-size: var(--font-size-sm);
+  padding: 0;
 }
-/* Todo Menu Styles */
+
+/* Dropdown menu */
 .todo-menu {
-    background-color: rgba(24, 25, 27, 0.8);
-    min-width: 400px;
-    max-width: 400px;
-    min-height: 500px;
-    max-height: 500px;
+  background-color: rgba(24, 25, 27, 0.9);
+  border-radius: 12px;
+  border: 4px solid rgb(41, 42, 58);
+  min-width: 400px;
+  max-width: 400px;
+  min-height: 500px;
+  max-height: 500px;
 }
 .todo-menu .header {
-    margin: 16px 10px
+  margin: 16px 10px
 }
 .todo-menu .header .add-task-button,
 .todo-menu .header .tab-buttons {
-    border: none;
-    border-radius: 13px;
-    color: #ffffff;
-    padding: 4px 8px;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0px;
+  border: none;
+  border-radius: 13px;
+  color: #ffffff;
+  padding: 4px 8px;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin: 0px;
 }
 .todo-menu .header .tab-buttons {
-    margin: 0;
-    font-size: 12px;
+  margin: 0;
+  font-size: var(--font-size-sm);
 }
 .todo-menu .header .add-task-button:hover {
-    background-color: #0f91e7;
+  background-color: #0f91e7;
 }
 .todo-menu .header .tab-buttons.in-progress,
 .todo-menu .header .tab-buttons.completed {
-    background-color: transparent;
+  background-color: transparent;
 }
 .todo-menu .header .tab-buttons.in-progress:checked {
-    color: #7fffd4;
+  color: #7fffd4;
 }
 .todo-menu .header .tab-buttons.completed:checked {
-    color: #ff583b;
+  color: #ff583b;
 }
 .todo-menu .header .tab-buttons.sort {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    border-radius: 10px;
-    min-height: 20px;
-    min-width: 20px;
-    max-width: 20px;
-    max-height: 20px;
-    padding: 0;
-    margin: 0 8px 0 0;
-    font-family: var(--font-icon);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 10px;
+  min-height: 20px;
+  min-width: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  padding: 0;
+  margin: 0 8px 0 0;
+  font-family: var(--font-main);
 }
 .todo-menu .header .tab-buttons.sort:pressed {
-    background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .todo-menu .no-tasks {
-    font-size: 18px;
-    color: #979fa0;
-    font-weight: 400;
-    margin-top: 16px;
+  font-size: var(--font-size-3xl);
+  color: #979fa0;
+  font-weight: 400;
+  margin-top: 16px;
 }
 .todo-menu .no-tasks-icon {
-    font-size: 80px;
-    color: #979fa0;
-    font-family: var(--font-icon);
-    margin-top: 64px;
-    font-weight: 400;
+  font-size: var(--icon-size-empty);
+  color: #979fa0;
+  font-family: var(--font-icon);
+  margin-top: 64px;
+  font-weight: 400;
 }
-
-/* Task item styles */
 .todo-menu .task-item {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin: 0px 12px 8px 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 8px 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 0px 12px 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 0;
 }
 .todo-menu .task-item.expanded {
-    background-color: rgba(211, 214, 219, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(211, 214, 219, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .todo-menu .task-item.drop-highlight,
 .todo-menu .task-item.drop-highlight:hover,
 .todo-menu .task-item.drop-highlight:focus {
-    background-color: rgba(0, 120, 212, 0.26);
-    border: 1px solid #007acc;
+  background-color: rgba(0, 120, 212, 0.26);
+  border: 1px solid #007acc;
 }
 .todo-menu .task-item .title {
-    color: #ebebeb;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 0 8px 8px 8px;
-    margin-top: 6px;
+  color: #ebebeb;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  padding: 0 8px 8px 8px;
+  margin-top: 6px;
 }
 .todo-menu .task-item.completed .title,
 .todo-menu .task-item.completed .description {
-    text-decoration: line-through;
-    color: #7f8c8d;
+  text-decoration: line-through;
+  color: #7f8c8d;
 }
 .todo-menu .task-item .description {
-    color: #bdc3c7;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 0 8px 8px 8px;
+  color: #bdc3c7;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  padding: 0 8px 8px 8px;
 }
 .todo-menu .task-checkbox {
-    background-color: transparent;
-    border: none;
-    margin-left: 12px;
-    margin-top: 5px;
-    font-size: 18px;
-    color: #ebebeb;
-    font-family: var(--font-icon);
+  background-color: transparent;
+  border: none;
+  margin-left: 12px;
+  margin-top: 5px;
+  font-size: var(--font-size-3xl);
+  color: #ebebeb;
+  font-family: var(--font-main);
 }
 .todo-menu .task-checkbox:checked {
-    color: #7f8c8d;
+  color: #7f8c8d;
 }
-
-/* Task info row styles */
 .todo-menu .task-info-row {
-    margin-left: 8px;
-    margin-bottom: 8px;
+  margin-left: 8px;
+  margin-bottom: 8px;
 }
 .todo-menu .task-info-row .date-text,
 .todo-menu .task-info-row .category-text {
-    font-weight: 600;
-    color: #7e7f88;
-    font-size: 13px;
-    padding-left: 0px;
-    margin-right: 12px;
+  font-weight: 600;
+  color: #7e7f88;
+  font-size: var(--font-size-md);
+  padding-left: 0px;
+  margin-right: 12px;
 }
 .todo-menu .task-info-row .date-icon,
 .todo-menu .task-info-row .category-icon {
-    font-weight: 400;
-    color: #a7a8b3;
-    font-size: 14px;
-    font-family: var(--font-icon);
-    margin-top: 1px;
+  font-weight: 400;
+  color: #a7a8b3;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-icon);
+  margin-top: 1px;
 }
 .todo-menu .task-info-row .category-text.important,
 .todo-menu .task-info-row .category-icon.important {
-    color: #ff2600;
+  color: #ff2600;
 }
 .todo-menu .task-info-row .category-text.urgent,
 .todo-menu .task-info-row .category-icon.urgent {
-    color: #ff583b;
+  color: #ff583b;
 }
 .todo-menu .task-info-row .category-text.soon,
 .todo-menu .task-info-row .category-icon.soon {
-    color: #7fffd4;
+  color: #7fffd4;
 }
 .todo-menu .task-info-row .category-text.today,
 .todo-menu .task-info-row .category-icon.today {
-    color: #f9e2af;
+  color: #f9e2af;
 }
 .todo-menu .task-info-row .delete-task-button {
-    background-color: var(--red);
-    color: #000000;
-    font-weight: 600;
-    font-size: 12px;
-    padding: 0 8px;
-    border-radius: 10px;
-    min-height: 20px;
-    max-height: 20px;
-    margin-right: 8px;
+  background-color: #f38ba8;
+  color: #000000;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  padding: 0 8px;
+  border-radius: 10px;
+  min-height: 20px;
+  max-height: 20px;
+  margin-right: 8px;
 }
 .todo-menu .task-info-row .edit-task-button {
-    background-color: var(--peachedit);
-    color: #1e1e2e;
-    font-weight: 700;
-    font-size: 12px;
-    padding: 0 8px;
-    border-radius: 10px;
-    min-height: 20px;
-    max-height: 20px;
-    margin-right: 8px;
+  background-color: #ecd093;
+  color: #1e1e2e;
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  padding: 0 8px;
+  border-radius: 10px;
+  min-height: 20px;
+  max-height: 20px;
+  margin-right: 8px;
 }
-
-/* App dialog style */
 .todo-menu .app-dialog {
-    background-color: #202020;
+  background-color: #202020;
 }
 .todo-menu .app-dialog .buttons-container {
-    background-color: #171717;
-    margin-top: 16px;
-    border-top: 1px solid #000;
-    max-height: 80px;
-    min-height: 80px;
-    padding: 0 20px 0 20px;
+  background-color: #171717;
+  margin-top: 16px;
+  border-top: 1px solid #000;
+  max-height: 80px;
+  min-height: 80px;
+  padding: 0 20px 0 20px;
 }
-
 .todo-menu .app-dialog .title-field,
 .todo-menu .app-dialog .desc-field {
-    background-color: #181818;
-    border: 1px solid #303030;
-    border-radius: 4px;
-    padding: 0 6px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #FFFFFF;
-    margin: 10px 0px 5px 0;
-    min-height: 30px;
+  background-color: #181818;
+  border: 1px solid #303030;
+  border-radius: 4px;
+  padding: 0 6px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 10px 0px 5px 0;
+  min-height: 30px;
 }
 .todo-menu .app-dialog .desc-field {
-    max-height: 60px;
+  max-height: 60px;
 }
 .todo-menu .app-dialog .title-field:focus,
 .todo-menu .app-dialog .desc-field:focus {
-    border-bottom-color: #4cc2ff;
+  border-bottom-color: #4cc2ff;
 }
 .todo-menu .app-dialog .button {
-    background-color: #2d2d2d;
-    border: none;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #FFFFFF;
-    min-width: 80px;
-    padding: 0 6px;
-    margin: 10px 0 5px 6px;
-    min-height: 28px;
-    outline: none;
+  background-color: #2d2d2d;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: #FFFFFF;
+  min-width: 80px;
+  padding: 0 6px;
+  margin: 10px 0 5px 6px;
+  min-height: 28px;
+  outline: none;
 }
 .todo-menu .app-dialog .buttons-container .button {
-    margin: 10px 0 5px 0px;
-    font-size: 13px;
+  margin: 10px 0 5px 0px;
+  font-size: var(--font-size-md);
 }
 .todo-menu .app-dialog .button:focus {
-    border: 2px solid #adadad;
+  border: 2px solid #adadad;
 }
 .todo-menu .app-dialog .button:focus,
 .todo-menu .app-dialog .button:hover {
-    background-color: #4A4A4A;
+  background-color: #4A4A4A;
 }
 .todo-menu .app-dialog .button:pressed {
-    background-color: #3A3A3A;
+  background-color: #3A3A3A;
 }
 .todo-menu .app-dialog .button.add {
-    background-color: #0078D4;
+  background-color: #0078D4;
 }
 .todo-menu .app-dialog .button.add:focus,
 .todo-menu .app-dialog .button.add:hover {
-    background-color: #0066B2;
+  background-color: #0066B2;
 }
 .todo-menu .app-dialog .button.add:pressed {
-    background-color: #00509E;
+  background-color: #00509E;
 }
 .todo-menu .app-dialog .warning-message {
-    background-color: #2b0b0e;
-    border: 1px solid #5a303c;
-    border-radius: 4px;
-    color: #cc9b9f;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 8px 12px;
-    margin: 4px 0px;
+  background-color: #2b0b0e;
+  border: 1px solid #5a303c;
+  border-radius: 4px;
+  color: #cc9b9f;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  padding: 8px 12px;
+  margin: 4px 0px;
 }
 .todo-menu .app-dialog .category-button {
-    background-color: #2d2d2d;
-    border: none;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 700;
-    color: #afafaf;
-    padding: 0 6px;
-    margin-top: 8px;
-    min-height: 24px;
-    outline: none;
+  background-color: #2d2d2d;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: #afafaf;
+  padding: 0 6px;
+  margin-top: 8px;
+  min-height: 24px;
+  outline: none;
 }
 .todo-menu .app-dialog .category-button:checked {
-    background-color: #535353;
-    color: #ffffff;
+  background-color: #535353;
+  color: #ffffff;
+}
+
+/* ==================== CLOCK WIDGET ==================== */
+
+/* Bar widget */
+.clock-widget {
+  padding: 0 var(--spacing-md);
+}
+.clock-widget .label {
+  font-size: var(--font-size-md);
+}
+
+/* Calendar dropdown */
+.calendar {
+  background-color: rgba(24, 24, 37, 0.9);
+  border-radius: 12px;
+  border: 4px solid rgb(41, 42, 58);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+  background-color: rgba(17, 17, 27, 0);
+  color: rgba(162, 177, 196, 0.85);
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-size: var(--font-size-2xl);
+  font-weight: 300;
+}
+.calendar .calendar-table::item:selected {
+  color: rgb(255, 255, 255);
+}
+.calendar .day-label {
+  margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+  color: #fff;
+  min-width: 180px;
+  max-width: 180px;
+  font-size: var(--font-size-4xl);
+  font-weight: 300;
+}
+.calendar .month-label {
+  font-size: var(--font-size-2xl);
+  font-weight: 300;
+}
+.calendar .date-label {
+  color: rgb(255, 255, 255);
+  margin-top: -20px;
+  font-size: var(--icon-size-calendar-date);
+  font-weight: 700;
+}
+
+/* ==================== VOLUME WIDGET ==================== */
+
+/* Bar widget */
+.volume-widget .icon {
+  font-family: var(--font-icon);
+  font-size: var(--icon-size-sm);
+  color: #89b4fa;
+  margin: var(--spacing-xs) var(--spacing-sm) 0 0;
+}
+
+/* Audio dropdown menu */
+.audio-menu {
+  background-color: rgba(24, 24, 37, 0.9);
+  border-radius: 12px;
+  border: 4px solid rgb(41, 42, 58);
+}
+.audio-container .device {
+  font-size: var(--font-size-2xl);
+  background-color: transparent;
+  border: none;
+  padding:6px 8px 6px 4px;
+  margin: 2px 0;
+  border-radius: 4px;
+  font-size: var(--font-size-2xl);
+  font-weight: 300;
+}
+.audio-container .device.selected {
+  background-color: rgba(255, 255, 255, 0.085);
+}
+.audio-container .device:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ==================== BLUETOOTH WIDGET ==================== */
+.bluetooth-widget .icon {
+  font-family: var(--font-icon);
+  font-size: var(--icon-size-md);
+  color: #89b4fa;
+}
+
+/* ==================== WIFI WIDGET ==================== */
+
+/* Bar widget */
+.wifi-widget .icon {
+  font-family: var(--font-icon);
+  font-size: var(--icon-size-md);
+  color: #89b4fa;
+}
+
+/* WiFi dropdown menu */
+.wifi-menu {
+  background-color: rgba(24, 24, 37, 0.9);
+  border-radius: 12px;
+  border: 4px solid rgb(41, 42, 58);
+  max-height: 350px;
+  min-height: 375px;
+  min-width: 375px;
+}
+.wifi-menu .progress-bar {
+  max-height: 2px;
+}
+.wifi-menu .progress-bar::chunk {
+  background-color: #4cc2ff;
+}
+.wifi-menu .header {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: 2px;
+  padding: 12px;
+  background-color: rgba(17, 17, 27, 0.6);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.wifi-menu .error-message {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: 2px;
+  padding: 12px;
+  background-color: red;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.wifi-menu .wifi-list {
+  background-color: rgba(17, 17, 27, 0.8);
+  margin-right: 3px;
+}
+.wifi-menu .wifi-item {
+  min-height: 35px;
+  padding: 2px 12px;
+  margin: 2px 4px;
+}
+.wifi-menu .wifi-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+.wifi-menu .wifi-item[active=true] {
+  background-color: rgba(255, 255, 255, 0.15);
+  font-size: var(--font-size-lg);
+  border-radius: 6px;
+  min-height: 80px;
+}
+.wifi-menu .wifi-item .icon {
+  font-family: var(--font-icon);
+  font-size: var(--icon-size-xl);
+  margin-right: 10px;
+}
+.wifi-menu .wifi-item .name {
+  font-size: var(--font-size-lg);
+  margin-right: 10px;
+}
+.wifi-menu .wifi-item .password {
+  background-color: transparent;
+  font-size: var(--font-size-lg);
+}
+.wifi-menu .wifi-item .status {
+  font-size: var(--font-size-lg);
+}
+.wifi-menu .wifi-item .strength {
+  font-size: var(--font-size-lg);
+}
+.wifi-menu .wifi-item .controls-container {
+  padding-top: 8px;
+}
+.wifi-menu .wifi-item .connect {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 4px 30px;
+  border-radius: 4px;
+  border: none;
+  font-size: var(--font-size-lg);
+}
+.wifi-menu .wifi-item .connect:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.wifi-menu .wifi-item .connect:pressed {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.wifi-menu .footer {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  padding: 12px;
+  margin-top: 2px;
+  color: #9399b2;
+  background-color: rgba(17, 17, 27, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.wifi-menu .footer .settings-button {
+  background-color: transparent;
+  border: none;
+  padding: 0 2px;
+  min-width: var(--icon-size-xl);
+  min-height: var(--icon-size-xl);
+  color: #fff;
+}
+.wifi-menu .footer .refresh-icon {
+  font-family: var(--font-icon);
+  background-color: transparent;
+  border: none;
+  min-width: var(--icon-size-xl);
+  min-height: var(--icon-size-xl);
+  color: #fff;
+}
+.wifi-menu .footer .refresh-icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* ==================== SYSTRAY WIDGET ==================== */
+.systray .button {
+  background-color: transparent;
+}
+.systray .button:hover {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.systray .unpinned-visibility-btn {
+  background-color: transparent;
+}
+.systray .unpinned-visibility-btn:checked {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==================== POWER MENU WIDGET ==================== */
+
+/* Bar widget */
+.power-menu-widget .label {
+  color: #f38ba8;
+  font-size: var(--font-size-md);
+  font-family: var(--font-main);
+}
+
+/* Power menu popup */
+.uptime {
+  font-size: var(--font-size-lg);
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: var(--font-main);
+}
+.power-menu-popup {
+  background-color: rgba(24, 24, 37, 0.9);
+  border-radius: 12px;
+  border: 4px solid rgb(41, 42, 58);
+}
+.power-menu-popup .button {
+  padding: 0;
+  width: 240px;
+  height: 120px;
+  border-radius: 8px;
+  background-color: rgb(41, 42, 58);
+  font-family: var(--font-main);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 8px;
+}
+.power-menu-popup .button.hover {
+  background-color: rgb(55, 56, 75);
+  border: 1px solid rgb(55, 56, 75);
+}
+.power-menu-popup .button .label {
+  margin-bottom: 8px;
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-main);
+}
+.power-menu-popup .button .icon {
+  font-size: var(--icon-size-power);
+  padding-top: 8px;
+  color: rgba(255, 255, 255, 0.25);
+}
+.power-menu-popup .button.cancel .icon {
+  color: rgba(243, 139, 168, 0.55);
+}
+.power-menu-popup .button.cancel .label {
+  color: rgba(243, 139, 168, 0.95);
+}
+.power-menu-popup .button.shutdown .icon {
+  color: rgba(137, 180, 250, 0.55);
+}
+.power-menu-popup .button.shutdown .label {
+  color: rgba(137, 180, 250, 0.95);
 }
