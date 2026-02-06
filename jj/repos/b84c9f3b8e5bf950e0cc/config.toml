@@ -1,0 +1,12 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[revset-aliases]
+"trunk()" = "main@origin"
+
+[fix.tools.1-ruff-lint]
+command = ["ruff", "check", "--fix", "--quiet", "--stdin-filename=$path", "-"]
+patterns = ["glob:'**/*.py'"]
+
+[fix.tools.2-ruff-format]
+command = ["ruff", "format", "--stdin-filename=$path", "-"]
+patterns = ["glob:'**/*.py'"]
