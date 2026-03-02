@@ -1,0 +1,44 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "a54b96a"
+hash = "c2c9ad90a84f9d86188a2b8b73a289c1"
+
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "a63550b"
+hash = "733c7340b1ca2d3ef274c427a0cf21b"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:vcs-files"
+rev = "b886025"
+hash = "67863e9bdd5a59b10d3b7479a109211a"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "7a08a09"
+hash = "5249d156940fa0ee9f00ca148e574eeb"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:zoom"
+rev = "68f7d48"
+hash = "bd0aa08b1f2b48a662b453eb049526e9"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-latte"
+rev = "d3fd3a5"
+hash = "1717f129cf3002995aaf7445d655d701"
+
+[[flavor.deps]]
+use = "BennyOe/tokyo-night"
+rev = "5f56364"
+hash = "62e55d8e4af15456907631e6536eb994"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "d3fd3a5"
+hash = "f50ad66820515bcf0f51ef1d2386221e"
+
+[[flavor.deps]]
+use = "956MB/vscode-light-modern"
+rev = "c054b12"
+hash = "dab0020baf1e1ecbc92bc2830f839914"

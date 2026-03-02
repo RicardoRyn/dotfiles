@@ -3,7 +3,6 @@ alias la = ls -a
 alias lla = ls -al
 alias vim = nvim
 alias vide = neovide
-alias y = yazi
 alias lg = lazygit
 alias lj = lazyjj -r "all()"
 alias ju = jjui -r "all()"
@@ -50,3 +49,14 @@ $env.MI_SAMBASHARE = "\\\\192.168.3.102\\MI_sambashare"
 source ~/.zoxide.nu
 use ~/appdata/roaming/nushell/virtual_environments/nu_conda_2/conda.nu
 use ~/appdata/roaming/nushell/completions-jj.nu *
+
+# shell wrapper for yazi
+def --env y [...args] {
+  let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+  ^yazi ...$args --cwd-file $tmp
+  let cwd = (open $tmp)
+  if $cwd != $env.PWD and ($cwd | path exists) {
+    cd $cwd
+  }
+  rm -fp $tmp
+}
