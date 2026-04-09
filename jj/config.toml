@@ -7,8 +7,6 @@ email = "ricardoryn1317@gmail.com"
 [ui]
 default-command = "log"
 editor = "nvim"
-# pager = "delta"
-# diff-formatter = ":git"
 diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
 diff-instructions = false
 merge-editor = "vimdiff"
@@ -34,3 +32,4 @@ merge-tool-edits-conflict-markers = true
 [colors]
 "diff removed token" = { bg = "#eac8d3", underline = false }
 "diff added token" = { bg = "#d0e2d1", underline = false }
+"diff context" = { dim = true }
