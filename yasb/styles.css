@@ -919,3 +919,79 @@
 .power-menu-popup .button.shutdown .label {
   color: rgba(137, 180, 250, 0.95);
 }
+
+/* ==================== MEMORY MENU WIDGET ==================== */
+.memory-popup {
+  background-color: rgba(24, 24, 37, 0.9);
+  border-radius: 12px;
+  border: 4px solid rgb(41, 42, 58);
+  min-width: 400px;
+}
+.memory-popup .header {
+  background-color: rgba(17, 17, 27, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px;
+}
+.memory-popup .header .text {
+  font-size: var(--font-size-lg);
+  font-family: var(--font-main);
+  color: #ffffff;
+  font-weight: 600;
+}
+.memory-popup .header .pin-btn {
+  font-size: var(--font-size-lg);
+  background: transparent;
+  font-family: var(--font-icon);
+  border: none;
+  padding: 4px 6px;
+  color: #9399b2;
+}
+.memory-popup .header .pin-btn:hover {
+  color: #cdd6f4;
+}
+.memory-popup .header .pin-btn.pinned {
+  color: #89b4fa;
+}
+/* Graph area */
+.memory-popup .graph-container {
+  background: transparent;
+  min-height: 64px;
+}
+.memory-popup .memory-graph {
+  color: #89b4fa;
+}
+.memory-popup .memory-graph-grid {
+  color: rgba(255, 255, 255, 0.08);
+}
+.memory-popup .graph-title {
+  font-size: var(--font-size-sm);
+  color: #9399b2;
+  font-family: var(--font-main);
+  padding: 0 0 4px 14px;
+}
+/* Stats grid */
+.memory-popup .stats {
+  background-color: rgba(17, 17, 27, 0.2);
+  padding: 12px;
+}
+.memory-popup .stats .stat-item {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 6px;
+}
+.memory-popup .stats .stat-label {
+  font-size: var(--font-size-sm);
+  color: #9399b2;
+  font-family: var(--font-main);
+  font-weight: 600;
+  padding: 6px 4px 2px 4px;
+}
+.memory-popup .stats .stat-value {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: #cdd6f4;
+  font-family: var(--font-main);
+  padding: 0 4px 10px 4px;
+}

@@ -1,5 +1,5 @@
 [mgr]
-  linemode = "size_and_mtime"
+  linemode = "size"
 
 [preview]
   wrap = "yes"
@@ -40,8 +40,18 @@ rules = [
   { url = "*", use = [ "open", "reveal" ] },
 ]
 
-[plugin]
-prepend_fetchers = [
-  { id = "git", name = "*", run = "git" },
-  { id = "git", name = "*/", run = "git" },
-]
+[[plugin.prepend_fetchers]]
+id    = "git" # Remove if Yazi > v26.1.22
+url   = "*"
+run   = "git"
+group = "git"
+
+[[plugin.prepend_fetchers]]
+id    = "git" # Remove if Yazi > v26.1.22
+url   = "*/"
+run   = "git"
+group = "git"
+
+[[plugin.prepend_previewers]]
+mime = "text/*"
+run = "git-diff-toggle"
