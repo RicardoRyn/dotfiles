@@ -9,7 +9,7 @@ default-command = "log"
 editor = "nvim"
 diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
 diff-instructions = false
-merge-editor = "vimdiff"
+merge-editor = ["nvim", "-c", "MergeEditor $base $left $right $output $path"]
 
 [git]
 private-commits = '''description(glob:'WIP:*')'''
@@ -19,15 +19,7 @@ private-commits = '''description(glob:'WIP:*')'''
 "format_timestamp(timestamp)" = "timestamp.ago()"
 
 [aliases]
-l = ["log", "-r", "::", "-n", "10"]
-
-[merge-tools.vimdiff]
-program = "nvim"
-merge-args = ["-f", "-d", "$output", "-M",
-    "$left", "$base", "$right",
-    "-c", "wincmd J", "-c", "set modifiable",
-    "-c", "set write"]
-merge-tool-edits-conflict-markers = true
+l = ["log", "-r", "::", "-n", "20"]
 
 [colors]
 "diff removed token" = { bg = "#eac8d3", underline = false }

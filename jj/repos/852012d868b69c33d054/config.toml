@@ -3,13 +3,12 @@
 [revset-aliases]
 "trunk()" = "main@origin"
 
-[snapshot]
-max-new-file-size = 3021365
-
 [fix.tools.ruff-lint]
 command = ["ruff", "check", "--fix", "--quiet", "--stdin-filename=$path", "-"]
 patterns = ["glob:'**/*.py'"]
+line-range-arg = "--lines=$first:$last"
 
 [fix.tools.ruff-format]
 command = ["ruff", "format", "--stdin-filename=$path", "-"]
 patterns = ["glob:'**/*.py'"]
+line-range-arg = "--lines=$first:$last"
