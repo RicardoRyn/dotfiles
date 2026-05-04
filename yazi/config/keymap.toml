@@ -37,6 +37,12 @@ run  = "plugin zoom -1"
 desc = "Zoom out hovered file"
 
 [[mgr.prepend_keymap]]
+on = '<C-o>'
+run = 'shell -- dwag %s'
+for = 'windows'
+desc = 'Drag files/folders'
+
+[[mgr.prepend_keymap]]
 on   = [ "g", "t" ]
 run  = "plugin git-diff-toggle"
 desc = "Toggle git diff preview"
