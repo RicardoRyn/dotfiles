@@ -32,14 +32,13 @@ bars:
         [
           "glazewm_tiling_direction",
           "glazewm_workspaces",
-          "bin",
           "github",
           "copilot",
           "todo",
           "active_window",
         ]
       center: ["memory", "clock"]
-      right: ["volume", "bluetooth", "wifi", "systray", "power_menu"]
+      right: ["bin", "volume", "bluetooth", "wifi", "power_menu"]
 widgets:
   glazewm_tiling_direction:
     type: "glazewm.tiling_direction.GlazewmTilingDirectionWidget"
