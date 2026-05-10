@@ -27,3 +27,5 @@
 
 [merge]
     conflictStyle = zdiff3
+[credential "https://codeberg.org"]
+	provider = generic
