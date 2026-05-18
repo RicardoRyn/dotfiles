@@ -1,7 +1,6 @@
 alias ll = ls -l
 alias la = ls -a
 alias lla = ls -al
-alias vim = nvim
 alias vide = neovide
 alias lg = lazygit
 alias lj = lazyjj -r "all()"

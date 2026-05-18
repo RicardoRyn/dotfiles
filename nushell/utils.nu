@@ -50,6 +50,16 @@ export def --env y [...args] {
   rm -fp $tmp
 }
 
+export def --env nvim [...args] {
+  $env.NVIM_APPNAME = "nvim"
+  ^nvim ...$args
+}
+
+export def --env nv [...args] {
+  $env.NVIM_APPNAME = "nvim-lite"
+  ^nvim ...$args
+}
+
 # Fuzzy-search shell history and replace the current command line buffer.
 #
 # Examples:
