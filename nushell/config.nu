@@ -8,7 +8,6 @@ alias ju = jjui -r "all()"
 alias jf = jj git fetch
 alias jp = jj git push
 
-$env.config.history.file_format = "sqlite"
 $env.config = {
   history: { file_format: "sqlite" }
   hooks: {
