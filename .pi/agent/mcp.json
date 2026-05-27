@@ -1,0 +1,16 @@
+{
+  "imports": [
+    "claude-code"
+  ],
+  "mcpServers": {
+    "codegraph": {
+      "type": "stdio",
+      "command": "codegraph",
+      "args": [
+        "serve",
+        "--mcp"
+      ],
+      "directTools": false
+    }
+  }
+}

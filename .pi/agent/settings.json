@@ -1,0 +1,18 @@
+{
+  "lastChangelogVersion": "0.75.5",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-pro",
+  "theme": "light",
+  "defaultThinkingLevel": "high",
+  "hideThinkingBlock": false,
+  "packages": [
+    "npm:context-mode",
+    "npm:pi-web-access",
+    "npm:@gotgenes/pi-permission-system",
+    "npm:pi-mcp-adapter",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@juicesharp/rpiv-i18n",
+    "npm:pi-subagents"
+  ],
+  "quietStartup": false
+}
