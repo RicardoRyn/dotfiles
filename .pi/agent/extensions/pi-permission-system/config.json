@@ -3,7 +3,7 @@
   "debugLog": false,
   "permissionReviewLog": true,
   "yoloMode": false,
-  "piInfrastructureReadPaths": [],
+  "piInfrastructureReadPaths": ["C:/Users/RicardoRyn/AppData/Local/nvim-data"],
   "permission": {
     "*": "ask",
     "path": {
@@ -32,7 +32,7 @@
       "jj *": "ask"
     },
     "mcp": { "*": "allow" },
-    "skill": { "*": "ask" },
+    "skill": { "*": "allow" },
     "external_directory": "ask"
   }
 }

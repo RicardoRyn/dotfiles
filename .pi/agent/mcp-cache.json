@@ -150,7 +150,7 @@
         },
         {
           "name": "codegraph_node",
-          "description": "Get detailed info about ONE symbol (location, signature, docstring). Pass includeCode=true for source: a function/method returns its body; a class/interface/struct/enum returns a compact member OUTLINE (fields + method signatures + line numbers), not every method body — Read or codegraph_node a specific member for its body. Keep includeCode=false to minimize context. For SEVERAL related symbols, make ONE codegraph_explore (or codegraph_context) call instead of many node calls — repeated node calls each re-read the whole context and cost far more.",
+          "description": "Get ONE symbol's details (location, signature, docstring) PLUS its TRAIL — what it calls and what calls it, each with file:line. Pass includeCode=true for source (functions return their body; containers return a member outline). Use this to WALK the call graph hop-by-hop — node a symbol, then node one of its trail entries — the structural, no-Read way to follow \"what calls/triggers/handles X\" across files. For a broad first overview of many symbols at once use codegraph_explore; use node to drill along a specific path from there. (If a trail is empty on a non-leaf, that hop is likely dynamic dispatch — read just that line.) Source returned with includeCode is the verbatim live file content — identical to Read.",
           "inputSchema": {
             "type": "object",
             "properties": {
@@ -175,7 +175,7 @@
         },
         {
           "name": "codegraph_explore",
-          "description": "Returns source for SEVERAL related symbols grouped by file, plus a relationship map, in ONE capped call. This is the efficient way to inspect many related symbols at once — strongly prefer it over a series of codegraph_node or Read calls (each separate call re-reads the whole context, so 8 node calls cost far more than 1 explore). Use it after codegraph_context when you need to see the actual source of several symbols. Query with specific symbol/file/code terms, NOT natural-language sentences — run codegraph_search first to find names. Bad: \"how are agent prompts loaded and passed to the CLI\". Good: \"renderStaticScene drawElementOnCanvas ShapeCache renderElement.ts\". Budget: make at most 1 calls for this project (100 files indexed).",
+          "description": "Returns source for SEVERAL related symbols grouped by file, plus a relationship map, in ONE capped call. This is the efficient way to inspect many related symbols at once — strongly prefer it over a series of codegraph_node or Read calls (each separate call re-reads the whole context, so 8 node calls cost far more than 1 explore). Use it after codegraph_context when you need to see the actual source of several symbols. Query with specific symbol/file/code terms, NOT natural-language sentences — run codegraph_search first to find names. Bad: \"how are agent prompts loaded and passed to the CLI\". Good: \"renderStaticScene drawElementOnCanvas ShapeCache renderElement.ts\". The code it returns is the VERBATIM live file source (byte-for-byte identical to Read), line-numbered — not a summary; treat files it shows as already Read, no need to re-open them.",
           "inputSchema": {
             "type": "object",
             "properties": {
@@ -250,10 +250,35 @@
               }
             }
           }
+        },
+        {
+          "name": "codegraph_trace",
+          "description": "Trace the CALL PATH between two symbols — \"how does <from> reach/become <to>?\" Returns the chain of functions from one to the other (each hop with file:line and its body inlined, plus the outgoing calls of the destination itself) in ONE call. This is something grep/Read structurally cannot do: there is no text pattern for \"the path from A to B\". Ideal for flow questions — how an update triggers a render, how a request reaches a handler, how a QuerySet becomes SQL. If no static path exists the chain likely breaks at dynamic dispatch (callbacks/descriptors/metaclasses); the tool says where and points you to codegraph_node to bridge it.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "string",
+                "description": "Symbol the flow starts at (e.g., \"QuerySet\", \"handleRequest\", \"mutateElement\")"
+              },
+              "to": {
+                "type": "string",
+                "description": "Symbol the flow should reach (e.g., \"execute_sql\", \"render\", \"setState\")"
+              },
+              "projectPath": {
+                "type": "string",
+                "description": "Path to a different project with .codegraph/ initialized. If omitted, uses current project. Use this to query other codebases."
+              }
+            },
+            "required": [
+              "from",
+              "to"
+            ]
+          }
         }
       ],
       "resources": [],
-      "cachedAt": 1779526856727
+      "cachedAt": 1780025168365
     }
   }
 }

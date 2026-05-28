@@ -10,3 +10,5 @@
 # 4. 重新单独封杀敏感文件（规则在最后，优先级最高）
 /.pi/agent/auth.json
 /.pi/cache/**/*.json
+
+jj/repos/**/*

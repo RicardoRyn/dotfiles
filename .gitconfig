@@ -1,31 +1,25 @@
-# 用户信息，用于标识提交者身份
 [user]
   name = Ricardo_T8
   email = ricardoryn1317@gmail.com
-
-# Gitee 的凭据设置，使用通用方式（generic）管理凭据
+  signingkey = 6D3481138D9D0B12
 [credential "https://gitee.com"]
   provider = generic
-
-# 初始化仓库时默认分支名为 main（而不是 master）
 [init]
   defaultBranch = main
-
 [include]
   path = C:/Users/RicardoRyn/dotfiles/catppuccin.gitconfig
-
 [core]
-    pager = delta
-
+  pager = delta
+  autocrlf = input
 [interactive]
-    diffFilter = delta --color-only
-
+  diffFilter = delta --color-only
 [delta]
-    navigate = true  # use n and N to move between diff sections
-    line-numbers = true
-    features = catppuccin-latte
-
+  navigate = true  # use n and N to move between diff sections
+  line-numbers = true
+  features = catppuccin-latte
 [merge]
-    conflictStyle = zdiff3
+  conflictStyle = zdiff3
 [credential "https://codeberg.org"]
-	provider = generic
+  provider = generic
+[commit]
+  gpgsign = true

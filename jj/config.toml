@@ -12,6 +12,7 @@ diff-instructions = false
 merge-editor = ["nvim", "-c", "MergeEditor $base $left $right $output $path"]
 
 [git]
+write-change-id-header = true
 private-commits = '''description(glob:'WIP:*')'''
 
 [template-aliases]
@@ -25,3 +26,10 @@ l = ["log", "-r", "::", "-n", "20"]
 "diff removed token" = { bg = "#eac8d3", underline = false }
 "diff added token" = { bg = "#d0e2d1", underline = false }
 "diff context" = { dim = true }
+
+[signing]
+behavior = "own"
+backend = "gpg"
+
+[working-copy]
+eol-conversion = "input"
