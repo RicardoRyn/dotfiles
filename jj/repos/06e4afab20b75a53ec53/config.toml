@@ -1,4 +1,0 @@
-"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
-
-[working-copy]
-eol-conversion = "none"
