@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.78.0",
-  "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-pro",
+  "defaultProvider": "opencode",
+  "defaultModel": "nemotron-3-ultra-free",
   "theme": "catppuccin-latte",
   "defaultThinkingLevel": "high",
   "hideThinkingBlock": true,
