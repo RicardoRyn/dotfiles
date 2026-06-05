@@ -1,18 +1,1 @@
-# 1. 忽略 .pi 目录下的【所有层级】的文件和文件夹
-/.pi/**/*
-
-# 2. 重新放行【所有层级】的目录（必须放行目录，否则底层无法遍历到文件）
-!/.pi/**/
-
-# 3. 强行放行任意深度的 .json 文件
-!/.pi/**/*.json
-
-# 4. 重新单独封杀敏感文件（规则在最后，优先级最高）
-/.pi/agent/auth.json
-/.pi/cache/**/*.json
-/.pi/context-mode/**/*
-/.pi/agent/sessions/**/*
-/.pi/agent/mcp-cache.json
-/.pi/agent/mcp-onboarding.json
-
 jj/repos/**/*
