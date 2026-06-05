@@ -1,21 +1,20 @@
 {
-  "lastChangelogVersion": "0.78.0",
-  "defaultProvider": "opencode",
-  "defaultModel": "nemotron-3-ultra-free",
+  "lastChangelogVersion": "0.79.3",
+  "defaultProvider": "opencode-go",
+  "defaultModel": "qwen3.7-max",
   "theme": "catppuccin-latte",
+  "quietStartup": false,
   "defaultThinkingLevel": "high",
   "hideThinkingBlock": true,
   "extensions": [
     "~/.pi/agent/extensions/agentmemory"
   ],
   "packages": [
-    "npm:context-mode",
     "npm:@gotgenes/pi-permission-system",
-    "npm:pi-mcp-adapter",
-    "npm:pi-subagents",
     "npm:pi-rewind",
     "npm:pi-exa",
-    "npm:@plannotator/pi-extension"
-  ],
-  "quietStartup": false
+    "npm:@plannotator/pi-extension",
+    "npm:pi-cache-optimizer",
+    "npm:@sean_pedersen/pi-codegraph"
+  ]
 }

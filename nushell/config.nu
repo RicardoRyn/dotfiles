@@ -9,7 +9,6 @@ alias jf = jj git fetch
 alias jp = jj git push
 
 $env.config = {
-  history: { file_format: "sqlite" }
   hooks: {
     display_output: { table --icons }
   }

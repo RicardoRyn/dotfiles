@@ -14,7 +14,7 @@ export def --env nvim [...args] {
   ^nvim ...$args
 }
 
-export def --env nv [...args] {
-  $env.NVIM_APPNAME = "nvim-lite"
+export def --env nvimbak [...args] {
+  $env.NVIM_APPNAME = "nvim-bak"
   ^nvim ...$args
 }
