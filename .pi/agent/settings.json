@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.79.3",
+  "lastChangelogVersion": "0.79.9",
   "defaultProvider": "opencode-go",
-  "defaultModel": "qwen3.7-max",
+  "defaultModel": "deepseek-v4-pro",
   "theme": "catppuccin-latte",
   "quietStartup": false,
   "defaultThinkingLevel": "high",
@@ -15,6 +15,6 @@
     "npm:pi-exa",
     "npm:@plannotator/pi-extension",
     "npm:pi-cache-optimizer",
-    "npm:@sean_pedersen/pi-codegraph"
+    "npm:@vndv/pi-codegraph"
   ]
 }

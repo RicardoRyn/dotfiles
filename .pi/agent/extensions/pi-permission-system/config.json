@@ -3,7 +3,9 @@
   "debugLog": false,
   "permissionReviewLog": true,
   "yoloMode": false,
-  "piInfrastructureReadPaths": ["C:/Users/RicardoRyn/AppData/Local/nvim-data"],
+  "toolInputPreviewMaxLength": 400,
+  "toolTextSummaryMaxLength": 120,
+  "piInfrastructureReadPaths": [],
   "permission": {
     "*": "ask",
     "path": {
@@ -12,12 +14,7 @@
       "*.env.*": "deny",
       "*.env.example": "allow"
     },
-    "read": {
-      "*": "allow",
-      "*.env": "deny",
-      "*.env.*": "deny",
-      "*.env.example": "allow"
-    },
+    "read": "allow",
     "write": {
       "*": "ask",
       "*.lock": "deny"
@@ -30,24 +27,22 @@
     "find": "allow",
     "ls": "allow",
     "bash": {
-      "grep": "allow",
-      "find": "allow",
-      "ls": "allow",
-      "cat": "allow",
-      "git status": "allow",
-      "git diff *": "allow",
+      "git *": { "action": "deny", "reason": "Use jj instead" },
+      "jj *": "ask",
       "jj status": "allow",
       "jj diff *": "allow",
+      "grep *": "allow",
+      "find *": "allow",
+      "ls *": "allow",
+      "sed *": "allow",
       "cat *": "allow"
     },
     "skill": { "*": "allow" },
-    "external_directory": "ask",
-    "codegraph_status": "allow",
+    "external_directory": "allow",
+    "memory_save": "allow",
+    "memory_search": "allow",
     "codegraph_search": "allow",
-    "codegraph_context": "allow",
-    "codegraph_node": "allow",
     "codegraph_explore": "allow",
-    "codegraph_trace": "allow",
-    "codegraph_files": "allow"
+    "codegraph_node": "allow"
   }
 }
