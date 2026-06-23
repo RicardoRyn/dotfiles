@@ -41,8 +41,12 @@
     "external_directory": "allow",
     "memory_save": "allow",
     "memory_search": "allow",
+    "codegraph_status": "allow",
     "codegraph_search": "allow",
+    "codegraph_context": "allow",
+    "codegraph_node": "allow",
     "codegraph_explore": "allow",
-    "codegraph_node": "allow"
+    "codegraph_trace": "allow",
+    "codegraph_files": "allow"
   }
 }

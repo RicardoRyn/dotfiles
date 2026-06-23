@@ -10,13 +10,17 @@
         "plannotator_submit_plan",
         "memory_search",
         "memory_save",
-        "codegraph_search",
-        "codegraph_explore",
-        "codegraph_node",
         "deep_search_exa",
         "web_search_exa",
         "web_search_advanced_exa",
-        "web_fetch_exa"
+        "web_fetch_exa",
+        "codegraph_status",
+        "codegraph_search",
+        "codegraph_context",
+        "codegraph_node",
+        "codegraph_explore",
+        "codegraph_trace",
+        "codegraph_files"
       ],
       "statusLabel": " plan",
       "systemPrompt": "[PLANNING]\nPlan file: ${planFilePath}"
