@@ -1,5 +1,6 @@
 {
   "app.editor.external": ["ctrl+e"],
   "tui.editor.undo": ["ctrl+z"],
-  "app.suspend": ["ctrl+-"]
+  "app.suspend": ["ctrl+-"],
+  "app.model.select": []
 }
