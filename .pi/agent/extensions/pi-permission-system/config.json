@@ -26,6 +26,7 @@
     "grep": "allow",
     "find": "allow",
     "ls": "allow",
+    "head": "allow",
     "bash": {
       "git *": { "action": "deny", "reason": "Use jj instead" },
       "jj *": "ask",
@@ -35,7 +36,8 @@
       "find *": "allow",
       "ls *": "allow",
       "sed *": "allow",
-      "cat *": "allow"
+      "cat *": "allow",
+      "head *": "allow"
     },
     "skill": { "*": "allow" },
     "external_directory": "allow",

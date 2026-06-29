@@ -7,6 +7,7 @@
         "grep",
         "find",
         "ls",
+        "head",
         "plannotator_submit_plan",
         "memory_search",
         "memory_save",

@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.80.2",
   "defaultProvider": "opencode-go",
-  "defaultModel": "qwen3.7-max",
+  "defaultModel": "deepseek-v4-pro",
   "theme": "catppuccin-latte",
   "quietStartup": false,
   "defaultThinkingLevel": "high",

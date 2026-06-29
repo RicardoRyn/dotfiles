@@ -7,6 +7,7 @@ alias lj = lazyjj -r "all()"
 alias ju = jjui -r "all()"
 alias jf = jj git fetch
 alias jp = jj git push
+alias rjxssh = ssh ruanjx@192.168.22.171
 
 $env.config = {
   hooks: {
