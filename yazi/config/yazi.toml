@@ -51,7 +51,3 @@ id    = "git" # Remove if Yazi > v26.1.22
 url   = "*/"
 run   = "git"
 group = "git"
-
-[[plugin.prepend_previewers]]
-mime = "text/*"
-run = "git-diff-toggle"

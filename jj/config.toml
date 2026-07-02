@@ -23,13 +23,9 @@ private-commits = '''description(glob:'WIP:*')'''
 l = ["log", "-r", "::", "-n", "20"]
 
 [colors]
-"diff removed token" = { bg = "#eac8d3", underline = false }
+"diff removed token" = { bg = "#eac8d3", underline = false, crossed-out = true }
 "diff added token" = { bg = "#d0e2d1", underline = false }
 "diff context" = { dim = true }
-
-[signing]
-behavior = "own"
-backend = "gpg"
 
 [working-copy]
 eol-conversion = "input"

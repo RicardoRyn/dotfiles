@@ -1,4 +1,14 @@
 [[mgr.prepend_keymap]]
+on   = "<C-u>"
+run  = "arrow -5"
+desc = "Move cursor up 5 items"
+
+[[mgr.prepend_keymap]]
+on   = "<C-d>"
+run  = "arrow 5"
+desc = "Move cursor down 5 items"
+
+[[mgr.prepend_keymap]]
 on   = "t"
 run  = "plugin smart-tab"
 desc = "Create a tab and enter the hovered directory"
@@ -37,12 +47,12 @@ run  = "plugin zoom -1"
 desc = "Zoom out hovered file"
 
 [[mgr.prepend_keymap]]
-on = '<C-o>'
-run = 'shell -- dwag %s'
-for = 'windows'
-desc = 'Drag files/folders'
+on   = [ "g", "c" ]
+run  = "plugin vcs-files"
+desc = "Show Git file changes"
 
 [[mgr.prepend_keymap]]
-on   = [ "g", "t" ]
-run  = "plugin git-diff-toggle"
-desc = "Toggle git diff preview"
+on = "<C-o>"
+run = "shell -- dwag %s"
+for = "windows"
+desc = "Drag files/folders"

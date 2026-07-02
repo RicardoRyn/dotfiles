@@ -18,7 +18,7 @@ dirs  = [
   { name = "Pictures", text = "" },
   { name = "Public", text = "" },
   { name = "Videos", text = "" },
-  # 自定义
+  # Custom
   { name = "Ricardo", text = "" },
   { name = "ricardo", text = "" },
   { name = "python", text = "" },
