@@ -1,5 +1,5 @@
 [mgr]
-  linemode = "size"
+  linemode = "size_mtime"
 
 [preview]
   wrap = "yes"

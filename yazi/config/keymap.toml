@@ -56,3 +56,38 @@ on = "<C-o>"
 run = "shell -- dwag %s"
 for = "windows"
 desc = "Drag files/folders"
+
+[[mgr.prepend_keymap]]
+on = [ "m", "c" ]
+run = "linemode size_mtime"
+desc = "Linemode: size+mtime"
+
+[[mgr.prepend_keymap]]
+on   = [ ",", "m" ]
+run  = "sort mtime --reverse=no"
+desc = "Sort by modified time"
+
+[[mgr.prepend_keymap]]
+on   = [ ",", "M" ]
+run  = "sort mtime --reverse=yes"
+desc = "Sort by modified time (reverse)"
+
+[[mgr.prepend_keymap]]
+on   = [ ",", "b" ]
+run  = "sort btime --reverse=no"
+desc = "Sort by birth time"
+
+[[mgr.prepend_keymap]]
+on   = [ ",", "B" ]
+run  = "sort btime --reverse=yes"
+desc = "Sort by birth time (reverse)"
+
+[[mgr.prepend_keymap]]
+on   = [ ",", "s" ]
+run  = "sort size --reverse=no"
+desc = "Sort by size"
+
+[[mgr.prepend_keymap]]
+on   = [ ",", "S" ]
+run  = "sort size --reverse=yes"
+desc = "Sort by size (reverse)"

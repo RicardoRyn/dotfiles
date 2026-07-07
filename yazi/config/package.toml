@@ -28,5 +28,10 @@ use = "yazi-rs/plugins:vcs-files"
 rev = "8cd50c6"
 hash = "2e4366828e8fcd7f36405d65a249082e"
 
+[[plugin.deps]]
+use = "barbanevosa/linemode-plus"
+rev = "4d0d034"
+hash = "5d0ac26725d9a975bef1d0887374f10e"
+
 [flavor]
 deps = []
