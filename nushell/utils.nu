@@ -18,3 +18,13 @@ export def --env nvimbak [...args] {
   $env.NVIM_APPNAME = "nvim-bak"
   ^nvim ...$args
 }
+
+export def --env mininvim [...args] {
+  $env.NVIM_APPNAME = "nvim-mini"
+  ^nvim ...$args
+}
+
+export def --env nvimpure [...args] {
+  $env.NVIM_APPNAME = "nvim-pure"
+  ^nvim ...$args
+}
