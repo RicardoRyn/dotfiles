@@ -24,7 +24,7 @@ bars:
       height: 24
     padding:
       top: 7
-      left: 8
+      left: 55
       bottom: 0
       right: 8
     widgets:
