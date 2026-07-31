@@ -3,8 +3,6 @@
   "debugLog": false,
   "permissionReviewLog": true,
   "yoloMode": false,
-  "toolInputPreviewMaxLength": 400,
-  "toolTextSummaryMaxLength": 120,
   "piInfrastructureReadPaths": [],
   "permission": {
     "*": "ask",
@@ -41,8 +39,6 @@
     },
     "skill": { "*": "allow" },
     "external_directory": "allow",
-    "memory_save": "allow",
-    "memory_search": "allow",
     "web_search_exa": "allow",
     "web_search_advanced_exa": "allow",
     "web_fetch_exa": "allow",

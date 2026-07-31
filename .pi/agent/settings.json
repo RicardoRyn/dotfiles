@@ -1,14 +1,12 @@
 {
-  "lastChangelogVersion": "0.80.10",
-  "defaultProvider": "openrouter",
-  "defaultModel": "tencent/hy3-preview",
+  "lastChangelogVersion": "1.3.0",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-pro",
   "theme": "catppuccin-latte",
   "quietStartup": false,
   "defaultThinkingLevel": "high",
   "hideThinkingBlock": false,
-  "extensions": [
-    "~/.pi/agent/extensions/agentmemory"
-  ],
+  "extensions": [],
   "packages": [
     "npm:@gotgenes/pi-permission-system",
     "npm:pi-rewind",
@@ -16,5 +14,9 @@
     "npm:@plannotator/pi-extension",
     "npm:pi-cache-optimizer",
     "npm:@vndv/pi-codegraph"
-  ]
+  ],
+  "editorPaddingX": 0,
+  "outputPad": 0,
+  "doubleEscapeAction": "tree",
+  "treeFilterMode": "no-tools"
 }

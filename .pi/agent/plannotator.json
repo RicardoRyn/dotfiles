@@ -9,8 +9,6 @@
         "ls",
         "head",
         "plannotator_submit_plan",
-        "memory_search",
-        "memory_save",
         "web_search_exa",
         "web_search_advanced_exa",
         "web_fetch_exa",
@@ -22,8 +20,7 @@
         "codegraph_trace",
         "codegraph_files"
       ],
-      "statusLabel": " plan",
-      "systemPrompt": "[PLANNING]\nPlan file: ${planFilePath}"
+      "statusLabel": " plan"
     }
   }
 }
