@@ -1,32 +1,32 @@
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
-rev = "159eaba"
-hash = "7de446280b1ba8c49ffd86dbc24bbbe6"
+rev = "ea92cf4"
+hash = "9776f378459072b6c2875eae5addc49d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:zoom"
-rev = "8cd50c6"
-hash = "ae2eeb3219effe8cae2924cf17ca813d"
+rev = "4dc7f1b"
+hash = "e8e279463ee99c940e6945a14cf4aa9e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "8cd50c6"
-hash = "eddc504a5718e3735475e18c8319b1e7"
+rev = "4dc7f1b"
+hash = "5b2fbef7d1513ce38ff72623a071a5e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "8cd50c6"
-hash = "2ea53389fd01aa5ff48f34bceb5cedbc"
+rev = "4dc7f1b"
+hash = "5bb0bfab901d3601c370eafdd66edd31"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "8cd50c6"
-hash = "67ebef7cfaaf677d746909c55bdf8554"
+rev = "4dc7f1b"
+hash = "f281261ff04ad7ec867c3f802a50835f"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:vcs-files"
-rev = "8cd50c6"
-hash = "2e4366828e8fcd7f36405d65a249082e"
+rev = "4dc7f1b"
+hash = "853240b2454c93a93fd03fc9fd7e06e8"
 
 [[plugin.deps]]
 use = "barbanevosa/linemode-plus"
