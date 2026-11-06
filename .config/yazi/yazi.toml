@@ -1,0 +1,21 @@
+[mgr]
+  linemode = "size_mtime"
+
+[preview]
+  wrap = "yes"
+  sort_by = "natural"
+
+[input]
+cursor_blink = true
+
+[[plugin.prepend_fetchers]]
+id    = "git" # Remove if Yazi > v26.1.22
+url   = "*"
+run   = "git"
+group = "git"
+
+[[plugin.prepend_fetchers]]
+id    = "git" # Remove if Yazi > v26.1.22
+url   = "*/"
+run   = "git"
+group = "git"

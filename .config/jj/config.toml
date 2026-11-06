@@ -1,0 +1,31 @@
+#:schema https://jj-vcs.github.io/jj/latest/config-schema.json
+
+[user]
+name = "Ricardo"
+email = "ricardoryn1317@gmail.com"
+
+[ui]
+default-command = "log"
+editor = "nvim"
+diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
+diff-instructions = false
+merge-editor = ["nvim", "-c", "MergeEditor $base $left $right $output $path"]
+
+[git]
+private-commits = '''description(glob:'WIP:*')'''
+
+[lazyjj]
+highlight-color = "#cccccc"
+diff-tool = "delta"
+
+[template-aliases]
+"format_short_signature(signature)" = "signature.name()"
+"format_timestamp(timestamp)" = "timestamp.ago()"
+
+[aliases]
+l = ["log", "-r", "::", "-n", "20"]
+
+[colors]
+"diff removed token" = { bg = "#eac8d3", underline = false, crossed-out = true }
+"diff added token" = { bg = "#d0e2d1", underline = false }
+"diff context" = { dim = true }
