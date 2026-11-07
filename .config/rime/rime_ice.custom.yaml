@@ -1,0 +1,4 @@
+patch:
+  speller/algebra/+:
+      - derive/in$/ing/
+      - derive/ing$/in/
