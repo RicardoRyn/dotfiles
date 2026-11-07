@@ -21,6 +21,16 @@ function y() {
   [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
   command rm -f -- "$tmp"
 }
+function jj() {
+    local theme_dir="$HOME/.config/jj/themes"
+    local theme
+    if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]]; then
+        theme="$theme_dir/dark.toml"
+    else
+        theme="$theme_dir/light.toml"
+    fi
+    command jj --config-file "$theme" "$@"
+}
 
 # 4. 别名
 alias grep='grep --color=auto'
@@ -33,10 +43,10 @@ alias jp='jj git push'
 alias sshruanjx='ssh ruanjx@192.168.22.171'
 alias sshnhp='ssh nhp@192.168.3.103'
 
-# 5. tmux 自动启动
-if [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
-  tmux new-session -A -s main
-fi
+# # 5. tmux 自动启动
+# if [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
+#   tmux new-session -A -s main
+# fi
 
 # 6. flyline
 enable flyline 2>/dev/null ||

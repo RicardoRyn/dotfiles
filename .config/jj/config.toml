@@ -25,7 +25,7 @@ diff-tool = "delta"
 [aliases]
 l = ["log", "-r", "::", "-n", "20"]
 
-[colors]
-"diff removed token" = { bg = "#eac8d3", underline = false, crossed-out = true }
-"diff added token" = { bg = "#d0e2d1", underline = false }
-"diff context" = { dim = true }
+# [colors]
+# "diff removed token" = { bg = "#eac8d3", underline = false, crossed-out = true }
+# "diff added token" = { bg = "#d0e2d1", underline = false }
+# "diff context" = { dim = true }
