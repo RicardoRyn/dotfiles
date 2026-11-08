@@ -1,0 +1,9 @@
+Generate a {type} commit message in {locale}.
+The message should not exceed {maxLength} characters.
+Please provide {generate} messages.
+
+Remember to follow these guidelines:
+1. Use the imperative mood
+2. Be concise and clear
+3. Explain the 'why' behind the change
+4. Please format the commit message body so that no line exceeds 72 characters.
