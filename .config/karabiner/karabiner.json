@@ -20,6 +20,17 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["command", "option"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
                                     "key_code": "m",
                                     "modifiers": {
                                         "mandatory": ["command"],
