@@ -68,7 +68,8 @@ esac
 
 PS1='\e[01;32m╭─ ${OS_ICON}\u\e[00m \e[01;34m\w\e[00m VCS_STATUS\n\e[01;32m╰─\e[00m $ '
 PS2='\e[2mline FLYLINE_PROMPT_LINE_NUMBER:\e[0m '
-PS1_FINAL='\e[01;32m>- ${OS_ICON} Ran\e[00m at \D{%Y-%m-%d %H:%M:%S} \e[01;32m->\e[00m '
+PS1_FINAL='\e[01;32m>- ${OS_ICON}Ran\e[00m at \D{%Y-%m-%d %H:%M:%S} \e[01;32m->\e[00m '
 RPS1=' FLYLINE_COPY_BUFFER FLYLINE_LAST_COMMAND_DURATION'
+PROMPT_RULER='empty-line'
 
 ################################################################################
