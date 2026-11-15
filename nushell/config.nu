@@ -43,7 +43,7 @@ $env.config = {
 
 $env.EDITOR = "nvim"
 $env.CONDA_NO_PROMPT = true  # 不显示conda的环境提示，由starship接管
-$env.NHP_SAMBASHARE = "\\\\172.28.178.224\\nhp_sambashare"
+$env.NHP_SAMBASHARE = "\\\\192.168.3.103\\nhp_sambashare"
 $env.MI_SAMBASHARE = "\\\\192.168.3.102\\MI_sambashare"
 
 source ~/.zoxide.nu

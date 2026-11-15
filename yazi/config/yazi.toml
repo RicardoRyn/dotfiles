@@ -11,8 +11,8 @@ cursor_blink = true
 [opener]
 edit = [
   { run = "${EDITOR:-vi} %s", desc = "$EDITOR", for = "unix",    block = true },
-  { run = "neovide %s",       desc = "neovide", for = "windows", orphan = true },
   { run = "nvim %s",          desc = "nvim",    for = "windows", block = true },
+  { run = "neovide %s",       desc = "neovide", for = "windows", orphan = true },
   { run = "code %s",          desc = "code",    for = "windows", orphan = true },
   { run = "zed %s",           desc = "zed",     for = "windows", orphan = true },
 ]

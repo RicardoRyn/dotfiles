@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "1.4.0",
-  "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-pro",
+  "lastChangelogVersion": "1.5.2",
+  "defaultProvider": "magpie",
+  "defaultModel": "group/smart-split",
   "theme": "catppuccin-latte",
   "quietStartup": false,
   "defaultThinkingLevel": "high",
@@ -17,5 +17,8 @@
   "editorPaddingX": 0,
   "outputPad": 0,
   "doubleEscapeAction": "tree",
-  "treeFilterMode": "no-tools"
+  "treeFilterMode": "no-tools",
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:@gotgenes/pi-permission-system\",\"scope\":\"user\"}": "42.0.0"
+  }
 }

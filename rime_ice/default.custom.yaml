@@ -1,9 +1,3 @@
-customization:
-  distribution_code_name: Weasel
-  distribution_version: 0.16.3
-  generator: "Rime::SwitcherSettings"
-  modified_time: "Tue Apr 29 20:55:07 2025"
-  rime_version: 1.11.2
 patch:
   ascii_composer:
     switch_key:
@@ -12,21 +6,14 @@ patch:
       Shift_R: noop         # commit_code | commit_text | inline_ascii | clear | noop
       Control_L: noop       # commit_code | commit_text | inline_ascii | clear | noop
       Control_R: noop       # commit_code | commit_text | inline_ascii | clear | noop
-  punctuator/full_shape/+:
-    '[' : '['
-    ']' : ']'
-    '{' : '{'
-    '}' : '}'
   punctuator/half_shape/+:
     '[' : '['
     ']' : ']'
     '{' : '{'
     '}' : '}'
-  schema_list:
-    - {schema: rime_ice}
-  recognizer/patterns/+:
-      uppercase: ".*[A-Z].*"
   key_binder/bindings/+:
     # 开启逗号句号翻页
     - { when: paging, accept: comma, send: Page_Up }
     - { when: has_menu, accept: period, send: Page_Down }
+  # recognizer/patterns/+:
+  #     uppercase: ".*[A-Z].*"
