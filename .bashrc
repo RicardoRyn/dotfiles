@@ -58,6 +58,7 @@ flyline set-cursor --backend terminal
 flyline create-prompt-widget last-command-duration
 flyline create-prompt-widget copy-buffer '[copy]'
 flyline create-prompt-widget custom --name VCS_STATUS --command 'bash $HOME/.config/flyline/vcs_prompt.sh' --placeholder prev
+flyline create-prompt-widget mouse-mode '🖱️' '🔴'
 
 # 根据操作系统设置图标变量
 case "$(uname -s)" in
@@ -69,7 +70,11 @@ esac
 PS1='\e[01;32m╭─ ${OS_ICON}\u\e[00m \e[01;34m\w\e[00m VCS_STATUS\n\e[01;32m╰─\e[00m $ '
 PS2='\e[2mline FLYLINE_PROMPT_LINE_NUMBER:\e[0m '
 PS1_FINAL='\e[01;32m>- ${OS_ICON}Ran\e[00m at \D{%Y-%m-%d %H:%M:%S} \e[01;32m->\e[00m '
-RPS1=' FLYLINE_COPY_BUFFER FLYLINE_LAST_COMMAND_DURATION'
+RPS1='[FLYLINE_MOUSE_MODE] FLYLINE_COPY_BUFFER FLYLINE_LAST_COMMAND_DURATION'
 PROMPT_RULER='empty-line'
+
+if [[ -s $HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh ]]; then
+  . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
+fi
 
 ################################################################################

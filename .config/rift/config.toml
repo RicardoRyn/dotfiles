@@ -1,7 +1,6 @@
 [keys]
 "Alt + Z" = "toggle_space_activated"
 "Alt + Shift + R" = { exec = ["rift-cli", "execute", "config", "reload"] }
-"Alt + R" = { binding_mode = "R" }
 "Alt + Y"= { exec = ["rift-cli", "execute", "window", "resize-by", "--amount=-0.1"] }
 "Alt + O"= { exec = ["rift-cli", "execute", "window", "resize-by", "--amount=0.1"] }
 "Alt + F"= { exec = ["rift-cli", "execute", "layout", "switch-preset-column-width"] }
@@ -33,11 +32,6 @@
 "Alt + Shift + 7" = { move_window_to_workspace = 6 }
 "Alt + Shift + 8" = { move_window_to_workspace = 7 }
 "Alt + Shift + 9" = { move_window_to_workspace = 8 }
-
-[binding_modes.R]
-"H" = { resize_window_shrink = "horizontal" }
-"L" = { resize_window_grow = "horizontal" }
-"Escape" = { binding_mode = "default" }
 
 [settings]
 default_disable = false
