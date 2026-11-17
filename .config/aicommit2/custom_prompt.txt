@@ -6,4 +6,4 @@ Remember to follow these guidelines:
 1. Use the imperative mood
 2. Be concise and clear
 3. Explain the 'why' behind the change
-4. Please format the commit message body so that no line exceeds 72 characters.
+4. Wrap the commit message body at 72 characters per line. Long sentences are allowed, but any text exceeding 72 characters should continue on the next line.
