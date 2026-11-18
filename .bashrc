@@ -1,18 +1,19 @@
 # 0. 非交互 shell 直接返回
 [[ $- != *i* ]] && return
 
-# 1. PATH 与环境变量
+
+# PATH 与环境变量
+[[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
 case ":$PATH:" in
 *":$HOME/.local/bin:"*) ;;
 *) export PATH="$HOME/.local/bin:$PATH" ;;
 esac
-
 export EDITOR="nvim"
 
-# 2. 工具初始化
+# 工具初始化
 eval "$(zoxide init bash)"
 
-# 3. 自定义函数
+# 自定义函数
 function y() {
   local tmp cwd
   tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -32,7 +33,7 @@ function jj() {
     command jj --config-file "$theme" "$@"
 }
 
-# 4. 别名
+# 别名
 alias grep='grep --color=auto'
 alias ls='ls --color=auto' # 若 macOS 自带 ls 报错，改成 alias ls='ls -G'
 alias ll='ls -l'
@@ -43,12 +44,12 @@ alias jp='jj git push'
 alias sshruanjx='ssh ruanjx@192.168.22.171'
 alias sshnhp='ssh nhp@192.168.3.103'
 
-# # 5. tmux 自动启动
+# tmux 自动启动
 # if [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
 #   tmux new-session -A -s main
 # fi
 
-# 6. flyline
+# flyline
 enable flyline 2>/dev/null ||
   enable -f /opt/homebrew/lib/libflyline.dylib flyline 2>/dev/null ||
   true
@@ -60,7 +61,6 @@ flyline create-prompt-widget copy-buffer '[copy]'
 flyline create-prompt-widget custom --name VCS_STATUS --command 'bash $HOME/.config/flyline/vcs_prompt.sh' --placeholder prev
 flyline create-prompt-widget mouse-mode '🖱️' '🔴'
 
-# 根据操作系统设置图标变量
 case "$(uname -s)" in
     Darwin)  OS_ICON=" " ;;
     Linux)   OS_ICON=" " ;;
@@ -73,8 +73,8 @@ PS1_FINAL='\e[01;32m>- ${OS_ICON}Ran\e[00m at \D{%Y-%m-%d %H:%M:%S} \e[01;32m->\
 RPS1='[FLYLINE_MOUSE_MODE] FLYLINE_COPY_BUFFER FLYLINE_LAST_COMMAND_DURATION'
 PROMPT_RULER='empty-line'
 
+# bash-completion
 if [[ -s $HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh ]]; then
   . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 fi
-
 ################################################################################

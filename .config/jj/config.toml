@@ -7,9 +7,18 @@ email = "ricardoryn1317@gmail.com"
 [ui]
 default-command = "log"
 editor = "nvim"
-diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
 diff-instructions = false
-merge-editor = ["nvim", "-c", "MergeEditor $base $left $right $output $path"]
+# diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
+# merge-editor = ["nvim", "-c", "MergeEditor $base $left $right $output $path"]
+merge-editor = "diffbandit"
+diff-editor = "diffbandit"
+
+[merge-tools.diffbandit]
+program = "diffbandit"   # bin/diffbandit on PATH
+merge-args = ["merge", "$base", "$left", "$right", "$output", "--path", "$path"]
+edit-args = ["edit", "$left", "$right"]
+diff-args = ["diff", "$left", "$right"]
+merge-tool-edits-conflict-markers = false
 
 [git]
 private-commits = '''description(glob:'WIP:*')'''
