@@ -49,17 +49,24 @@ alias llamarjx='llama-server -m ~/ricardo/local_models/Hy-MT2-7B-Q8_0.gguf -c 16
 #   tmux new-session -A -s main
 # fi
 
+################################################################################
 # flyline
+################################################################################
 enable flyline 2>/dev/null ||
   enable -f /opt/homebrew/lib/libflyline.dylib flyline 2>/dev/null ||
   true
 
-flyline key bind Ctrl+y 'inlineSuggestionAvailable+cursorAtEnd=inlineSuggestionAccept'
 flyline set-cursor --backend terminal
 flyline create-prompt-widget last-command-duration
 flyline create-prompt-widget copy-buffer '[copy]'
 flyline create-prompt-widget custom --name VCS_STATUS --command 'bash $HOME/.config/flyline/vcs_prompt.sh' --placeholder prev
 flyline create-prompt-widget mouse-mode '🖱️' '🔴'
+flyline key remap Ctrl+n Down
+flyline key remap Ctrl+p Up
+flyline key remap Ctrl+f Right
+flyline key remap Ctrl+b Left
+flyline key bind Ctrl+y 'inlineSuggestionAvailable+cursorAtEnd+!tabCompletionMultiColAvailable=inlineSuggestionAccept'
+flyline key bind Ctrl+w 'inlineSuggestionAvailable+cursorAtEnd+!tabCompletionMultiColAvailable=inlineSuggestionAcceptOneWordPart'
 
 case "$(uname -s)" in
 Darwin) OS_ICON=" " ;;

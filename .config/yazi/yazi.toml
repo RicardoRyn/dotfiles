@@ -8,6 +8,13 @@
 [input]
 cursor_blink = true
 
+[opener]
+edit = [
+  { run = "${EDITOR:-vi} %s", desc = "$EDITOR", for = "unix", block = true },
+  { run = "zed %s", desc = "zed", for = "unix", orphan = true },
+  { run = "zed -w %s", desc = "zed (block)", for = "unix", block = true },
+]
+
 [[plugin.prepend_fetchers]]
 id    = "git" # Remove if Yazi > v26.1.22
 url   = "*"
