@@ -1246,19 +1246,6 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Qwen4-Max-Preview · Qoder CN",
-            "max_tokens": 1000000,
-            "name": "qoder-cn/qmodel_latest_preview",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
             "display_name": "Qwen3.8-Max · Qoder CN",
             "max_tokens": 1000000,
             "name": "qoder-cn/qmodel_38max",

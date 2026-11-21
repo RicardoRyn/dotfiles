@@ -32,12 +32,21 @@ function jj() {
   command jj --config-file "$theme" "$@"
 }
 
+function nvim() {
+  local log="${TMPDIR:-/tmp}nvim-startup-$$.log"
+  rm -f "$log"
+  NVIM_STARTUP_LOG="$log" command nvim --startuptime "$log" "$@"
+  local rc=$?
+  rm -f "$log"
+  return $rc
+}
+
 # 别名
 alias grep='grep --color=auto'
-alias ls='ls --color=auto' # 若 macOS 自带 ls 报错，改成 alias ls='ls -G'
-alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -l --icons --git --group-directories-first'
+alias la='eza -la --icons --git --group-directories-first'
+alias lt='eza --tree --icons --group-directories-first'
 alias jf='jj git fetch'
 alias jp='jj git push'
 alias sshruanjx='ssh ruanjx@192.168.22.171'
