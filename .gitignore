@@ -1,0 +1,15 @@
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+*secret*
+*credentials*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp

@@ -1,0 +1,14 @@
+[dotfiles]
+root = "~/.dotfiles"
+
+[dotfile_groups.yazi]
+root = "yazi"
+
+[dotfile_groups.kitty]
+root = "kitty"
+
+[dotfile_groups.aicommit2]
+root = "aicommit2"
+
+[dotfile_groups.bat]
+root = "bat"
