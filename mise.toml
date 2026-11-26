@@ -1,14 +1,15 @@
-[dotfiles]
-root = "~/.dotfiles"
+[dotfiles."yazi/plugins"]
+source = "yazi/shared/plugins"
+mode = "symlink-each"
+variants = [
+    { os = "macos", target = "~/.config/yazi/plugins" },
+    { os = "windows", target = "~/AppData/Roaming/yazi/config/plugins" },
+]
 
-[dotfile_groups.yazi]
-root = "yazi"
-
-[dotfile_groups.kitty]
-root = "kitty"
-
-[dotfile_groups.aicommit2]
-root = "aicommit2"
-
-[dotfile_groups.bat]
-root = "bat"
+[dotfiles."yazi/theme.toml"]
+source = "yazi/shared/theme.toml"
+mode = "symlink"
+variants = [
+    { os = "macos", target = "~/.config/yazi/theme.toml" },
+    { os = "windows", target = "~/AppData/Roaming/yazi/config/theme.toml" },
+]

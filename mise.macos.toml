@@ -1,0 +1,15 @@
+[dotfiles."~/.config/yazi/init.lua"]
+source = "yazi/macos/init.lua"
+mode = "symlink"
+
+[dotfiles."~/.config/yazi/keymap.toml"]
+source = "yazi/macos/keymap.toml"
+mode = "symlink"
+
+[dotfiles."~/.config/yazi/package.toml"]
+source = "yazi/macos/package.toml"
+mode = "symlink"
+
+[dotfiles."~/.config/yazi/yazi.toml"]
+source = "yazi/macos/yazi.toml"
+mode = "symlink"

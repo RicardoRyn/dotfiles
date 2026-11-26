@@ -1,0 +1,15 @@
+[dotfiles."~/AppData/Roaming/yazi/config/init.lua"]
+source = "yazi/windows/init.lua"
+mode = "symlink"
+
+[dotfiles."~/AppData/Roaming/yazi/config/keymap.toml"]
+source = "yazi/windows/keymap.toml"
+mode = "symlink"
+
+[dotfiles."~/AppData/Roaming/yazi/config/package.toml"]
+source = "yazi/windows/package.toml"
+mode = "symlink"
+
+[dotfiles."~/AppData/Roaming/yazi/config/yazi.toml"]
+source = "yazi/windows/yazi.toml"
+mode = "symlink"
