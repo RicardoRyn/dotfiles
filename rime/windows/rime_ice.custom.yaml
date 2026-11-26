@@ -1,0 +1,9 @@
+patch:
+  style:
+    font_point: 11                           # 全局字体字号
+  speller/algebra/+:
+      - derive/in$/ing/
+      - derive/ing$/in/
+  switches/+:
+    - name: ascii_mode
+      reset: 1

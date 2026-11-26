@@ -1,0 +1,200 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+      "context": "EmptyPane || vim_mode == normal",
+      "bindings": {
+          "space space": "file_finder::Toggle",
+      },
+  },
+  {
+      "context": "Editor && vim_mode == insert",
+      "bindings": {
+          "j k": "vim::NormalBefore",
+      },
+  },
+  {
+      "context": "vim_mode == normal && !menu",
+      "bindings": {
+          "shift-y": ["workspace::SendKeystrokes", "y $"],
+      },
+  },
+  {
+      "context": "Dock",
+      "bindings": {
+          "ctrl-w h": "workspace::ActivatePaneLeft",
+          "ctrl-w l": "workspace::ActivatePaneRight",
+          "ctrl-w k": "workspace::ActivatePaneUp",
+          "ctrl-w j": "workspace::ActivatePaneDown",
+      },
+  },
+  {
+      "context": "VimControl && !menu && vim_mode != operator",
+      "bindings": {
+          "w": "vim::NextSubwordStart",
+          "b": "vim::PreviousSubwordStart",
+          "e": "vim::NextSubwordEnd",
+          "g e": "vim::PreviousSubwordEnd",
+      },
+  },
+  // 避免在编辑区误按 x 删除字符或选区
+  {
+      "context": "Editor && (vim_mode == normal || vim_mode == visual)",
+      "bindings": {
+          "x": null,
+      },
+  },
+  // 格式化
+  {
+      "context": "Editor && vim_mode == normal && !menu",
+      "bindings": {
+          "space l f": "editor::Format",
+      },
+  },
+  {
+      "context": "Editor && vim_mode == visual && !menu",
+      "bindings": {
+          "space l f": "editor::FormatSelections",
+      },
+  },
+  // 接受ai建议
+  {
+      "context": "(Editor && edit_prediction)",
+      "bindings": {
+          "ctrl-y": "editor::AcceptEditPrediction",
+      },
+  },
+  {
+      "context": "(Editor && edit_prediction)",
+      "bindings": {
+          "ctrl-w": "editor::AcceptNextWordEditPrediction",
+      },
+  },
+  // 切换buffer
+  {
+      "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+      "bindings": {
+          "shift-l": "vim::GoToTab",
+      },
+  },
+  {
+      "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+      "bindings": {
+          "shift-h": "vim::GoToPreviousTab",
+      },
+  },
+  // 右dock/ai面板
+  {
+      "context": "EmptyPane || vim_mode == normal",
+      "bindings": {
+          "space a a": "workspace::ToggleRightDock",
+      },
+  },
+  // 左dock/项目面板
+  {
+      "context": "EmptyPane || vim_mode == normal || (ProjectPanel && not_editing)",
+      "bindings": {
+          "space e": "workspace::ToggleLeftDock",
+      },
+  },
+  {
+      "context": "(ProjectPanel && not_editing)",
+      "bindings": {
+          "space": null,
+      },
+  },
+  {
+      "context": "(ProjectPanel && not_editing)",
+      "bindings": {
+          "r": "project_panel::Rename",
+      },
+  },
+  {
+      "context": "(ProjectPanel && not_editing)",
+      "bindings": {
+          "shift-r": null,
+      },
+  },
+  {
+      "context": "(ProjectPanel && not_editing)",
+      "bindings": {
+          "o": "project_panel::Open",
+      },
+  },
+  {
+      "context": "ProjectPanel && not_editing",
+      "bindings": {
+          "y": "project_panel::Copy",
+      },
+  },
+  {
+      "context": "ProjectPanel && not_editing",
+      "bindings": {
+          "d": [
+              "project_panel::Trash",
+              {
+                  "skip_prompt": false,
+              },
+          ],
+      },
+  },
+  {
+      "context": "ProjectPanel && not_editing",
+      "bindings": {
+          "p": "project_panel::Paste",
+      },
+  },
+  {
+      "context": "(ProjectPanel && not_editing)",
+      "bindings": {
+          "a": "project_panel::NewFile",
+      },
+  },
+  {
+      "context": "(ProjectPanel && not_editing)",
+      "bindings": {
+          "shift-x": "project_panel::RevealInFileManager",
+      },
+  },
+  {
+      "context": "ProjectPanel && not_editing",
+      "bindings": {
+          "x": "project_panel::Cut",
+      },
+  },
+  {
+      "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+      "bindings": {
+          "space b d": "pane::CloseActiveItem"
+      }
+  },
+  {
+      "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+      "bindings": {
+          "space b o": "pane::CloseOtherItems"
+      }
+  },
+  {
+      "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+      "bindings": {
+          "space b a": "pane::CloseAllItems"
+      }
+  },
+  {
+      "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+      "bindings": {
+          "space b l": "pane::CloseItemsToTheLeft"
+      }
+  },
+  {
+      "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+      "bindings": {
+          "space b r": "pane::CloseItemsToTheRight"
+      }
+  },
+]

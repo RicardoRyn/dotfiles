@@ -1,15 +1,62 @@
+# flyline
+[dotfiles."~/.config/flyline"]
+source = "flyline/macos"
+mode = "symlink-each"
+
+# jj
+[dotfiles."~/.config/jj/config.toml"]
+source = "jj/macos/config.toml"
+mode = "symlink"
+
+# karabiner
+[dotfiles."~/.config/karabiner/karabiner.json"]
+source = "karabiner/macos/karabiner.json"
+mode = "symlink"
+[dotfiles."~/.config/karabiner/assets"]
+source = "karabiner/macos/assets"
+mode = "symlink-each"
+
+# kitty
+[dotfiles."~/.config/kitty"]
+source = "kitty/macos"
+mode = "symlink-each"
+
+# newsboat
+[dotfiles."~/.config/newsboat/config"]
+source = "newsboat/macos/config"
+mode = "symlink"
+[dotfiles."~/.config/newsboat/urls"]
+source = "newsboat/macos/urls"
+mode = "symlink"
+
+# rift
+[dotfiles."~/.config/rift"]
+source = "rift/macos"
+mode = "symlink-each"
+
+# rime
+[dotfiles."~/.config/rime/rime_ice.custom.yaml"]
+source = "rime/macos/rime_ice.custom.yaml"
+mode = "symlink"
+[dotfiles."~/.config/rime/squirrel.custom.yaml"]
+source = "rime/macos/squirrel.custom.yaml"
+mode = "symlink"
+
+# tmux
+[dotfiles."~/.config/tmux/tmux.conf"]
+source = "tmux/macos/tmux.conf"
+mode = "symlink"
+
+# yazi
 [dotfiles."~/.config/yazi/init.lua"]
 source = "yazi/macos/init.lua"
 mode = "symlink"
-
 [dotfiles."~/.config/yazi/keymap.toml"]
 source = "yazi/macos/keymap.toml"
 mode = "symlink"
-
 [dotfiles."~/.config/yazi/package.toml"]
 source = "yazi/macos/package.toml"
 mode = "symlink"
-
 [dotfiles."~/.config/yazi/yazi.toml"]
 source = "yazi/macos/yazi.toml"
 mode = "symlink"

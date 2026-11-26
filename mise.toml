@@ -1,3 +1,45 @@
+# aicommit2
+[dotfiles."aicommit2/custom_prompt.txt"]
+source = "aicommit2/shared/custom_prompt.txt"
+mode = "symlink"
+variants = [
+    { os = "macos", target = "~/.config/aicommit2/custom_prompt.txt" },
+    { os = "windows", target = "~/AppData/Local/aicommit2/custom_prompt.txt" },
+]
+
+# bat
+[dotfiles."bat"]
+source = "bat/shared"
+mode = "symlink-each"
+variants = [
+    { os = "macos", target = "~/.config/bat" },
+    { os = "windows", target = "~/AppData/Roaming/bat" },
+]
+
+# fastfetch
+[dotfiles."~/.config/fastfetch"]
+source = "fastfetch/shared"
+mode = "symlink-each"
+
+# jj
+[dotfiles."jj/themes"]
+source = "jj/shared/themes"
+mode = "symlink-each"
+variants = [
+    { os = "macos", target = "~/.config/jj/themes" },
+    { os = "windows", target = "~/AppData/Roaming/jj/themes" },
+]
+
+# rime
+[dotfiles."rime/default.custom.yaml"]
+source = "rime/shared/default.custom.yaml"
+mode = "symlink"
+variants = [
+    { os = "macos", target = "~/.config/rime/default.custom.yaml" },
+    { os = "windows", target = "~/AppData/Roaming/Rime/default.custom.yaml" },
+]
+
+# yazi
 [dotfiles."yazi/plugins"]
 source = "yazi/shared/plugins"
 mode = "symlink-each"
@@ -5,11 +47,19 @@ variants = [
     { os = "macos", target = "~/.config/yazi/plugins" },
     { os = "windows", target = "~/AppData/Roaming/yazi/config/plugins" },
 ]
-
 [dotfiles."yazi/theme.toml"]
 source = "yazi/shared/theme.toml"
 mode = "symlink"
 variants = [
     { os = "macos", target = "~/.config/yazi/theme.toml" },
     { os = "windows", target = "~/AppData/Roaming/yazi/config/theme.toml" },
+]
+
+# zed
+[dotfiles."zed/keymap.json"]
+source = "zed/shared/keymap.json"
+mode = "symlink"
+variants = [
+    { os = "macos", target = "~/.config/zed/keymap.json" },
+    { os = "windows", target = "~/AppData/Roaming/Zed/keymap.json" },
 ]

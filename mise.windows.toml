@@ -1,15 +1,26 @@
+# jj
+[dotfiles."~/AppData/Roaming/jj/config.toml"]
+source = "jj/windows/config.toml"
+mode = "symlink"
+
+# rime
+[dotfiles."~/AppData/Roaming/Rime/rime_ice.custom.yaml"]
+source = "rime/windows/rime_ice.custom.yaml"
+mode = "symlink"
+[dotfiles."~/AppData/Roaming/Rime/weasel.custom.yaml"]
+source = "rime/windows/weasel.custom.yaml"
+mode = "symlink"
+
+# yazi
 [dotfiles."~/AppData/Roaming/yazi/config/init.lua"]
 source = "yazi/windows/init.lua"
 mode = "symlink"
-
 [dotfiles."~/AppData/Roaming/yazi/config/keymap.toml"]
 source = "yazi/windows/keymap.toml"
 mode = "symlink"
-
 [dotfiles."~/AppData/Roaming/yazi/config/package.toml"]
 source = "yazi/windows/package.toml"
 mode = "symlink"
-
 [dotfiles."~/AppData/Roaming/yazi/config/yazi.toml"]
 source = "yazi/windows/yazi.toml"
 mode = "symlink"

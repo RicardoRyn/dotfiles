@@ -1,0 +1,5 @@
+patch:
+  "custom_phrase/user_dict": custom_phrase_double
+  speller/algebra/+:
+      - derive/in$/ing/
+      - derive/ing$/in/

@@ -1,0 +1,4 @@
+[colors]
+"diff removed token" = { bg = "#55313f", underline = false, crossed-out = true }
+"diff added token" = { bg = "#294b3a", underline = false }
+"diff context" = { dim = true }
