@@ -1,6 +1,16 @@
+# conda
+[dotfiles."~/.condarc"]
+source = "conda/windows/condarc"
+mode = "symlink"
+
 # git
 [dotfiles."~/.config/git"]
 source = "git/windows"
+mode = "symlink-each"
+
+# glazewm
+[dotfiles."~/.glzr/glazewm"]
+source = "glazewm/windows"
 mode = "symlink-each"
 
 # jj
@@ -39,3 +49,8 @@ mode = "symlink"
 [dotfiles."~/AppData/Roaming/yazi/config/yazi.toml"]
 source = "yazi/windows/yazi.toml"
 mode = "symlink"
+
+# yasb
+[dotfiles."~/.config/yasb"]
+source = "yasb/windows"
+mode = "symlink-each"
