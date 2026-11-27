@@ -16,6 +16,11 @@ mode = "symlink"
 source = "rime/windows/weasel.custom.yaml"
 mode = "symlink"
 
+# starship
+[dotfiles."~/.config/starship.toml"]
+source = "starship/windows/starship.toml"
+mode = "symlink"
+
 # yazi
 [dotfiles."~/AppData/Roaming/yazi/config/init.lua"]
 source = "yazi/windows/init.lua"
