@@ -35,6 +35,11 @@ variants = [
     { os = "windows", target = "~/AppData/Roaming/jj/themes" },
 ]
 
+# pi
+[dotfiles."~/.pi"]
+source = "pi/shared"
+mode = "symlink-each"
+
 # rime
 [dotfiles."rime/default.custom.yaml"]
 source = "rime/shared/default.custom.yaml"

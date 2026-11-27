@@ -1,0 +1,16 @@
+{
+  "lastChangelogVersion": "1.6.0",
+  "defaultProvider": "magpie",
+  "defaultModel": "group/smart-split",
+  "packages": [
+    "npm:pi-exa",
+    "npm:@plannotator/pi-extension",
+    "npm:pi-rewind",
+    "npm:pi-tidy",
+    "npm:pi-btw"
+  ],
+  "hideThinkingBlock": true,
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-tidy\",\"scope\":\"user\"}": "0.11.1"
+  }
+}

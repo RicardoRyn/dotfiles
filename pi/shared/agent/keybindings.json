@@ -1,0 +1,5 @@
+{
+  "tui.editor.undo": ["ctrl+z"],
+  "app.suspend": ["ctrl+-"],
+  "app.model.select": []
+}
