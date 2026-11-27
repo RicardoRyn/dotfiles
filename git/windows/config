@@ -1,0 +1,24 @@
+[user]
+  name = RicardoRyn
+  email = ricardoryn1317@gmail.com
+  signingkey = C:\\Users\\RicardoRyn\\.ssh\\id_rsa.pub
+[init]
+  defaultBranch = main
+[gpg]
+  format = ssh
+[commit]
+  gpgsign = true
+[merge]
+  conflictStyle = zdiff3
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  line-numbers = true
+  features = catppuccin-latte
+[core]
+  pager = delta
+  autocrlf = input
+[interactive]
+  diffFilter = delta --color-only
+[include]
+  path = catppuccin.gitconfig

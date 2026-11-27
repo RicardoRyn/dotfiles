@@ -1,3 +1,8 @@
+# git
+[dotfiles."~/.config/git"]
+source = "git/windows"
+mode = "symlink-each"
+
 # jj
 [dotfiles."~/AppData/Roaming/jj/config.toml"]
 source = "jj/windows/config.toml"

@@ -21,6 +21,11 @@ variants = [
 source = "fastfetch/shared"
 mode = "symlink-each"
 
+# git
+[dotfiles."~/.config/git/ignore"]
+source = "git/shared/ignore"
+mode = "symlink"
+
 # jj
 [dotfiles."jj/themes"]
 source = "jj/shared/themes"

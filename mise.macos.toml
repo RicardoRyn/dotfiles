@@ -11,6 +11,11 @@ mode = "symlink"
 source = "flyline/macos"
 mode = "symlink-each"
 
+# git
+[dotfiles."~/.config/git"]
+source = "git/macos"
+mode = "symlink-each"
+
 # hammerspoon
 [dotfiles."~/.hammerspoon"]
 source = "hammerspoon/macos"
