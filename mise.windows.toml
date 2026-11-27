@@ -36,6 +36,11 @@ mode = "symlink"
 source = "starship/windows/starship.toml"
 mode = "symlink"
 
+# yasb
+[dotfiles."~/.config/yasb"]
+source = "yasb/windows"
+mode = "symlink-each"
+
 # yazi
 [dotfiles."~/AppData/Roaming/yazi/config/init.lua"]
 source = "yazi/windows/init.lua"
@@ -49,8 +54,3 @@ mode = "symlink"
 [dotfiles."~/AppData/Roaming/yazi/config/yazi.toml"]
 source = "yazi/windows/yazi.toml"
 mode = "symlink"
-
-# yasb
-[dotfiles."~/.config/yasb"]
-source = "yasb/windows"
-mode = "symlink-each"

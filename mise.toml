@@ -1,3 +1,6 @@
+[settings]
+  dotfiles.windows_symlinks = true
+
 # aicommit2
 [dotfiles."aicommit2/custom_prompt.txt"]
 source = "aicommit2/shared/custom_prompt.txt"

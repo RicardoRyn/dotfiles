@@ -53,7 +53,21 @@ local function cancelSearch()
 end
 
 local appearanceKey = "glassLauncherPublicLightMode"
-local lightMode = hs.settings.get(appearanceKey) == true
+-- Appearance preference: nil = follow system, true = force light, false = force dark.
+local function systemLight()
+    -- Read the real value via a subprocess: hs.host.interfaceStyle() reads the
+    -- in-process NSUserDefaults cache, which can stay stale in a background app.
+    local out = hs.execute("defaults read -g AppleInterfaceStyle 2>/dev/null")
+    return not (out or ""):find("Dark")
+end
+
+local function resolveLightMode()
+    local pref = hs.settings.get(appearanceKey)
+    if pref == nil then return systemLight() end
+    return pref == true
+end
+
+local lightMode = resolveLightMode()
 
 local queryHistoryLimit = 20
 local queryHistory = {}
@@ -524,11 +538,20 @@ local function search(session, request, query, reset)
     end
 
     if lowerQuery == "theme" or lowerQuery == ".theme" then
-        sendRows(session, {{
-            title = lightMode and "Switch to Dark Mode" or "Switch to Light Mode",
-            subtitle = lightMode and "GlassLauncher is using Light Mode" or "GlassLauncher is using Dark Mode",
-            symbol = lightMode and "moon" or "sun.max", action = "toggleAppearance",
-        }}, placeholder, reset and session.root.query or nil)
+        local pref = hs.settings.get(appearanceKey)
+        local mode = pref == nil and "auto" or (pref and "light" or "dark")
+        local function themeRow(value, title, subtitle, symbol)
+            return {
+                title = (mode == value and "✓ " or "") .. title,
+                subtitle = subtitle, symbol = symbol,
+                action = "toggleAppearance", appearance = value,
+            }
+        end
+        sendRows(session, {
+            themeRow("auto", "Follow System", "System is currently in " .. (systemLight() and "Light" or "Dark") .. " Mode", "circle.lefthalf.filled"),
+            themeRow("light", "Light Mode", "Always use Light Mode", "sun.max"),
+            themeRow("dark", "Dark Mode", "Always use Dark Mode", "moon"),
+        }, placeholder, reset and session.root.query or nil)
         return
     end
 
@@ -899,6 +922,26 @@ function View:back()
     end
 end
 
+local function refreshAppearance()
+    local nextMode = resolveLightMode()
+    if nextMode == lightMode then return end
+    lightMode = nextMode
+    if active and active.view then
+        search(active, active.request, active.view.query)
+    end
+end
+
+local appearanceWatcher = hs.distributednotifications.new(function()
+    refreshAppearance()
+end, "AppleInterfaceThemeChangedNotification")
+appearanceWatcher:start()
+
+-- Fallback: distributed notifications are not guaranteed to be delivered.
+-- Poll once a second, but only while the panel is open (zero cost when idle).
+local appearancePoll = hs.timer.doEvery(1, function()
+    if active then refreshAppearance() end
+end)
+
 local startupInput
 
 local function handleEvent(session, line, event)
@@ -1020,8 +1063,12 @@ local function handleEvent(session, line, event)
         elseif choice.action == "reloadHammerspoon" then
             view:finish(function() hs.timer.doAfter(0, hs.reload) end)
         elseif choice.action == "toggleAppearance" then
-            lightMode = not lightMode
-            hs.settings.set(appearanceKey, lightMode)
+            if choice.appearance == "auto" then
+                hs.settings.clear(appearanceKey)
+            else
+                hs.settings.set(appearanceKey, choice.appearance == "light")
+            end
+            refreshAppearance()
             search(session, session.request, view.query)
         elseif choice.action == "clearClipboardHistory" then
             view:finish(function()
@@ -1129,6 +1176,7 @@ hs.shutdownCallback = function()
 end
 
 local function launch(start, arguments, pending, clipboardLaunch)
+    lightMode = resolveLightMode()
     if startupInput and startupInput ~= pending then
         startupInput.timer:stop()
         startupInput = nil
@@ -1380,4 +1428,6 @@ local function prewarm()
     hs.timer.doAfter(0.15, fileSearchScope.warmPathIndex)
 end
 
-return { prewarm = prewarm, launcherHotkey = launcherHotkey, showFileActions = showFileActions, textActionHotkey = textActionHotkey, clipboardHotkey = clipboardHotkey }
+return { prewarm = prewarm, launcherHotkey = launcherHotkey, showFileActions = showFileActions, textActionHotkey = textActionHotkey, clipboardHotkey = clipboardHotkey,
+    -- Keep watcher/timer reachable so Lua GC never collects them.
+    appearanceWatcher = appearanceWatcher, appearancePoll = appearancePoll }
