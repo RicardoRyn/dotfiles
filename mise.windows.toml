@@ -8,6 +8,11 @@ mode = "symlink-each"
 source = "jj/windows/config.toml"
 mode = "symlink"
 
+# nushell
+[dotfiles."~/AppData/Roaming/nushell"]
+source = "nushell/windows"
+mode = "symlink-each"
+
 # rime
 [dotfiles."~/AppData/Roaming/Rime/rime_ice.custom.yaml"]
 source = "rime/windows/rime_ice.custom.yaml"
