@@ -11,6 +11,11 @@ mode = "symlink"
 source = "flyline/macos"
 mode = "symlink-each"
 
+# hammerspoon
+[dotfiles."~/.hammerspoon"]
+source = "hammerspoon/macos"
+mode = "symlink-each"
+
 # jj
 [dotfiles."~/.config/jj/config.toml"]
 source = "jj/macos/config.toml"
